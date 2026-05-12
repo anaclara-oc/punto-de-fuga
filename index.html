@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Punto de Fuga · Colectivo de danza aérea</title>
+  <meta name="description" content="Colectivo artístico uruguayo de danza aérea con arnés y artes escénicas. Montevideo, 2022." />
+
+  <!-- Open Graph (para compartir en redes) -->
+  <meta property="og:title" content="Punto de Fuga · Colectivo de danza aérea" />
+  <meta property="og:description" content="Colectivo artístico uruguayo de danza aérea con arnés y artes escénicas. Montevideo, 2022." />
+  <meta property="og:type" content="website" />
+
+  <!-- Tipografías -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-theme="light">
+
+  <div id="root"></div>
+
+  <!-- React via CDN (no necesitás instalar nada) -->
+  <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin></script>
+
+  <!-- Datos y componentes -->
+  <script src="data.js"></script>
+  <script type="text/babel" src="components.jsx"></script>
+  <script type="text/babel" src="app.jsx"></script>
+
+</body>
+</html>

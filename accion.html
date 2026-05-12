@@ -1,0 +1,888 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Acción · Punto de Fuga</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f5f4f0;
+      --fg: #111110;
+      --fg-muted: #666660;
+      --fg-subtle: #999990;
+      --accent: #1a1aff;
+      --border: rgba(17,17,16,0.12);
+      --border-mid: rgba(17,17,16,0.25);
+      --nav-h: 56px;
+      --max: 1200px;
+      --pad: clamp(1.5rem, 5vw, 4rem);
+      --mono: 'JetBrains Mono', monospace;
+      --display: 'Space Grotesk', sans-serif;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: var(--display);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    .site-nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: var(--nav-h);
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 var(--pad);
+      z-index: 100;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      color: var(--fg);
+    }
+
+    .nav-logo img { height: 32px; width: auto; }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--fg-muted);
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--fg); }
+
+    /* HERO */
+    .hero {
+      padding: 2rem var(--pad) 4rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+      max-width: var(--max);
+      margin: 0 auto;
+    }
+
+    .hero-type-badge {
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+
+    .hero-title {
+      font-family: var(--display);
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      font-weight: 400;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      font-weight: 300;
+    }
+
+    .hero-subtitle {
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--fg-muted);
+      margin-bottom: 2rem;
+    }
+
+    .hero-meta {
+      border-top: 1px solid var(--border-mid);
+      border-bottom: 1px solid var(--border-mid);
+      padding: 1rem 0;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .hero-meta-label {
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--fg-subtle);
+      margin-bottom: 3px;
+    }
+
+    .hero-meta-value {
+      font-family: var(--mono);
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--fg);
+    }
+
+    .hero-desc-lead {
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 1.55;
+      color: var(--fg);
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-desc {
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.7;
+      color: var(--fg-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-quote {
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 1.4;
+      color: var(--fg);
+      padding-left: 1rem;
+      border-left: 2px solid var(--accent);
+    }
+
+    .hero-img-wrap {
+      width: 100%;
+      aspect-ratio: 3/4;
+      background: #1a1a1a;
+      overflow: hidden;
+    }
+
+    .hero-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .hero-img-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      color: #555;
+      text-transform: uppercase;
+    }
+
+    /* VIDEO */
+    .video-section {
+      background: #111110;
+      padding: 4rem var(--pad);
+    }
+
+    .video-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+    }
+
+    .video-label {
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #666;
+      margin-bottom: 1.5rem;
+    }
+
+    .video-wrap {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: #1e1e1c;
+      border: 1px solid #2a2a28;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .video-play {
+      width: 64px;
+      height: 64px;
+      border: 1.5px solid rgba(255,255,255,0.3);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .video-wrap:hover .video-play {
+      border-color: rgba(255,255,255,0.7);
+      transform: scale(1.05);
+    }
+
+    .video-play svg {
+      width: 20px;
+      height: 20px;
+      fill: white;
+      margin-left: 3px;
+    }
+
+    .video-caption {
+      margin-top: 1rem;
+      font-family: var(--mono);
+      font-size: 12px;
+      color: #555;
+      letter-spacing: 0.05em;
+    }
+
+    /* FICHA TÉCNICA */
+    .ficha-section {
+      padding: 4rem var(--pad);
+      max-width: var(--max);
+      margin: 0 auto;
+    }
+
+    .ficha-card {
+      border: 1px solid var(--border-mid);
+      padding: 2.5rem;
+    }
+
+    .ficha-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+      padding-bottom: 1.25rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .ficha-title {
+      font-size: 1.1rem;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+    }
+
+    .ficha-num {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--fg-subtle);
+      letter-spacing: 0.1em;
+    }
+
+    .ficha-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .ficha-item-label {
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--fg-subtle);
+      margin-bottom: 6px;
+    }
+
+    .ficha-item-value {
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--fg);
+      line-height: 1.5;
+    }
+
+    .ficha-item-value.muted {
+      color: var(--fg-muted);
+      font-style: italic;
+    }
+
+    /* GALERÍA */
+    .gallery-section {
+      padding: 0 var(--pad) 4rem;
+      max-width: var(--max);
+      margin: 0 auto;
+    }
+
+    .gallery-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .gallery-label {
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--fg-muted);
+    }
+
+    .gallery-count {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--fg-subtle);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 6px;
+    }
+
+    .gallery-item {
+      background: #ccc8c0;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .gallery-item:nth-child(1) { aspect-ratio: 4/3; }
+    .gallery-item:nth-child(2) { aspect-ratio: 3/4; grid-row: span 2; }
+    .gallery-item:nth-child(3) { aspect-ratio: 4/3; }
+    .gallery-item:nth-child(4) { aspect-ratio: 1/1; }
+    .gallery-item:nth-child(5) { aspect-ratio: 4/3; }
+    .gallery-item:nth-child(6) { aspect-ratio: 3/4; grid-row: span 2; }
+    .gallery-item:nth-child(7) { aspect-ratio: 4/3; }
+    .gallery-item:nth-child(8) { aspect-ratio: 1/1; }
+    .gallery-item:nth-child(9) { aspect-ratio: 4/3; }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+      filter: grayscale(20%);
+    }
+
+    .gallery-item:hover img { transform: scale(1.04); filter: grayscale(0%); }
+
+    .gallery-placeholder {
+      width: 100%;
+      height: 100%;
+      min-height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #d0cdc5;
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      color: #aaa;
+      text-transform: uppercase;
+    }
+
+    /* NAV PREV / NEXT */
+    .nav-actions {
+      border-top: 1px solid var(--border-mid);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .nav-action {
+      padding: 2rem var(--pad);
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      transition: background 0.2s;
+    }
+
+    .nav-action:hover { background: rgba(17,17,16,0.04); }
+
+    .nav-action.next {
+      border-left: 1px solid var(--border);
+      align-items: flex-end;
+      text-align: right;
+    }
+
+    .nav-action-dir {
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--fg-subtle);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .nav-action.next .nav-action-dir { flex-direction: row-reverse; }
+
+    .nav-action-dir svg {
+      width: 14px; height: 14px;
+      stroke: currentColor; fill: none; stroke-width: 1.5;
+    }
+
+    .nav-action-title {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--fg);
+    }
+
+    .nav-action-sub {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--fg-subtle);
+    }
+
+    .nav-action.disabled {
+      opacity: 0.3;
+      pointer-events: none;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #111110;
+      color: rgba(255,255,255,0.4);
+      padding: 2rem var(--pad);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    footer span {
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: 0.05em;
+    }
+
+    @media (max-width: 768px) {
+      .hero { grid-template-columns: 1fr; gap: 2rem; }
+      .hero-right { order: -1; }
+      .hero-img-wrap { aspect-ratio: 4/3; }
+      .ficha-grid { grid-template-columns: 1fr 1fr; }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .gallery-item:nth-child(2),
+      .gallery-item:nth-child(6) { grid-row: span 1; }
+      .nav-links { display: none; }
+    }
+
+    @media (max-width: 480px) {
+      .ficha-grid { grid-template-columns: 1fr; }
+      .nav-actions { grid-template-columns: 1fr; }
+      .nav-action.next { border-left: none; border-top: 1px solid var(--border); align-items: flex-start; text-align: left; }
+      .nav-action.next .nav-action-dir { flex-direction: row; }
+    }
+
+    /* LIGHTBOX */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      background: rgba(0,0,0,0.95);
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox.is-open { display: flex; }
+
+    .lightbox__img {
+      max-width: 90vw;
+      max-height: 90vh;
+      object-fit: contain;
+      display: block;
+      user-select: none;
+    }
+
+    .lightbox__btn {
+      position: fixed;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: 1px solid rgba(255,255,255,0.2);
+      color: white;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s;
+      font-size: 20px;
+      line-height: 1;
+    }
+
+    .lightbox__btn:hover { border-color: white; background: rgba(255,255,255,0.08); }
+    .lightbox__prev { left: 24px; }
+    .lightbox__next { right: 24px; }
+
+    .lightbox__close {
+      position: fixed;
+      top: 20px;
+      right: 24px;
+      background: none;
+      border: none;
+      color: rgba(255,255,255,0.6);
+      font-size: 28px;
+      cursor: pointer;
+      line-height: 1;
+      padding: 8px;
+      transition: color 0.2s;
+    }
+
+    .lightbox__close:hover { color: white; }
+
+    .lightbox__counter {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.4);
+    }
+
+    .gallery-item { cursor: zoom-in; }
+
+    .gallery-seccion { margin-bottom: 3rem; }
+
+    .gallery-seccion__header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+  </style>
+</head>
+<body data-theme="light">
+
+  <!-- NAV -->
+  <nav class="site-nav">
+    <a href="index.html" class="nav-logo">
+      <img src="assets/logo.svg" alt="Punto de Fuga" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html#acciones">Acciones</a></li>
+      <li><a href="index.html#somos">Somos</a></li>
+      <li><a href="index.html#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-left">
+      <span class="hero-type-badge" id="hero-tipo">—</span>
+      <h1 class="hero-title" id="hero-title">—</h1>
+      <p class="hero-subtitle" id="hero-sub">—</p>
+
+      <div class="hero-meta">
+        <div class="hero-meta-item">
+          <div class="hero-meta-label">Espacio</div>
+          <div class="hero-meta-value" id="hero-lugar">—</div>
+        </div>
+        <div class="hero-meta-item" style="text-align:right">
+          <div class="hero-meta-label">Fecha</div>
+          <div class="hero-meta-value" id="hero-fecha">—</div>
+        </div>
+      </div>
+
+      <div id="hero-desc-wrap"></div>
+      <p class="hero-quote" id="hero-frase" style="display:none"></p>
+    </div>
+
+    <div class="hero-right">
+      <div class="hero-img-wrap" id="hero-img-wrap">
+        <div class="hero-img-placeholder">[s/foto]</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDEO -->
+  <div class="video-section">
+    <div class="video-inner">
+      <p class="video-label">— Registro</p>
+      <div class="video-wrap">
+        <div class="video-play">
+          <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+        </div>
+      </div>
+      <p class="video-caption" id="video-caption">—</p>
+    </div>
+  </div>
+
+  <!-- FICHA TÉCNICA -->
+  <div class="ficha-section">
+    <div class="ficha-card">
+      <div class="ficha-header">
+        <h2 class="ficha-title">Ficha técnica</h2>
+        <span class="ficha-num" id="ficha-num">—</span>
+      </div>
+      <div class="ficha-grid" id="ficha-grid"></div>
+    </div>
+  </div>
+
+  <!-- GALERÍA -->
+  <div class="gallery-section">
+    <div class="gallery-header" id="gallery-header">
+      <span class="gallery-label">— Galería</span>
+      <span class="gallery-count" id="gallery-count">—</span>
+    </div>
+    <div class="gallery-grid" id="gallery-grid"></div>
+  </div>
+
+  <!-- NAV PREV / NEXT -->
+  <nav class="nav-actions">
+    <a id="nav-prev" href="#" class="nav-action prev">
+      <span class="nav-action-dir">
+        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+        Anterior
+      </span>
+      <span class="nav-action-title" id="prev-title">—</span>
+      <span class="nav-action-sub" id="prev-sub">—</span>
+    </a>
+    <a id="nav-next" href="#" class="nav-action next">
+      <span class="nav-action-dir">
+        Siguiente
+        <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+      </span>
+      <span class="nav-action-title" id="next-title">—</span>
+      <span class="nav-action-sub" id="next-sub">—</span>
+    </a>
+  </nav>
+
+  <!-- FOOTER -->
+  <footer>
+    <span>Punto de Fuga · Montevideo</span>
+    <span>© 2024 — Todos los derechos reservados</span>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox__close" id="lb-close">×</button>
+    <button class="lightbox__btn lightbox__prev" id="lb-prev">←</button>
+    <img class="lightbox__img" id="lb-img" src="" alt="" />
+    <button class="lightbox__btn lightbox__next" id="lb-next">→</button>
+    <span class="lightbox__counter" id="lb-counter"></span>
+  </div>
+
+  <script src="data.js"></script>
+  <script>
+    const params = new URLSearchParams(location.search);
+    const id = params.get("id");
+    const acciones = window.PDF_DATA.acciones;
+    const idx = acciones.findIndex(a => a.slug === id);
+    const a = acciones[idx];
+
+    if (!a) {
+      document.querySelector(".hero-title").textContent = "Acción no encontrada";
+    } else {
+      document.title = a.title + " · Punto de Fuga";
+
+      // Hero
+      document.getElementById("hero-tipo").textContent = "— " + a.tipo;
+      document.getElementById("hero-title").innerHTML = a.title.replace("Vol.", "<em>Vol.</em>");
+      document.getElementById("hero-sub").textContent = "— " + a.sub;
+      document.getElementById("hero-lugar").textContent = a.lugar;
+      document.getElementById("hero-fecha").textContent = (a.mes ? a.mes + " · " : "") + a.year;
+
+      // Descripción
+      if (a.descripcion) {
+        const wrap = document.getElementById("hero-desc-wrap");
+        wrap.innerHTML = '<p class="hero-desc-lead">' + a.descripcion + '</p>';
+      }
+
+      // Frase
+      if (a.frase) {
+        const frase = document.getElementById("hero-frase");
+        frase.textContent = a.frase;
+        frase.style.display = "block";
+      }
+
+      // Imagen hero
+      if (a.imagen) {
+        document.getElementById("hero-img-wrap").innerHTML =
+          '<img src="' + a.imagen + '" alt="' + a.title + '" />';
+      }
+
+      // Video caption
+      document.getElementById("video-caption").textContent =
+        a.title + " · " + a.lugar + " · " + (a.mes ? a.mes + " " : "") + a.year;
+
+      // Ficha técnica
+      document.getElementById("ficha-num").textContent =
+        String(idx + 1).padStart(2, "0") + " / " + a.year;
+
+      const fichaGrid = document.getElementById("ficha-grid");
+      const fichaFields = [
+        { label: "Dirección", key: "direccion" },
+        { label: "Elenco", key: "elenco" },
+        { label: "Producción", key: "produccion" },
+        { label: "Vestuario", key: "vestuario" },
+        { label: "Diseño de luces", key: "luces" },
+        { label: "Duración", key: "duracion" },
+      ];
+      const ficha = a.ficha || {};
+      fichaGrid.innerHTML = fichaFields.map(f => {
+        const val = ficha[f.key];
+        const display = Array.isArray(val)
+          ? val.join("<br>")
+          : val || null;
+        return '<div class="ficha-item">'
+          + '<div class="ficha-item-label">' + f.label + '</div>'
+          + '<div class="ficha-item-value' + (display ? "" : " muted") + '">'
+          + (display || "Por completar")
+          + '</div></div>';
+      }).join("");
+
+      // Galería — soporta array plano o array de secciones {seccion, fotos}
+      const galeria = a.galeria || [];
+      const esSecciones = galeria.length > 0 && typeof galeria[0] === "object" && galeria[0].fotos;
+
+      // Aplanar todas las fotos para el lightbox
+      const allImgs = esSecciones
+        ? galeria.flatMap(s => s.fotos)
+        : galeria;
+
+      const galleryContainer = document.getElementById("gallery-grid").parentElement;
+      document.getElementById("gallery-count").textContent =
+        allImgs.length ? allImgs.length + " imágenes" : "Próximamente";
+
+      function buildGrid(fotos, globalOffset) {
+        return fotos.map((src, i) =>
+          '<div class="gallery-item" data-src="' + src + '" data-idx="' + (globalOffset + i) + '">'
+          + '<img src="' + src + '" alt="' + a.title + ' ' + (globalOffset + i + 1) + '" />'
+          + '</div>'
+        ).join("");
+      }
+
+      if (esSecciones) {
+        document.getElementById("gallery-header").remove();
+        document.getElementById("gallery-grid").remove();
+        let offset = 0;
+        galeria.forEach(s => {
+          const secEl = document.createElement("div");
+          secEl.className = "gallery-seccion";
+          secEl.innerHTML =
+            '<div class="gallery-seccion__header">'
+            + '<span class="gallery-label">— ' + s.seccion + '</span>'
+            + '<span class="gallery-count">' + s.fotos.length + ' imágenes</span>'
+            + '</div>'
+            + '<div class="gallery-grid">' + buildGrid(s.fotos, offset) + '</div>';
+          galleryContainer.appendChild(secEl);
+          offset += s.fotos.length;
+        });
+      } else {
+        const total = Math.max(allImgs.length, 9);
+        document.getElementById("gallery-grid").innerHTML =
+          Array.from({ length: total }, (_, i) => {
+            const src = allImgs[i];
+            return src
+              ? '<div class="gallery-item" data-src="' + src + '" data-idx="' + i + '">'
+                + '<img src="' + src + '" alt="' + a.title + ' ' + (i+1) + '" /></div>'
+              : '<div class="gallery-item"><div class="gallery-placeholder">[s/foto]</div></div>';
+          }).join("");
+      }
+
+      // Lightbox
+      const lb = document.getElementById("lightbox");
+      const lbImg = document.getElementById("lb-img");
+      const lbCounter = document.getElementById("lb-counter");
+      let lbIdx = 0;
+
+      function lbOpen(i) {
+        lbIdx = i;
+        lbImg.src = allImgs[lbIdx];
+        lbCounter.textContent = (lbIdx + 1) + " / " + allImgs.length;
+        lb.classList.add("is-open");
+        document.body.style.overflow = "hidden";
+      }
+
+      function lbClose() {
+        lb.classList.remove("is-open");
+        document.body.style.overflow = "";
+      }
+
+      function lbMove(dir) {
+        lbIdx = (lbIdx + dir + allImgs.length) % allImgs.length;
+        lbImg.src = allImgs[lbIdx];
+        lbCounter.textContent = (lbIdx + 1) + " / " + allImgs.length;
+      }
+
+      document.querySelector(".gallery-section").addEventListener("click", e => {
+        const item = e.target.closest("[data-src]");
+        if (item) lbOpen(parseInt(item.dataset.idx));
+      });
+
+      document.getElementById("lb-close").addEventListener("click", lbClose);
+      document.getElementById("lb-prev").addEventListener("click", () => lbMove(-1));
+      document.getElementById("lb-next").addEventListener("click", () => lbMove(1));
+      lb.addEventListener("click", e => { if (e.target === lb) lbClose(); });
+      document.addEventListener("keydown", e => {
+        if (!lb.classList.contains("is-open")) return;
+        if (e.key === "Escape") lbClose();
+        if (e.key === "ArrowLeft") lbMove(-1);
+        if (e.key === "ArrowRight") lbMove(1);
+      });
+
+      // Prev / Next
+      const prev = acciones[idx - 1];
+      const next = acciones[idx + 1];
+
+      const navPrev = document.getElementById("nav-prev");
+      if (prev) {
+        navPrev.href = "accion.html?id=" + prev.slug;
+        document.getElementById("prev-title").textContent = prev.title;
+        document.getElementById("prev-sub").textContent = prev.tipo + " · " + prev.year;
+      } else {
+        navPrev.classList.add("disabled");
+        document.getElementById("prev-title").textContent = "—";
+        document.getElementById("prev-sub").textContent = "";
+      }
+
+      const navNext = document.getElementById("nav-next");
+      if (next) {
+        navNext.href = "accion.html?id=" + next.slug;
+        document.getElementById("next-title").textContent = next.title;
+        document.getElementById("next-sub").textContent = next.tipo + " · " + next.year;
+      } else {
+        navNext.classList.add("disabled");
+        document.getElementById("next-title").textContent = "—";
+        document.getElementById("next-sub").textContent = "";
+      }
+    }
+  </script>
+</body>
+</html>
