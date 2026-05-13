@@ -35,6 +35,7 @@ window.PDF_DATA = {
       lugar: "En proceso",
       destacado: true,
       imagen: "assets/acciones/tramas-colectivas/grutas.jpg",
+      descripcion: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     },
     {
       slug: "capas",
@@ -44,6 +45,7 @@ window.PDF_DATA = {
       tipo: "Performance",
       lugar: "Espacio MUMI · Noche de los Museos",
       imagen: "assets/acciones/capas/mumi.jpg",
+      descripcion: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     },
     {
       slug: "espacio-bahia",
@@ -52,6 +54,7 @@ window.PDF_DATA = {
       sub: "Performance",
       tipo: "Performance",
       lugar: "Espacio Bahía",
+      descripcion: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     },
     {
       slug: "artivismo-por-palestina",
@@ -61,6 +64,7 @@ window.PDF_DATA = {
       tipo: "Intervención",
       lugar: "Plaza Liber Seregni",
       imagen: "assets/acciones/artivismo-por-palestina/artivismo-palestina.png",
+      descripcion: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     },
     {
       slug: "29m-pioneras",
@@ -70,6 +74,7 @@ window.PDF_DATA = {
       tipo: "Intervención",
       lugar: "Plaza Las Pioneras · Municipio C",
       imagen: "assets/acciones/29m-pioneras/intervencion/29m-pioneras.jpg",
+      descripcion: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
       galeria: [
         {
           seccion: "Taller",
@@ -113,6 +118,7 @@ window.PDF_DATA = {
       tipo: "Obra",
       lugar: "Sala El Picadero",
       mes: "Diciembre",
+      descripcion: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     },
     {
       slug: "fugas-colectivas-vol-i",
@@ -135,6 +141,7 @@ window.PDF_DATA = {
       sub: "Muestra abierta",
       tipo: "Ensayo",
       lugar: "La Galponera",
+      descripcion: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     },
   ],
 

@@ -18,7 +18,7 @@
       --accent: #1a1aff;
       --border: rgba(17,17,16,0.12);
       --border-mid: rgba(17,17,16,0.25);
-      --nav-h: 56px;
+      --nav-h: 108px;
       --max: 1200px;
       --pad: clamp(1.5rem, 5vw, 4rem);
       --mono: 'JetBrains Mono', monospace;
@@ -38,14 +38,18 @@
     .site-nav {
       position: fixed;
       top: 0; left: 0; right: 0;
-      height: var(--nav-h);
       background: var(--bg);
       border-bottom: 1px solid var(--border);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 var(--pad);
+      padding: 18px var(--pad);
       z-index: 100;
+    }
+
+    @media (max-width: 600px) {
+      .site-nav { padding: 14px 20px; }
+      :root { --nav-h: 80px; }
     }
 
     .nav-logo {
@@ -56,18 +60,21 @@
       color: var(--fg);
     }
 
-    .nav-logo img { height: 32px; width: auto; }
+    .nav-logo img { height: 72px; width: auto; }
+
+    @media (max-width: 600px) {
+      .nav-logo img { height: 52px; }
+    }
 
     .nav-links {
       display: flex;
-      gap: 2rem;
+      gap: 48px;
       list-style: none;
     }
 
     .nav-links a {
       font-family: var(--mono);
-      font-size: 12px;
-      font-weight: 500;
+      font-size: 14px;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       text-decoration: none;
@@ -77,9 +84,21 @@
 
     .nav-links a:hover { color: var(--fg); }
 
+    @media (max-width: 720px) {
+      .nav-links { gap: 16px; }
+    }
+
+    @media (max-width: 600px) {
+      .nav-links { gap: 12px; font-size: 14px; letter-spacing: 0.05em; }
+    }
+
+    @media (max-width: 420px) {
+      .nav-links { gap: 7px; font-size: 12px; }
+    }
+
     /* HERO */
     .hero {
-      padding: 2rem var(--pad) 4rem;
+      padding: calc(var(--nav-h) + 2rem) var(--pad) 4rem;
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 3rem;
@@ -491,7 +510,6 @@
       .gallery-grid { grid-template-columns: repeat(2, 1fr); }
       .gallery-item:nth-child(2),
       .gallery-item:nth-child(6) { grid-row: span 1; }
-      .nav-links { display: none; }
     }
 
     @media (max-width: 480px) {

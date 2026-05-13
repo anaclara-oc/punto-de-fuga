@@ -168,12 +168,12 @@ function Acciones() {
   const conImagen = items.filter((a) => a.imagen);
   const featured = conImagen[Math.min(activeIdx, conImagen.length - 1)] || items[0];
 
-  // Auto-avance cada 5s
+  // Auto-avance cada 10s
   React.useEffect(() => {
     if (conImagen.length < 2) return;
     const id = setInterval(() => {
       setActiveIdx((i) => (i + 1) % conImagen.length);
-    }, 5000);
+    }, 10000);
     return () => clearInterval(id);
   }, [conImagen.length]);
 
@@ -181,7 +181,7 @@ function Acciones() {
     <section className="acciones reveal" id="acciones">
       <header className="section-head">
         <div>
-          <div className="section-head__num">[02] Acciones · 2022 — 2026</div>
+          <div className="section-head__num">Acciones · 2022 — 2026</div>
           <h2 className="section-head__title">
             Obras, performances<br />e intervenciones
           </h2>
@@ -204,7 +204,10 @@ function Acciones() {
               />
             ))}
             <div className="featured__overlay" />
-            <div className="featured__caption">
+            <a
+              className="featured__caption"
+              href={"accion.html?id=" + featured.slug}
+            >
               <div className="featured__caption-tipo">{featured.tipo} · {featured.year}</div>
               <div className="featured__caption-title">
                 {featured.title.includes("Vol") ? (
@@ -215,7 +218,7 @@ function Acciones() {
                 ) : featured.title}
               </div>
               <div className="featured__caption-lugar">{featured.lugar}</div>
-            </div>
+            </a>
             {conImagen.length > 1 && (
               <>
                 <button
@@ -300,7 +303,7 @@ function CuerpoTexto() {
         <div className="cuerpo-texto__media-stripes" />
       </div>
       <div className="cuerpo-texto__text">
-        <h3>[03] Metodología — Del cuerpo al texto</h3>
+        <h3>Metodología — Del cuerpo al texto</h3>
         <p>
           Concebimos la obra como organismo vivo. Trabajamos con estructuras compositivas que enmarcan la creación, pero también nos abrimos a la improvisación.
         </p>
@@ -318,7 +321,7 @@ function Somos() {
     <section className="somos reveal" id="somos">
       <div className="section-head" style={{ padding: 0, border: "none" }}>
         <div>
-          <div className="section-head__num">[04] El colectivo</div>
+          <div className="section-head__num">El colectivo</div>
         </div>
         <div className="section-head__meta">
           {D.somos.integrantes.length} integrantes
@@ -356,7 +359,7 @@ function NosInteresa() {
   return (
     <section className="nos-interesa reveal" id="nos-interesa">
       <div className="section-head" style={{ padding: 0, border: "none" }}>
-        <div className="section-head__num">[05] Nos interesa</div>
+        <div className="section-head__num">Nos interesa</div>
       </div>
       <h2 className="nos-interesa__title">nos interesa.</h2>
       <ul className="nos-interesa__lista">
@@ -388,7 +391,7 @@ function Contacto() {
     <section className="contacto reveal" id="contacto">
       <div className="contacto__grid">
         <div>
-          <div className="label" style={{ marginBottom: 24 }}>[06] Contacto</div>
+          <div className="label" style={{ marginBottom: 24 }}>Contacto</div>
           <h2 className="contacto__title">
             Escribinos.<br />
             <em>Programemos.</em>
