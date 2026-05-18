@@ -160,12 +160,28 @@ function Manifiesto() {
 }
 
 /* ─────────────  Acciones (con carrusel grande)  ───────────── */
+function ImgPortada({ accion, className, alt }) {
+  const base = `assets/acciones/${accion.carpeta || accion.slug}/portada`;
+  const fallbacks = [`${base}.jpg`, `${base}.png`, `${base}.jpeg`, accion.imagen].filter(Boolean);
+  const [idx, setIdx] = React.useState(0);
+  return (
+    <img
+      src={fallbacks[idx]}
+      alt={alt || ""}
+      className={className}
+      onError={() => {
+        if (idx + 1 < fallbacks.length) setIdx(idx + 1);
+      }}
+    />
+  );
+}
+
 function Acciones() {
   const [activeIdx, setActiveIdx] = useState(0);
   const items = D.acciones;
 
-  // Solo las acciones con imagen entran al carrusel
-  const conImagen = items.filter((a) => a.imagen);
+  // Entran al carrusel las acciones con imagen o carpeta propia
+  const conImagen = items.filter((a) => a.imagen || a.carpeta);
   const featured = conImagen[Math.min(activeIdx, conImagen.length - 1)] || items[0];
 
   // Auto-avance cada 10s
@@ -192,13 +208,13 @@ function Acciones() {
       </header>
 
       {/* Carrusel destacado */}
-      {featured && featured.imagen && (
+      {featured && (
         <div className="acciones__featured">
           <div className="featured__media">
             {conImagen.map((a, i) => (
-              <img
-                key={a.imagen}
-                src={a.imagen}
+              <ImgPortada
+                key={a.slug}
+                accion={a}
                 alt={a.title}
                 className={"featured__img" + (i === activeIdx ? " is-active" : "")}
               />
@@ -258,10 +274,10 @@ function Acciones() {
               href={"accion.html?id=" + a.slug}
               onMouseEnter={() => { if (imgIdx >= 0) setActiveIdx(imgIdx); }}
             >
-              <div className="accion__num">{String(i + 1).padStart(2, "0")} / {a.year}</div>
+              <div className="accion__num">{a.year}</div>
               <div className="accion__thumb" aria-hidden="true">
-                {a.imagen ? (
-                  <img src={a.imagen} alt="" />
+                {(a.imagen || a.carpeta) ? (
+                  <ImgPortada accion={a} />
                 ) : (
                   <span className="accion__thumb-placeholder">[ s/foto ]</span>
                 )}
@@ -281,10 +297,6 @@ function Acciones() {
               </div>
               <div className="accion__lugar">{a.lugar}</div>
               <div className="accion__end">
-                <div className="accion__meta">
-                  {a.tipo}
-                  {a.mes ? ` · ${a.mes}` : ""}
-                </div>
                 <div className="accion__arrow">→</div>
               </div>
             </a>

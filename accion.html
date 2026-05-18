@@ -98,13 +98,23 @@
 
     /* HERO */
     .hero {
-      padding: calc(var(--nav-h) + 2rem) var(--pad) 4rem;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      align-items: start;
       max-width: var(--max);
       margin: 0 auto;
+      padding: calc(var(--nav-h) + 2.5rem) var(--pad) 0;
+    }
+
+    .hero-header {
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border-mid);
+      margin-bottom: 2rem;
+    }
+
+    .hero-body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+      padding-bottom: 4rem;
     }
 
     .hero-type-badge {
@@ -144,12 +154,11 @@
 
     .hero-meta {
       border-top: 1px solid var(--border-mid);
-      border-bottom: 1px solid var(--border-mid);
-      padding: 1rem 0;
+      padding: 0.5rem 0;
       display: grid;
       grid-template-columns: 1fr auto;
       gap: 1rem;
-      margin-bottom: 2rem;
+      margin-bottom: 0;
     }
 
     .hero-meta-label {
@@ -224,7 +233,7 @@
     /* VIDEO */
     .video-section {
       background: #111110;
-      padding: 4rem var(--pad);
+      padding: 2rem var(--pad) 2.5rem;
     }
 
     .video-inner {
@@ -234,55 +243,114 @@
 
     .video-label {
       font-family: var(--mono);
-      font-size: 12px;
+      font-size: 16px;
       font-weight: 500;
-      letter-spacing: 0.15em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: #666;
-      margin-bottom: 1.5rem;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 1.25rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #2a2a28;
     }
 
-    .video-wrap {
-      width: 100%;
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 8px;
+    }
+
+    .video-card {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .video-card__thumb {
       aspect-ratio: 16/9;
-      background: #1e1e1c;
+      background: #1a1a18;
       border: 1px solid #2a2a28;
       display: flex;
       align-items: center;
       justify-content: center;
       position: relative;
-      cursor: pointer;
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+
+    .video-card:hover .video-card__thumb {
+      border-color: rgba(255,255,255,0.2);
+    }
+
+    .video-card__thumb img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.6;
     }
 
     .video-play {
-      width: 64px;
-      height: 64px;
-      border: 1.5px solid rgba(255,255,255,0.3);
+      width: 44px;
+      height: 44px;
+      border: 1.5px solid rgba(255,255,255,0.35);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
+      position: relative;
+      z-index: 1;
       transition: border-color 0.2s, transform 0.2s;
     }
 
-    .video-wrap:hover .video-play {
-      border-color: rgba(255,255,255,0.7);
-      transform: scale(1.05);
+    .video-card:hover .video-play {
+      border-color: rgba(255,255,255,0.8);
+      transform: scale(1.08);
     }
 
     .video-play svg {
-      width: 20px;
-      height: 20px;
+      width: 14px;
+      height: 14px;
       fill: white;
-      margin-left: 3px;
+      margin-left: 2px;
     }
 
-    .video-caption {
-      margin-top: 1rem;
+    .video-card__label {
       font-family: var(--mono);
-      font-size: 12px;
-      color: #555;
-      letter-spacing: 0.05em;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      color: rgba(255,255,255,0.35);
+      text-transform: uppercase;
+    }
+
+    .video-card__thumb--local {
+      cursor: pointer;
+      aspect-ratio: unset;
+      height: auto;
+      background: #000;
+    }
+    .video-card__thumb--local video {
+      position: static;
+      width: 100%;
+      height: auto;
+      max-height: 70vh;
+      object-fit: contain;
+      opacity: 0.7;
+      display: block;
+    }
+    .video-card__thumb--local .video-play {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .video-card__thumb--local.is-playing video { opacity: 1; }
+    .video-card__thumb--local.is-playing .video-play { opacity: 0; }
+
+    @media (max-width: 640px) {
+      .video-grid { grid-template-columns: 1fr 1fr; }
     }
 
     /* FICHA TÉCNICA */
@@ -349,7 +417,7 @@
 
     /* GALERÍA */
     .gallery-section {
-      padding: 0 var(--pad) 4rem;
+      padding: 3rem var(--pad) 4rem;
       max-width: var(--max);
       margin: 0 auto;
     }
@@ -365,9 +433,9 @@
 
     .gallery-label {
       font-family: var(--mono);
-      font-size: 12px;
+      font-size: 16px;
       font-weight: 500;
-      letter-spacing: 0.15em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--fg-muted);
     }
@@ -428,62 +496,159 @@
 
     /* NAV PREV / NEXT */
     .nav-actions {
-      border-top: 1px solid var(--border-mid);
       display: grid;
       grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      background: var(--fg);
+      margin-top: 4rem;
     }
 
     .nav-action {
-      padding: 2rem var(--pad);
+      padding: 2.5rem var(--pad);
       text-decoration: none;
       display: flex;
       flex-direction: column;
       gap: 0.5rem;
-      transition: background 0.2s;
+      background: #1e1e1c;
+      color: #fff;
+      transition: background 0.25s;
+      position: relative;
     }
 
-    .nav-action:hover { background: rgba(17,17,16,0.04); }
+    .nav-action:hover { background: #2e2e2c; }
 
     .nav-action.next {
-      border-left: 1px solid var(--border);
       align-items: flex-end;
       text-align: right;
     }
 
     .nav-action-dir {
       font-family: var(--mono);
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 500;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: var(--fg-subtle);
+      color: rgba(255,255,255,0.4);
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
+      margin-bottom: 0.5rem;
     }
 
     .nav-action.next .nav-action-dir { flex-direction: row-reverse; }
 
     .nav-action-dir svg {
-      width: 14px; height: 14px;
-      stroke: currentColor; fill: none; stroke-width: 1.5;
+      width: 16px; height: 16px;
+      stroke: currentColor; fill: none; stroke-width: 2;
     }
 
     .nav-action-title {
-      font-size: 14px;
-      font-weight: 500;
-      color: var(--fg);
+      font-family: var(--display);
+      font-size: clamp(1rem, 2.2vw, 1.6rem);
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      color: #fff;
+      line-height: 1.15;
     }
 
     .nav-action-sub {
       font-family: var(--mono);
       font-size: 12px;
-      color: var(--fg-subtle);
+      color: rgba(255,255,255,0.4);
+      letter-spacing: 0.05em;
     }
 
     .nav-action.disabled {
-      opacity: 0.3;
+      opacity: 0.2;
       pointer-events: none;
+    }
+
+    /* PIEZAS GRÁFICAS */
+    .graficas-section {
+      padding: 3rem var(--pad) 4rem;
+      max-width: var(--max);
+      margin: 0 auto;
+    }
+
+    .graficas-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .graficas-label {
+      font-family: var(--mono);
+      font-size: 16px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--fg-muted);
+    }
+
+    .graficas-counter {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--fg-subtle);
+    }
+
+    .graficas-carousel {
+      position: relative;
+    }
+
+    .graficas-track {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 12px;
+    }
+
+    .graficas-slide {
+      background: var(--border);
+      cursor: zoom-in;
+    }
+
+    .graficas-slide img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .graficas-slide:hover img { transform: scale(1.02); }
+
+    .graficas-nav {
+      display: flex;
+      gap: 8px;
+      margin-top: 1rem;
+      justify-content: flex-end;
+    }
+
+    .graficas-btn {
+      width: 40px;
+      height: 40px;
+      border: 1.5px solid var(--accent);
+      background: none;
+      cursor: pointer;
+      font-family: var(--mono);
+      font-size: 16px;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .graficas-btn:hover { background: var(--accent); color: #fff; }
+    .graficas-btn:disabled { opacity: 0.2; pointer-events: none; }
+
+    @media (max-width: 768px) {
+      .graficas-slide { width: calc(50% - 6px); }
+    }
+
+    @media (max-width: 480px) {
+      .graficas-slide { width: calc(100% - 0px); }
     }
 
     /* FOOTER */
@@ -502,10 +667,12 @@
       letter-spacing: 0.05em;
     }
 
-    @media (max-width: 768px) {
-      .hero { grid-template-columns: 1fr; gap: 2rem; }
-      .hero-right { order: -1; }
+    @media (max-width: 540px) {
+      .hero-body { grid-template-columns: 1fr; gap: 2rem; }
       .hero-img-wrap { aspect-ratio: 4/3; }
+      .nav-action { padding: 1.25rem 20px; gap: 0.25rem; }
+      .nav-action-dir { margin-bottom: 0.2rem; }
+      .nav-action-title { font-size: 1rem; }
       .ficha-grid { grid-template-columns: 1fr 1fr; }
       .gallery-grid { grid-template-columns: repeat(2, 1fr); }
       .gallery-item:nth-child(2),
@@ -621,11 +788,12 @@
 
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-left">
-      <span class="hero-type-badge" id="hero-tipo">—</span>
+
+    <!-- Fila superior: título + meta -->
+    <div class="hero-header">
+      <span class="hero-type-badge" id="hero-tipo" style="display:none">—</span>
       <h1 class="hero-title" id="hero-title">—</h1>
       <p class="hero-subtitle" id="hero-sub">—</p>
-
       <div class="hero-meta">
         <div class="hero-meta-item">
           <div class="hero-meta-label">Espacio</div>
@@ -636,28 +804,35 @@
           <div class="hero-meta-value" id="hero-fecha">—</div>
         </div>
       </div>
-
-      <div id="hero-desc-wrap"></div>
-      <p class="hero-quote" id="hero-frase" style="display:none"></p>
     </div>
 
-    <div class="hero-right">
+    <!-- Fila inferior: imagen + texto -->
+    <div class="hero-body">
       <div class="hero-img-wrap" id="hero-img-wrap">
         <div class="hero-img-placeholder">[s/foto]</div>
       </div>
+      <div class="hero-text">
+        <div id="hero-desc-wrap"></div>
+        <p class="hero-quote" id="hero-frase" style="display:none"></p>
+      </div>
     </div>
+
   </section>
 
+  <!-- GALERÍA -->
+  <div class="gallery-section">
+    <div class="gallery-header" id="gallery-header">
+      <span class="gallery-label">— Galería</span>
+      <span class="gallery-count" id="gallery-count">—</span>
+    </div>
+    <div class="gallery-grid" id="gallery-grid"></div>
+  </div>
+
   <!-- VIDEO -->
-  <div class="video-section">
+  <div class="video-section" id="video-section" style="display:none">
     <div class="video-inner">
-      <p class="video-label">— Registro</p>
-      <div class="video-wrap">
-        <div class="video-play">
-          <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
-        </div>
-      </div>
-      <p class="video-caption" id="video-caption">—</p>
+      <p class="video-label">— Videos y spots</p>
+      <div class="video-grid" id="video-grid"></div>
     </div>
   </div>
 
@@ -672,13 +847,19 @@
     </div>
   </div>
 
-  <!-- GALERÍA -->
-  <div class="gallery-section">
-    <div class="gallery-header" id="gallery-header">
-      <span class="gallery-label">— Galería</span>
-      <span class="gallery-count" id="gallery-count">—</span>
+  <!-- PIEZAS GRÁFICAS -->
+  <div class="graficas-section" id="graficas-section" style="display:none">
+    <div class="graficas-header">
+      <span class="graficas-label">— Piezas gráficas</span>
+      <span class="graficas-counter" id="graficas-counter"></span>
     </div>
-    <div class="gallery-grid" id="gallery-grid"></div>
+    <div class="graficas-carousel">
+      <div class="graficas-track" id="graficas-track"></div>
+      <div class="graficas-nav">
+        <button class="graficas-btn" id="graficas-prev">←</button>
+        <button class="graficas-btn" id="graficas-next">→</button>
+      </div>
+    </div>
   </div>
 
   <!-- NAV PREV / NEXT -->
@@ -755,9 +936,40 @@
           '<img src="' + a.imagen + '" alt="' + a.title + '" />';
       }
 
-      // Video caption
-      document.getElementById("video-caption").textContent =
-        a.title + " · " + a.lugar + " · " + (a.mes ? a.mes + " " : "") + a.year;
+      // Video gallery
+      if (a.videos && a.videos.length) {
+        document.getElementById("video-section").style.display = "";
+        document.getElementById("video-grid").innerHTML = a.videos.map(v => {
+          if (v.src) {
+            // Video local
+            return '<div class="video-card">'
+              + '<div class="video-card__thumb video-card__thumb--local">'
+              + '<video src="' + v.src + '" preload="metadata" muted playsinline></video>'
+              + '<div class="video-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>'
+              + '</div>'
+              + '<span class="video-card__label">' + (v.label || '') + '</span>'
+              + '</div>';
+          } else {
+            // URL externa (YouTube, Vimeo, etc.)
+            return '<a class="video-card" href="' + v.url + '" target="_blank" rel="noopener">'
+              + '<div class="video-card__thumb">'
+              + (v.thumb ? '<img src="' + v.thumb + '" alt="' + (v.label || a.title) + '" />' : '')
+              + '<div class="video-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>'
+              + '</div>'
+              + '<span class="video-card__label">' + (v.label || a.title) + '</span>'
+              + '</a>';
+          }
+        }).join("");
+
+        // Click en video local: play/pause
+        document.getElementById("video-grid").querySelectorAll(".video-card__thumb--local").forEach(card => {
+          card.addEventListener("click", () => {
+            const vid = card.querySelector("video");
+            vid.paused ? vid.play() : vid.pause();
+            card.classList.toggle("is-playing", !vid.paused);
+          });
+        });
+      }
 
       // Ficha técnica
       document.getElementById("ficha-num").textContent =
@@ -766,6 +978,7 @@
       const fichaGrid = document.getElementById("ficha-grid");
       const fichaFields = [
         { label: "Dirección", key: "direccion" },
+        { label: "Co-creación", key: "cocreacion" },
         { label: "Elenco", key: "elenco" },
         { label: "Producción", key: "produccion" },
         { label: "Vestuario", key: "vestuario" },
@@ -839,11 +1052,13 @@
       const lbImg = document.getElementById("lb-img");
       const lbCounter = document.getElementById("lb-counter");
       let lbIdx = 0;
+      let lbImgs = allImgs;
 
-      function lbOpen(i) {
+      function lbOpen(i, imgs) {
+        if (imgs) lbImgs = imgs;
         lbIdx = i;
-        lbImg.src = allImgs[lbIdx];
-        lbCounter.textContent = (lbIdx + 1) + " / " + allImgs.length;
+        lbImg.src = lbImgs[lbIdx];
+        lbCounter.textContent = (lbIdx + 1) + " / " + lbImgs.length;
         lb.classList.add("is-open");
         document.body.style.overflow = "hidden";
       }
@@ -854,9 +1069,9 @@
       }
 
       function lbMove(dir) {
-        lbIdx = (lbIdx + dir + allImgs.length) % allImgs.length;
-        lbImg.src = allImgs[lbIdx];
-        lbCounter.textContent = (lbIdx + 1) + " / " + allImgs.length;
+        lbIdx = (lbIdx + dir + lbImgs.length) % lbImgs.length;
+        lbImg.src = lbImgs[lbIdx];
+        lbCounter.textContent = (lbIdx + 1) + " / " + lbImgs.length;
       }
 
       document.querySelector(".gallery-section").addEventListener("click", e => {
@@ -874,6 +1089,27 @@
         if (e.key === "ArrowLeft") lbMove(-1);
         if (e.key === "ArrowRight") lbMove(1);
       });
+
+      // Piezas gráficas
+      if (a.graficas && a.graficas.length) {
+        const sec = document.getElementById("graficas-section");
+        sec.style.display = "";
+        document.getElementById("graficas-counter").textContent = a.graficas.length + " piezas";
+        const track = document.getElementById("graficas-track");
+        track.innerHTML = a.graficas.map(src =>
+          '<div class="graficas-slide"><img src="' + src + '" alt="Pieza gráfica" /></div>'
+        ).join("");
+
+        document.getElementById("graficas-nav").style.display = "none";
+
+        // Lightbox al hacer click en cada pieza
+        track.addEventListener("click", e => {
+          const slide = e.target.closest(".graficas-slide");
+          if (!slide) return;
+          const idx = [...track.querySelectorAll(".graficas-slide")].indexOf(slide);
+          lbOpen(idx, a.graficas);
+        });
+      }
 
       // Prev / Next
       const prev = acciones[idx - 1];
