@@ -47,7 +47,7 @@ window.PDF_DATA = {
         },
         {
           seccion: "Balcón del Cerro",
-          fotos: Array.from({ length: 23 }, (_, i) => `assets/acciones/tramas-colectivas/Balcón del Cerro/balcon_img-${i + 1}.jpg`),
+          fotos: Array.from({ length: 23 }, (_, i) => `assets/acciones/tramas-colectivas/balcon-del-cerro/balcon_img-${i + 1}.jpg`),
         },
         {
           seccion: "Plaza Feminista Las Pioneras",
@@ -57,13 +57,12 @@ window.PDF_DATA = {
     },
     {
       slug: "fugas-al-este",
-      carpeta: "Fugas al este",
       year: "2026",
       title: "Fugas al este",
       sub: "Intervención",
       tipo: "Intervención",
       lugar: "Grutas de Punta Ballena - Bosque y arroyo",
-      imagen: "assets/acciones/Fugas al este/fugas_al_este_1.jpg",
+      imagen: "assets/acciones/fugas-al-este/fugas-al-este_img-1.jpg",
       descripcion: "Una intervención de danza aérea con arnés en paisajes naturales del este uruguayo. Cuerpos suspendidos en el bosque, el arroyo y las grutas de Punta Ballena — un diálogo entre la gravedad, el territorio y el movimiento.",
       galeria: [
         {
@@ -85,6 +84,25 @@ window.PDF_DATA = {
       lugar: "Espacio MUMI · Noche de los Museos",
       imagen: "assets/acciones/capas/mumi.jpg",
       descripcion: "Performance multidisciplinaria presentada en la Noche de los Museos en el Espacio MUMI. Una exploración de las capas del cuerpo en movimiento — lo visible y lo invisible, lo que se muestra y lo que se oculta — a través de la danza aérea y las artes escénicas.",
+      galeria: [
+        {
+          seccion: "Registro",
+          fotos: Array.from({ length: 10 }, (_, i) => `assets/acciones/capas/capas_img-${i + 1}.jpg`),
+        },
+      ],
+      graficas: [
+        "assets/acciones/capas/graficas/capas_flyer-mumi.png",
+        "assets/acciones/capas/graficas/capas_story-hoy.png",
+        "assets/acciones/capas/graficas/capas_posteo-3a.png",
+        "assets/acciones/capas/graficas/capas_posteo-3b.png",
+        "assets/acciones/capas/graficas/capas_posteo-4.png",
+        "assets/acciones/capas/graficas/capas_posteo-5.png",
+        "assets/acciones/capas/graficas/capas_posteo-6.png",
+      ],
+      videos: [
+        { label: "Spot", src: "assets/acciones/capas/graficas/capas_spot-1.mp4" },
+        { label: "Video", src: "assets/acciones/capas/graficas/capas_video-1.mp4" },
+      ],
     },
     {
       slug: "artivismo-por-palestina",
@@ -145,6 +163,23 @@ window.PDF_DATA = {
       mes: "Diciembre",
       imagen: "assets/acciones/fugas-colectivas-vol-ii/portada.jpg",
       descripcion: "Segunda edición de Fugas Colectivas en la Sala El Picadero. La obra regresa con nuevas capas de sentido, profundizando en el lenguaje del cuerpo suspendido y la poética del movimiento colectivo. Fugas Colectivas, porque el futuro será colectivo.",
+      graficas: [
+        "assets/acciones/fugas-colectivas-vol-ii/graficas/fugas_ii_afiche-dic.jpg",
+        "assets/acciones/fugas-colectivas-vol-ii/graficas/fugas_ii_grafica-6.jpg",
+        "assets/acciones/fugas-colectivas-vol-ii/graficas/fugas_ii_grafica-7.jpg",
+        "assets/acciones/fugas-colectivas-vol-ii/graficas/fugas_ii_posteo-1a.jpg",
+        "assets/acciones/fugas-colectivas-vol-ii/graficas/fugas_ii_posteo-1b.jpg",
+        "assets/acciones/fugas-colectivas-vol-ii/graficas/fugas_ii_posteo-1c.jpg",
+        "assets/acciones/fugas-colectivas-vol-ii/graficas/fugas_ii_posteo-3a.jpg",
+        "assets/acciones/fugas-colectivas-vol-ii/graficas/fugas_ii_posteo-4a.jpg",
+        "assets/acciones/fugas-colectivas-vol-ii/graficas/fugas_ii_posteo-5b.jpg",
+      ],
+      videos: [
+        { label: "Reel", src: "assets/acciones/fugas-colectivas-vol-ii/graficas/fugas_ii_reel-1.mp4" },
+        { label: "Spot lanzamiento", src: "assets/acciones/fugas-colectivas-vol-ii/graficas/fugas_ii_spot-lanzamiento.mp4" },
+        { label: "Spot lanzamiento (alt)", src: "assets/acciones/fugas-colectivas-vol-ii/graficas/fugas_ii_spot-lanzamiento-2.mp4" },
+        { label: "Video", src: "assets/acciones/fugas-colectivas-vol-ii/graficas/fugas_ii_video-1.mp4" },
+      ],
     },
     {
       slug: "fugas-colectivas-vol-i",
@@ -171,34 +206,60 @@ window.PDF_DATA = {
         },
       ],
       graficas: [
-        "assets/acciones/fugas-colectivas-vol-i/grafica/fugas_i_grafica-1.png",
-        "assets/acciones/fugas-colectivas-vol-i/grafica/fugas_i_grafica-2.png",
+        "assets/acciones/fugas-colectivas-vol-i/graficas/fugas_i_grafica-1.jpg",
+        "assets/acciones/fugas-colectivas-vol-i/graficas/fugas_i_grafica-2.jpg",
+        "assets/acciones/fugas-colectivas-vol-i/graficas/fugas_i_grafica-3.jpg",
+        "assets/acciones/fugas-colectivas-vol-i/graficas/fugas_i_grafica-4.jpg",
+        "assets/acciones/fugas-colectivas-vol-i/graficas/fugas_i_grafica-5.jpg",
       ],
       videos: [
-        { label: "Reel", src: "assets/acciones/fugas-colectivas-vol-i/grafica/fugas_i_reel-1.mp4" },
+        { label: "Reel", src: "assets/acciones/fugas-colectivas-vol-i/graficas/fugas_i_reel-1.mp4" },
       ],
     },
     {
       slug: "apertura-proceso-creativo",
-      carpeta: "Apertura de proceso creativo",
       year: "2023",
       title: "Apertura de proceso creativo",
       sub: "Muestra abierta",
       tipo: "Ensayo",
       lugar: "La Galponera espacio de circo",
-      imagen: "assets/acciones/Apertura de proceso creativo/apertura_img-1.jpg",
+      imagen: "assets/acciones/apertura-proceso-creativo/apertura_img-1.jpg",
       videos: [
-        { label: "Video 1", src: "assets/acciones/Apertura de proceso creativo/apertura_video-1.mp4" },
-        { label: "Video 2", src: "assets/acciones/Apertura de proceso creativo/apertura_video-2.mp4" },
-        { label: "Video 3", src: "assets/acciones/Apertura de proceso creativo/apertura_video-3.mp4" },
-        { label: "Video 4", src: "assets/acciones/Apertura de proceso creativo/apertura_video-4.mp4" },
+        { label: "Video 1", src: "assets/acciones/apertura-proceso-creativo/apertura_video-1.mp4" },
+        { label: "Video 2", src: "assets/acciones/apertura-proceso-creativo/apertura_video-2.mp4" },
+        { label: "Video 3", src: "assets/acciones/apertura-proceso-creativo/apertura_video-3.mp4" },
+        { label: "Video 4", src: "assets/acciones/apertura-proceso-creativo/apertura_video-4.mp4" },
       ],
       descripcion: "Muestra abierta del proceso creativo de Fugas Colectivas en La Galponera. Un espacio de encuentro con el público para compartir el trabajo en construcción — la obra en su estado más vivo y vulnerable.",
       galeria: [
         {
           seccion: "Registro",
-          fotos: Array.from({ length: 19 }, (_, i) => `assets/acciones/Apertura de proceso creativo/apertura_img-${i + 1}.jpg`),
+          fotos: Array.from({ length: 19 }, (_, i) => `assets/acciones/apertura-proceso-creativo/apertura_img-${i + 1}.jpg`),
         },
+      ],
+    },
+    {
+      slug: "investigacion-visual-luces",
+      year: "2022",
+      title: "Investigación Visual y Luces",
+      sub: "Proceso de investigación",
+      tipo: "Ensayo",
+      lugar: "Lugar de ensayo",
+      imagen: "assets/acciones/investigacion-visual-luces/portada.jpg",
+      descripcion: "Investigación de luces y visuales — exploración del espacio escénico a través de la luz y los recursos visuales como herramientas de creación.",
+      galeria: [
+        {
+          seccion: "Registro",
+          fotos: [
+            "assets/acciones/investigacion-visual-luces/inv-visual_img-1.jpg",
+            "assets/acciones/investigacion-visual-luces/inv-visual_img-2.jpg",
+            "assets/acciones/investigacion-visual-luces/inv-visual_img-3.jpg",
+            "assets/acciones/investigacion-visual-luces/inv-visual_img-4.jpg",
+          ],
+        },
+      ],
+      videos: [
+        { label: "Video", src: "assets/acciones/investigacion-visual-luces/inv-visual_video-1.mp4" },
       ],
     },
   ],
