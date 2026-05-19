@@ -353,6 +353,7 @@
 
     @media (max-width: 640px) {
       .video-grid { grid-template-columns: 1fr 1fr; }
+      .video-grid--single { grid-template-columns: 1fr; }
     }
 
     /* FICHA TÉCNICA */
@@ -956,7 +957,9 @@
       // Video gallery
       if (a.videos && a.videos.length) {
         document.getElementById("video-section").style.display = "";
-        document.getElementById("video-grid").innerHTML = a.videos.map(v => {
+        const videoGrid = document.getElementById("video-grid");
+        if (a.videos.length === 1) videoGrid.classList.add("video-grid--single");
+        videoGrid.innerHTML = a.videos.map(v => {
           if (v.src) {
             // Video local
             return '<div class="video-card">'
@@ -979,13 +982,9 @@
         }).join("");
 
         // Click en video local: play/pause + preview del primer frame
-        document.getElementById("video-grid").querySelectorAll(".video-card__thumb--local").forEach(card => {
+        videoGrid.querySelectorAll(".video-card__thumb--local").forEach(card => {
           const vid = card.querySelector("video");
-          const seek = () => { vid.currentTime = 1; };
-          vid.addEventListener("loadedmetadata", seek);
-          vid.addEventListener("loadeddata", seek);
-          vid.addEventListener("canplay", seek);
-          vid.load();
+          vid.addEventListener("loadedmetadata", () => { vid.currentTime = 1; }, { once: true });
           card.addEventListener("click", () => {
             vid.paused ? vid.play() : vid.pause();
             card.classList.toggle("is-playing", !vid.paused);
