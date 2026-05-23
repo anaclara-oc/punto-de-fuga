@@ -9,14 +9,14 @@ window.PDF_DATA = {
   somos: {
     intro: "Provenimos de distintas disciplinas y formaciones. Aunque cada una aporta un enfoque singular, la mayoría somos mujeres, por lo que la identidad y la vivencia del género emergen como un hilo conductor en nuestras experiencias.",
     integrantes: [
-      "Elisa Acosta",
-      "Agustina Leiva",
-      "Florencia Mazzucco",
-      "Leticia Moreno",
-      "Anaclara Oyenart",
-      "Stella Peña",
-      "Agustina Rodríguez",
-      "Diego Ruella",
+      { nombre: "Elisa Acosta" },
+      { nombre: "Agustina Leiva" },
+      { nombre: "Florencia Mazzucco", foto: "assets/somos/flo-100.jpg" },
+      { nombre: "Leticia Moreno" },
+      { nombre: "Anaclara Oyenart" },
+      { nombre: "Stella Peña" },
+      { nombre: "Agustina Rodríguez" },
+      { nombre: "Diego Ruella" },
     ],
   },
 
@@ -281,8 +281,8 @@ window.PDF_DATA = {
 
   contacto: {
     email: "puntodefuga.danzaerea@gmail.com",
-    instagram: "puntodefuga_danzaerea",
-    instagramUrl: "https://instagram.com/puntodefuga_danzaerea",
+    instagram: "puntodefuga.danzaerea",
+    instagramUrl: "https://www.instagram.com/puntodefuga.danzaerea/",
     location: "Montevideo · Uruguay",
   },
 };
