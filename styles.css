@@ -1971,7 +1971,7 @@ body[data-theme="magenta"] {
 
 .modal__bio {
   font-family: var(--display);
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 400;
   line-height: 1.7;
   color: var(--accent);
