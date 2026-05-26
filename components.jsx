@@ -366,7 +366,7 @@ function IntegranteModal({ item, onClose }) {
     };
   }, []);
 
-  return (
+  return ReactDOM.createPortal(
     <div className="modal-overlay" onClick={onClose}>
       <div className="modal" onClick={e => e.stopPropagation()}>
         <button className="modal__close" onClick={onClose}>✕</button>
@@ -399,7 +399,8 @@ function IntegranteModal({ item, onClose }) {
           </div>
         )}
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }
 
