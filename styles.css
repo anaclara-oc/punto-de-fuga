@@ -1115,7 +1115,19 @@ section {
 .integrante__avatar:has(img) { background: #f5f4f0; }
 .integrante__avatar:has(img)::after { display: none; }
 
-.integrante__avatar.is-carousel { cursor: pointer; }
+.integrante__hint {
+  display: block;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-top: 10px;
+}
+
+.integrante:hover .integrante__hint {
+  color: rgba(255, 255, 255, 0.6);
+}
 
 .integrante__dots {
   position: absolute;
