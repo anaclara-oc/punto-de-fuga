@@ -417,7 +417,7 @@ function Integrante({ item, onOpen }) {
       <div className="integrante__name">
         <span>{partes[0]}</span>
         <span>{partes.slice(1).join(" ")}</span>
-        <span className="integrante__hint">ver</span>
+        <span className="integrante__hint">conocer →</span>
       </div>
     </div>
   );
