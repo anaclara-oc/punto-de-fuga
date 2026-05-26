@@ -13,7 +13,7 @@ window.PDF_DATA = {
       { nombre: "Agustina Leiva", bio: null },
       { nombre: "Florencia Mazzucco", fotos: ["assets/somos/flo-100.jpg"], bio: null },
       { nombre: "Leticia Moreno", bio: null },
-      { nombre: "Anaclara Oyenart", fotos: ["assets/somos/Anaclara.jpg", "assets/somos/Anaclara-2.jpg"], bio: "Diseñadora gráfica y artista escénica. Forma parte de Punto de Fuga desde sus inicios en 2022, donde confluyen su práctica en danza aérea con arnés y su trabajo visual. Responsable de la identidad gráfica del colectivo. Ha participado en todas las producciones del grupo como integrante del elenco y área de comunicación." },
+      { nombre: "Anaclara Oyenart", fotos: ["assets/somos/Anaclara.jpg", "assets/somos/Anaclara-2.jpg"], bio: "Licenciada en Diseño de Comunicación Visual y artista escénica con trayectoria en danza aérea con arnés. Forma parte de Punto de Fuga desde sus inicios en 2022, donde confluyen su práctica escénica y su trabajo como diseñadora — responsable de la identidad visual del colectivo. Con más de 15 años de formación continua en disciplinas aéreas y circenses, desarrolla proyectos en el cruce entre diseño, gestión cultural y escena." },
       { nombre: "Stella Peña", bio: null },
       { nombre: "Agustina Rodríguez", bio: null },
       { nombre: "Diego Ruella", bio: null },
