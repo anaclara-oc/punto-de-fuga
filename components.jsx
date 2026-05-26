@@ -393,10 +393,11 @@ function IntegranteModal({ item, onClose }) {
           )}
         </div>
 
-        <div className="modal__info">
-          <h3 className="modal__name">{nombre}</h3>
-          {bio && <p className="modal__bio">{bio}</p>}
-        </div>
+        {bio && (
+          <div className="modal__info">
+            <p className="modal__bio">{bio}</p>
+          </div>
+        )}
       </div>
     </div>
   );
