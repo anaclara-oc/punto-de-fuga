@@ -13,7 +13,7 @@ window.PDF_DATA = {
       { nombre: "Agustina Leiva" },
       { nombre: "Florencia Mazzucco", foto: "assets/somos/flo-100.jpg" },
       { nombre: "Leticia Moreno" },
-      { nombre: "Anaclara Oyenart" },
+      { nombre: "Anaclara Oyenart", foto: "assets/somos/Anaclara.jpg" },
       { nombre: "Stella Peña" },
       { nombre: "Agustina Rodríguez" },
       { nombre: "Diego Ruella" },
