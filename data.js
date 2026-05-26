@@ -91,13 +91,13 @@ window.PDF_DATA = {
         },
       ],
       graficas: [
-        "assets/acciones/capas/graficas/capas_flyer-mumi.png",
-        "assets/acciones/capas/graficas/capas_story-hoy.png",
-        "assets/acciones/capas/graficas/capas_posteo-3a.png",
-        "assets/acciones/capas/graficas/capas_posteo-3b.png",
-        "assets/acciones/capas/graficas/capas_posteo-4.png",
-        "assets/acciones/capas/graficas/capas_posteo-5.png",
-        "assets/acciones/capas/graficas/capas_posteo-6.png",
+        "assets/acciones/capas/graficas/capas_flyer-mumi.jpg",
+        "assets/acciones/capas/graficas/capas_story-hoy.jpg",
+        "assets/acciones/capas/graficas/capas_posteo-3a.jpg",
+        "assets/acciones/capas/graficas/capas_posteo-3b.jpg",
+        "assets/acciones/capas/graficas/capas_posteo-4.jpg",
+        "assets/acciones/capas/graficas/capas_posteo-5.jpg",
+        "assets/acciones/capas/graficas/capas_posteo-6.jpg",
       ],
       videos: [
         { label: "Spot", src: "assets/acciones/capas/graficas/capas_spot-1.mp4" },
@@ -111,7 +111,7 @@ window.PDF_DATA = {
       sub: "Activación escénica · Varieté Artivismo",
       tipo: "Intervención",
       lugar: "Plaza Liber Seregni",
-      imagen: "assets/acciones/artivismo-por-palestina/portada.png",
+      imagen: "assets/acciones/artivismo-por-palestina/portada.jpg",
       descripcion: "Activación escénica en el marco del Varieté Artivismo por Palestina en la Plaza Liber Seregni. El cuerpo como herramienta política y poética — una intervención que une arte y resistencia en el espacio público.",
     },
     {
@@ -142,7 +142,7 @@ window.PDF_DATA = {
       galeria: [
         {
           seccion: "Taller",
-          fotos: Array.from({ length: 19 }, (_, i) => `assets/acciones/29m-pioneras/taller/taller_img-${i + 1}.jpeg`),
+          fotos: Array.from({ length: 19 }, (_, i) => `assets/acciones/29m-pioneras/taller/taller_img-${i + 1}.jpg`),
         },
         {
           seccion: "Intervención",
