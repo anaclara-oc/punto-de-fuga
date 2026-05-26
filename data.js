@@ -11,9 +11,9 @@ window.PDF_DATA = {
     integrantes: [
       { nombre: "Elisa Acosta" },
       { nombre: "Agustina Leiva" },
-      { nombre: "Florencia Mazzucco", foto: "assets/somos/flo-100.jpg" },
+      { nombre: "Florencia Mazzucco", fotos: ["assets/somos/flo-100.jpg"] },
       { nombre: "Leticia Moreno" },
-      { nombre: "Anaclara Oyenart", foto: "assets/somos/Anaclara.jpg" },
+      { nombre: "Anaclara Oyenart", fotos: ["assets/somos/Anaclara.jpg"] },
       { nombre: "Stella Peña" },
       { nombre: "Agustina Rodríguez" },
       { nombre: "Diego Ruella" },

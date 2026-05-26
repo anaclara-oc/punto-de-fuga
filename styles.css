@@ -1115,6 +1115,28 @@ section {
 .integrante__avatar:has(img) { background: #f5f4f0; }
 .integrante__avatar:has(img)::after { display: none; }
 
+.integrante__avatar.is-carousel { cursor: pointer; }
+
+.integrante__dots {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 5px;
+  z-index: 2;
+}
+
+.integrante__dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.45);
+  transition: background 0.2s;
+}
+
+.integrante__dot.is-active { background: #fff; }
+
 .integrante:hover .integrante__avatar {
   background:
     repeating-linear-gradient(

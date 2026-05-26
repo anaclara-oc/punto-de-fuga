@@ -338,6 +338,37 @@ function CuerpoTexto() {
 }
 
 /* ─────────────  Somos  ───────────── */
+function Integrante({ item }) {
+  const nombre = item.nombre ?? item;
+  const fotos = item.fotos ?? (item.foto ? [item.foto] : []);
+  const [idx, setIdx] = useState(0);
+  const partes = nombre.split(" ");
+
+  const next = () => setIdx(i => (i + 1) % fotos.length);
+
+  return (
+    <div className="integrante">
+      <div
+        className={"integrante__avatar" + (fotos.length > 1 ? " is-carousel" : "")}
+        onClick={fotos.length > 1 ? next : undefined}
+      >
+        {fotos[idx] && <img src={fotos[idx]} alt={nombre} />}
+        {fotos.length > 1 && (
+          <div className="integrante__dots">
+            {fotos.map((_, j) => (
+              <span key={j} className={"integrante__dot" + (j === idx ? " is-active" : "")} />
+            ))}
+          </div>
+        )}
+      </div>
+      <div className="integrante__name">
+        <span>{partes[0]}</span>
+        <span>{partes.slice(1).join(" ")}</span>
+      </div>
+    </div>
+  );
+}
+
 function Somos() {
   return (
     <section className="somos reveal" id="somos">
@@ -356,22 +387,9 @@ function Somos() {
       </div>
 
       <div className="integrantes">
-        {D.somos.integrantes.map((item, i) => {
-          const nombre = item.nombre ?? item;
-          const foto = item.foto ?? null;
-          const partes = nombre.split(" ");
-          return (
-            <div className="integrante" key={nombre}>
-              <div className="integrante__avatar">
-                {foto && <img src={foto} alt={nombre} />}
-              </div>
-              <div className="integrante__name">
-                <span>{partes[0]}</span>
-                <span>{partes.slice(1).join(" ")}</span>
-              </div>
-            </div>
-          );
-        })}
+        {D.somos.integrantes.map((item) => (
+          <Integrante key={item.nombre ?? item} item={item} />
+        ))}
       </div>
     </section>
   );
