@@ -1222,8 +1222,8 @@ section {
 .nos-interesa__item:nth-child(2),
 .nos-interesa__item:nth-child(3) { border-color: var(--fg); }
 
-.nos-interesa__item:nth-child(1) strong { color: var(--azul); }
-.nos-interesa__item:nth-child(2) strong { color: var(--magenta); }
+.nos-interesa__item:nth-child(1) strong { color: var(--turquesa); }
+.nos-interesa__item:nth-child(2) strong { color: var(--turquesa); }
 .nos-interesa__item:nth-child(3) strong { color: var(--turquesa); }
 
 @media (max-width: 900px) {
