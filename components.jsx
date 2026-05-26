@@ -79,13 +79,22 @@ function Hero({ bg }) {
   React.useEffect(() => {
     const v = videoRef.current;
     if (!v) return;
-    const LOOP_END = 10; // segundos — corta antes de que aparezca el logo final
+    const LOOP_END = 10;
+
+    const tryPlay = () => {
+      const p = v.play();
+      if (p !== undefined) p.catch(() => {});
+    };
+
     const onTime = () => {
       if (v.currentTime >= LOOP_END) {
         v.currentTime = 0;
-        v.play();
+        tryPlay();
       }
     };
+
+    // iOS a veces ignora autoplay aunque tenga muted+playsinline
+    tryPlay();
     v.addEventListener("timeupdate", onTime);
     return () => v.removeEventListener("timeupdate", onTime);
   }, []);
@@ -100,6 +109,7 @@ function Hero({ bg }) {
         loop
         muted
         playsInline
+        preload="auto"
       />
       <div className="hero__overlay" />
       <div className="hero__content">
