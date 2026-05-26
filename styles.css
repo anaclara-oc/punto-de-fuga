@@ -1277,7 +1277,7 @@ section {
 
 .contacto__title em {
   font-style: italic;
-  color: var(--accent);
+  color: var(--magenta);
 }
 
 .contacto__derecha {
