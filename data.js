@@ -9,14 +9,14 @@ window.PDF_DATA = {
   somos: {
     intro: "Provenimos de distintas disciplinas y formaciones. Aunque cada una aporta un enfoque singular, la mayoría somos mujeres, por lo que la identidad y la vivencia del género emergen como un hilo conductor en nuestras experiencias.",
     integrantes: [
-      { nombre: "Elisa Acosta" },
-      { nombre: "Agustina Leiva" },
-      { nombre: "Florencia Mazzucco", fotos: ["assets/somos/flo-100.jpg"] },
-      { nombre: "Leticia Moreno" },
-      { nombre: "Anaclara Oyenart", fotos: ["assets/somos/Anaclara.jpg", "assets/somos/Anaclara-2.jpg"] },
-      { nombre: "Stella Peña" },
-      { nombre: "Agustina Rodríguez" },
-      { nombre: "Diego Ruella" },
+      { nombre: "Elisa Acosta", bio: null },
+      { nombre: "Agustina Leiva", bio: null },
+      { nombre: "Florencia Mazzucco", fotos: ["assets/somos/flo-100.jpg"], bio: null },
+      { nombre: "Leticia Moreno", bio: null },
+      { nombre: "Anaclara Oyenart", fotos: ["assets/somos/Anaclara.jpg", "assets/somos/Anaclara-2.jpg"], bio: null },
+      { nombre: "Stella Peña", bio: null },
+      { nombre: "Agustina Rodríguez", bio: null },
+      { nombre: "Diego Ruella", bio: null },
     ],
   },
 
