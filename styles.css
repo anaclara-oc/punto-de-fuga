@@ -1799,9 +1799,17 @@ body[data-theme="magenta"] {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    padding: 0;
   }
   .integrante__avatar {
-    display: none;
+    width: 38%;
+    flex-shrink: 0;
+    align-self: stretch;
+    margin: 0;
+  }
+  .integrante__name {
+    padding: 20px;
+    flex: 1;
   }
 }
 
