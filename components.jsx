@@ -343,14 +343,26 @@ function Integrante({ item }) {
   const fotos = item.fotos ?? (item.foto ? [item.foto] : []);
   const [idx, setIdx] = useState(0);
   const partes = nombre.split(" ");
+  const touchX = React.useRef(null);
 
   const next = () => setIdx(i => (i + 1) % fotos.length);
+  const prev = () => setIdx(i => (i - 1 + fotos.length) % fotos.length);
+
+  const onTouchStart = (e) => { touchX.current = e.touches[0].clientX; };
+  const onTouchEnd = (e) => {
+    if (touchX.current === null || fotos.length < 2) return;
+    const dx = e.changedTouches[0].clientX - touchX.current;
+    if (Math.abs(dx) > 30) dx < 0 ? next() : prev();
+    touchX.current = null;
+  };
 
   return (
     <div className="integrante">
       <div
         className={"integrante__avatar" + (fotos.length > 1 ? " is-carousel" : "")}
         onClick={fotos.length > 1 ? next : undefined}
+        onTouchStart={fotos.length > 1 ? onTouchStart : undefined}
+        onTouchEnd={fotos.length > 1 ? onTouchEnd : undefined}
       >
         {fotos[idx] && <img src={fotos[idx]} alt={nombre} />}
         {fotos.length > 1 && (
