@@ -262,7 +262,7 @@ window.PDF_DATA = {
       sub: "Muestra abierta",
       tipo: "Ensayo",
       lugar: "La Galponera espacio de circo",
-      imagen: "assets/acciones/apertura-proceso-creativo/apertura_img-1.jpg",
+      imagen: "assets/acciones/apertura-proceso-creativo/portada.jpg",
       videos: [
         { label: "Video 1", src: "assets/acciones/apertura-proceso-creativo/apertura_video-1.mp4" },
         { label: "Video 2", src: "assets/acciones/apertura-proceso-creativo/apertura_video-2.mp4" },
