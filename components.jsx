@@ -325,7 +325,7 @@ function CuerpoTexto() {
         <div className="cuerpo-texto__media-stripes" />
       </div>
       <div className="cuerpo-texto__text">
-        <h3>Metodología — Del cuerpo al texto</h3>
+        <h3>Metodología de creación — del cuerpo al texto</h3>
         <p>
           Concebimos la obra como organismo vivo. Trabajamos con estructuras compositivas que enmarcan la creación, pero también nos abrimos a la improvisación.
         </p>

@@ -2,8 +2,8 @@
 
 window.PDF_DATA = {
   manifiesto: [
-    "Un colectivo artístico nacido en 2022 a partir de inquietudes y búsquedas compartidas en torno a la creación escénica.",
-    "Fusionamos la danza aérea con arnés y las artes escénicas — un juego con la gravedad y el equilibrio; la creación de nuevas poéticas corporales.",
+    "Somos un colectivo artístico que surge en 2022 a partir de búsquedas y exploraciones compartidas en torno a la creación escénica",
+    "Fusionamos la danza aérea con arnés y las artes escénicas desde la creación de poéticas corporales en juego con la luz, el espacio, la gravedad y el equilibrio- en un diálogo constante con el lenguaje audiovisual y el paisaje sonoro-",
   ],
 
   somos: {
@@ -21,8 +21,8 @@ window.PDF_DATA = {
   },
 
   cuerpo: [
-    "Concebimos la obra como organismo vivo. Trabajamos con estructuras compositivas que enmarcan la creación, pero también nos abrimos a la improvisación, resaltando la tensión entre la ficción y la subjetividad de cada una.",
-    "El arnés nos permite desafiar la gravedad y expandir nuestras posibilidades de movimiento. Habitar el espacio de manera no convencional.",
+    "Trabajamos a partir de improvisaciones y estructuras compositivas que guían la creación.  Concebimos la obra como organismo vivo.",
+    "La danza aérea con arnés nos permite desafiar la gravedad y expandir las posibilidades de movimiento en diálogo con el espacio y el equilibrio",
   ],
 
   acciones: [
