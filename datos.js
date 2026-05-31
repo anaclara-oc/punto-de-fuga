@@ -1,29 +1,49 @@
 // Datos del colectivo Punto de Fuga
 
 window.PDF_DATA = {
-  manifiesto: [
-    "Somos un colectivo artístico que surge en 2022 a partir de búsquedas y exploraciones compartidas en torno a la creación escénica",
-    "Fusionamos la danza aérea con arnés y las artes escénicas desde la creación de poéticas corporales en juego con la luz, el espacio, la gravedad y el equilibrio- en un diálogo constante con el lenguaje audiovisual y el paisaje sonoro-",
-  ],
+  hero: {
+    tag: "Colectivo artístico · Danza aérea con arnés + artes escénicas",
+    caption: "Un juego con la gravedad y el equilibrio · La creación de nuevas poéticas corporales",
+  },
+
+  manifiesto: {
+    parrafos: [
+      "Somos un colectivo artístico que surge en 2022 a partir de búsquedas y exploraciones compartidas en torno a la creación escénica",
+      "Fusionamos la danza aérea con arnés y las artes escénicas desde la creación de poéticas corporales en juego con la luz, el espacio, la gravedad y el equilibrio- en un diálogo constante con el lenguaje audiovisual y el paisaje sonoro-",
+    ],
+    dossierUrl: "assets/dossier colectivo_2026-.pdf",
+    dossierNombre: "dossier-colectivo-2026.pdf",
+    imagen: "assets/abrazo.jpg",
+  },
 
   somos: {
+    seccion: "El colectivo",
+    titulo: "somos.",
     intro: "Dentro del colectivo coexisten diversidad de disciplinas y formaciones que aportan desde la singularidad de cada una, colaborando en el entramado y la potencia de la grupalidad. La identidad y sus múltiples intersecciones es un tema que nos atraviesa y que decidimos poner en juego a la hora de la creación",
     integrantes: [
       { nombre: "Elisa Acosta", bio: null },
       { nombre: "Agustina Leiva", bio: null },
-      { nombre: "Florencia Mazzucco", fotos: ["assets/somos/flo-100.jpg"], bio: null },
+      { nombre: "Florencia Mazzucco", bio: null },
       { nombre: "Leticia Moreno", bio: null },
-      { nombre: "Anaclara Oyenart", fotos: ["assets/somos/Anaclara.jpg", "assets/somos/Anaclara-2.jpg"], bio: "Licenciada en Diseño de Comunicación Visual y artista escénica con trayectoria en danza aérea con arnés. Forma parte de Punto de Fuga desde sus inicios, donde confluyen su práctica escénica y su trabajo como diseñadora — responsable de la identidad visual del colectivo. Con más de 15 años de formación continua en disciplinas aéreas y circenses, desarrolla proyectos en el cruce entre diseño, gestión cultural y escena." },
-      { nombre: "Stella Peña", bio: null },
+      { nombre: "Anaclara Oyenart", fotos: ["assets/somos/Anaclara.jpg", "assets/somos/Anaclara-2.jpg", "assets/somos/Anaclara-3.jpg"], bio: "Licenciada en Diseño de Comunicación Visual y artista escénica con trayectoria en danza aérea con arnés. Forma parte de Punto de Fuga desde sus inicios, donde confluyen su práctica escénica y su trabajo como diseñadora — responsable de la identidad visual del colectivo. Con más de 15 años de formación continua en disciplinas aéreas y circenses, desarrolla proyectos en el cruce entre diseño, gestión cultural y escena." },
+      { nombre: "Stella Peña", fotos: ["assets/somos/stella.jpg", "assets/somos/stella-2.jpg", "assets/somos/stella-3.jpg", "assets/somos/stella-4.jpg"], bio: "Bailarina, acróbata, aerealista y química. Realizó un doctorado en Química donde la mayor parte del tiempo estaba creando y sintetizando compuestos químicos bioactivos. Por lo que la experimentación y la investigación atraviesan sus poros tanto a nivel científico como a través del movimiento y la fusión de danza contemporánea y circo. Es directora de la obra PLASTIKUS, ha integrado diversos colectivos de danza y circo como Prácticas Bestiales, Proyecto Incorporar, ENTRE, Fúa, La Masa, Invertidos Circo. Actualmente es bailarina aérea y creadora en el Colectivo Punto de Fuga. Cuenta con más de 18 años de experiencia docente en acrobacias aéreas, donde desarrolla una pedagogía integral enfocada en el desarrollo humano." },
       { nombre: "Agustina Rodríguez", bio: null },
-      { nombre: "Diego Ruella", bio: null },
+      { nombre: "Diego Ruella", fotos: ["assets/somos/diego.jpg"], bio: "Artista escénico, coreógrafo y docente. Formado en Fotografía (Udelar), Docencia en Danza (IPA) y Danza Contemporánea (SODRE), complementa su trayectoria con estudios en acrobacia y danza aérea con arneses. Integra la Red de Artes Circenses del Uruguay (RACU) y el colectivo Punto de Fuga. Ha participado en producciones junto a La Fura dels Baus y en obras de danza contemporánea como Suite Gardel, Transparente y EX-ES, entre otras. Es co-creador de Buscar Nada en Ti y R.O.J.O. (Premio Jóvenes Creadores). Dirige y produce proyectos de danza contemporánea y danza aérea con arneses." },
     ],
   },
 
-  cuerpo: [
-    "Trabajamos a partir de improvisaciones y estructuras compositivas que guían la creación.  Concebimos la obra como organismo vivo.",
-    "La danza aérea con arnés nos permite desafiar la gravedad y expandir las posibilidades de movimiento en diálogo con el espacio y el equilibrio",
-  ],
+  cuerpo: {
+    titulo: "Metodología de creación — del cuerpo al texto",
+    parrafos: [
+      "Trabajamos a partir de improvisaciones y estructuras compositivas que guían la creación.  Concebimos la obra como organismo vivo.",
+      "La danza aérea con arnés nos permite desafiar la gravedad y expandir las posibilidades de movimiento en diálogo con el espacio y el equilibrio",
+    ],
+  },
+
+  accionesMeta: {
+    num: "Acciones · 2022 — 2026",
+    titulo: "Obras, performances e intervenciones",
+  },
 
   acciones: [
     {
@@ -316,9 +336,23 @@ window.PDF_DATA = {
       lead: "Crear instancias de encuentro con la comunidad",
       cuerpo: "donde la práctica corporal y artística en el espacio público se convierta en una experiencia compartida y significativa.",
     },
+    {
+      lead: "Explorar y crear mediante la danza aérea en arnés",
+      cuerpo: "piezas escénicas singulares con una identidad propia.",
+    },
+    {
+      lead: "Realizar intervenciones artísticas múltiples",
+      cuerpo: "adaptables a diversos espacios escénicos.",
+    },
   ],
 
+  footer: {
+    copyright: "© 2018–2026 · Colectivo Punto de Fuga",
+  },
+
   contacto: {
+    titulo: "Escribinos.",
+    tituloEm: "Programemos.",
     email: "puntodefuga.danzaerea@gmail.com",
     instagram: "puntodefuga.danzaerea",
     instagramUrl: "https://www.instagram.com/puntodefuga.danzaerea/",

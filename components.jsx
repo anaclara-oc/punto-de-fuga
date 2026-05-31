@@ -120,22 +120,14 @@ function Hero({ bg }) {
           </div>
         </div>
 
-        <div className="hero__tag">
-          Colectivo artístico ·<br />
-          Danza aérea con arnés<br />
-          + artes escénicas
-        </div>
+        <div className="hero__tag">{D.hero.tag}</div>
 
         <div className="hero__bottom">
           <h1 className="hero__title">
             punto<br />
             de <em>fuga</em>
           </h1>
-          <div className="hero__caption">
-            Un juego con la gravedad<br />
-            y el equilibrio · La creación<br />
-            de nuevas poéticas corporales
-          </div>
+          <div className="hero__caption">{D.hero.caption}</div>
         </div>
       </div>
       <div className="hero__scroll">SCROLL</div>
@@ -153,17 +145,21 @@ function Manifiesto() {
       </aside>
       <div className="manifiesto__body">
         <p>
-          Un colectivo artístico nacido en <span className="manifiesto__highlight">2022</span> a partir de inquietudes y búsquedas compartidas en torno a la creación escénica.
+          {D.manifiesto.parrafos[0].split("2022").map((part, i) =>
+            i === 0 ? part : [<span key={i} className="manifiesto__highlight">2022</span>, part]
+          )}
         </p>
         <p>
-          Fusionamos la <em>danza aérea con arnés</em> y las artes escénicas — un juego con la gravedad y el equilibrio; la creación de nuevas poéticas corporales.
+          {D.manifiesto.parrafos[1].split("danza aérea con arnés").map((part, i) =>
+            i === 0 ? part : [<em key={i}>danza aérea con arnés</em>, part]
+          )}
         </p>
-        <a className="manifiesto__cta" href="assets/dossier colectivo_2026-.pdf" download="dossier-colectivo-2026.pdf">
+        <a className="manifiesto__cta" href={D.manifiesto.dossierUrl} download={D.manifiesto.dossierNombre}>
           Descargar dossier <span>↓</span>
         </a>
       </div>
       <div className="manifiesto__imagen">
-        <img src="assets/abrazo.jpg" alt="Punto de Fuga" />
+        <img src={D.manifiesto.imagen} alt="Punto de Fuga" />
       </div>
     </section>
   );
@@ -207,10 +203,8 @@ function Acciones() {
     <section className="acciones reveal" id="acciones">
       <header className="section-head">
         <div>
-          <div className="section-head__num">Acciones · 2022 — 2026</div>
-          <h2 className="section-head__title">
-            Obras, performances<br />e intervenciones
-          </h2>
+          <div className="section-head__num">{D.accionesMeta.num}</div>
+          <h2 className="section-head__title">{D.accionesMeta.titulo}</h2>
         </div>
         <div className="section-head__meta">
           {D.acciones.length} acciones
@@ -325,13 +319,8 @@ function CuerpoTexto() {
         <div className="cuerpo-texto__media-stripes" />
       </div>
       <div className="cuerpo-texto__text">
-        <h3>Metodología de creación — del cuerpo al texto</h3>
-        <p>
-          Concebimos la obra como organismo vivo. Trabajamos con estructuras compositivas que enmarcan la creación, pero también nos abrimos a la improvisación.
-        </p>
-        <p>
-          El arnés nos permite <em>desafiar la gravedad</em> y expandir las posibilidades de movimiento. Habitar el espacio de manera no convencional.
-        </p>
+        <h3>{D.cuerpo.titulo}</h3>
+        {D.cuerpo.parrafos.map((p, i) => <p key={i}>{p}</p>)}
       </div>
     </section>
   );
@@ -429,13 +418,13 @@ function Somos() {
     <section className="somos reveal" id="somos">
       <div className="section-head" style={{ padding: 0, border: "none" }}>
         <div>
-          <div className="section-head__num">El colectivo</div>
+          <div className="section-head__num">{D.somos.seccion}</div>
         </div>
         <div className="section-head__meta">
           {D.somos.integrantes.length} integrantes
         </div>
       </div>
-      <h2 className="somos__title">somos.</h2>
+      <h2 className="somos__title">{D.somos.titulo}</h2>
 
       <div className="somos__intro">
         <p>{D.somos.intro}</p>
@@ -490,8 +479,8 @@ function Contacto() {
         <div>
           <div className="label" style={{ marginBottom: 24 }}>Contacto</div>
           <h2 className="contacto__title">
-            Escribinos.<br />
-            <em>Programemos.</em>
+            {D.contacto.titulo}<br />
+            <em>{D.contacto.tituloEm}</em>
           </h2>
         </div>
 
@@ -612,7 +601,7 @@ function Contacto() {
 function Footer() {
   return (
     <footer className="footer">
-      <div>© 2018–2026 · Colectivo Punto de Fuga</div>
+      <div>{D.footer.copyright}</div>
       <div>Montevideo · Uruguay</div>
       <div>
         <a href={D.contacto.instagramUrl}>IG ↗</a>

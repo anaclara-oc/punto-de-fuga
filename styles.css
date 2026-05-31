@@ -668,7 +668,7 @@ section {
     padding: 0 0 16px;
   }
   .featured__media {
-    aspect-ratio: 3 / 4;
+    aspect-ratio: 16 / 9;
   }
   .featured__overlay {
     background: linear-gradient(
@@ -779,7 +779,7 @@ section {
 
 .accion__thumb {
   width: 140px;
-  height: 90px;
+  aspect-ratio: 16 / 9;
   background: var(--line-soft);
   overflow: hidden;
   position: relative;
@@ -1037,7 +1037,6 @@ section {
   position: relative;
   cursor: pointer;
   transition: background 0.3s;
-  aspect-ratio: 3 / 4;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -1077,8 +1076,8 @@ section {
 
 .integrante__avatar {
   width: 100%;
-  flex: 1;
-  margin: 16px 0;
+  aspect-ratio: 4 / 5;
+  margin: 16px 0 0;
   background:
     repeating-linear-gradient(
       90deg,
@@ -1666,7 +1665,7 @@ body[data-theme="magenta"] {
     border-bottom: 1px solid var(--line-soft);
   }
   .accion__thumb img {
-    object-fit: contain;
+    object-fit: cover;
     width: 100%;
     height: 100%;
   }
@@ -1754,6 +1753,14 @@ body[data-theme="magenta"] {
     font-size: clamp(16px, 4.5vw, 20px);
   }
 
+  /* Modal integrante */
+  .modal-overlay {
+    padding: 12px;
+  }
+  .modal__carousel {
+    max-height: none;
+  }
+
   /* Contacto */
   .contacto {
     padding: 80px 20px 40px;
@@ -1808,22 +1815,18 @@ body[data-theme="magenta"] {
     grid-template-columns: 1fr;
   }
   .integrante {
-    aspect-ratio: 4 / 3;
     border-right: none !important;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0;
+    flex-direction: column;
+    padding: 16px;
   }
   .integrante__avatar {
-    width: 38%;
-    flex-shrink: 0;
-    align-self: stretch;
-    margin: 0;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    margin: 0 0 12px;
   }
   .integrante__name {
-    padding: 20px;
-    flex: 1;
+    padding: 0;
+    flex: unset;
   }
 }
 
@@ -1880,21 +1883,18 @@ body[data-theme="magenta"] {
 .modal__carousel {
   position: relative;
   width: 100%;
-  aspect-ratio: 3 / 4;
-  max-height: 60vh;
   background: #0a0a0a;
   overflow: hidden;
   flex-shrink: 0;
 }
 
 .modal__photo {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top center;
   display: block;
+  width: 100%;
+  height: auto;
+  max-height: 75vh;
+  object-fit: contain;
+  object-position: center;
 }
 
 .modal__photo-empty {
