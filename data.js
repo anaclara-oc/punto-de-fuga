@@ -7,7 +7,7 @@ window.PDF_DATA = {
   ],
 
   somos: {
-    intro: "Provenimos de distintas disciplinas y formaciones. Aunque cada una aporta un enfoque singular, la mayoría somos mujeres, por lo que la identidad y la vivencia del género emergen como un hilo conductor en nuestras experiencias.",
+    intro: "Dentro del colectivo coexisten diversidad de disciplinas y formaciones que aportan desde la singularidad de cada una, colaborando en el entramado y la potencia de la grupalidad. La identidad y sus múltiples intersecciones es un tema que nos atraviesa y que decidimos poner en juego a la hora de la creación",
     integrantes: [
       { nombre: "Elisa Acosta", bio: null },
       { nombre: "Agustina Leiva", bio: null },
