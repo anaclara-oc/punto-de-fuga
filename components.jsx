@@ -185,17 +185,27 @@ function ImgPortada({ accion, className, alt }) {
 function Acciones() {
   const [activeIdx, setActiveIdx] = useState(0);
   const items = D.acciones;
+  const touchX = React.useRef(null);
 
   // Entran al carrusel las acciones con imagen o carpeta propia
   const conImagen = items.filter((a) => a.imagen || a.carpeta);
   const featured = conImagen[Math.min(activeIdx, conImagen.length - 1)] || items[0];
 
+  const next = () => setActiveIdx((i) => (i + 1) % conImagen.length);
+  const prev = () => setActiveIdx((i) => (i - 1 + conImagen.length) % conImagen.length);
+
+  const onTouchStart = (e) => { touchX.current = e.touches[0].clientX; };
+  const onTouchEnd = (e) => {
+    if (touchX.current === null || conImagen.length < 2) return;
+    const dx = e.changedTouches[0].clientX - touchX.current;
+    if (Math.abs(dx) > 30) dx < 0 ? next() : prev();
+    touchX.current = null;
+  };
+
   // Auto-avance cada 10s
   React.useEffect(() => {
     if (conImagen.length < 2) return;
-    const id = setInterval(() => {
-      setActiveIdx((i) => (i + 1) % conImagen.length);
-    }, 10000);
+    const id = setInterval(next, 10000);
     return () => clearInterval(id);
   }, [conImagen.length]);
 
@@ -214,7 +224,11 @@ function Acciones() {
       {/* Carrusel destacado */}
       {featured && (
         <div className="acciones__featured">
-          <div className="featured__media">
+          <div
+            className="featured__media"
+            onTouchStart={conImagen.length > 1 ? onTouchStart : undefined}
+            onTouchEnd={conImagen.length > 1 ? onTouchEnd : undefined}
+          >
             {conImagen.map((a, i) => (
               <ImgPortada
                 key={a.slug}
@@ -241,16 +255,8 @@ function Acciones() {
             </a>
             {conImagen.length > 1 && (
               <>
-                <button
-                  className="featured__nav featured__nav--prev"
-                  onClick={() => setActiveIdx((i) => (i - 1 + conImagen.length) % conImagen.length)}
-                  aria-label="Anterior"
-                >←</button>
-                <button
-                  className="featured__nav featured__nav--next"
-                  onClick={() => setActiveIdx((i) => (i + 1) % conImagen.length)}
-                  aria-label="Siguiente"
-                >→</button>
+                <button className="featured__nav featured__nav--prev" onClick={prev} aria-label="Anterior">←</button>
+                <button className="featured__nav featured__nav--next" onClick={next} aria-label="Siguiente">→</button>
                 <div className="featured__dots">
                   {conImagen.map((_, i) => (
                     <button

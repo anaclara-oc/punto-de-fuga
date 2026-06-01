@@ -41,7 +41,7 @@ window.PDF_DATA = {
   },
 
   accionesMeta: {
-    num: "Acciones · 2022 — 2026",
+    num: "Acciones performáticas",
     titulo: "Obras, performances e intervenciones",
   },
 
