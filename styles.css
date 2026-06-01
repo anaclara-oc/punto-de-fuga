@@ -1750,7 +1750,7 @@ body[data-theme="magenta"] {
 
   /* Modal integrante */
   .modal-overlay {
-    padding: 12px;
+    padding: 24px 20px;
   }
   .modal__carousel {
     max-height: none;
@@ -1837,7 +1837,7 @@ body[data-theme="magenta"] {
   align-items: center;
   justify-content: center;
   z-index: 99999;
-  padding: 24px;
+  padding: 40px 32px;
 }
 
 .modal {
@@ -1856,8 +1856,8 @@ body[data-theme="magenta"] {
   top: 12px;
   right: 12px;
   background: transparent;
-  border: 1.5px solid var(--accent);
-  color: var(--accent);
+  border: 1.5px solid #fff;
+  color: #fff;
   font-family: var(--mono);
   font-size: 13px;
   width: 32px;
@@ -1906,11 +1906,11 @@ body[data-theme="magenta"] {
 
 .modal__arrow {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: var(--bg);
-  border: 1.5px solid var(--accent);
-  color: var(--accent);
+  bottom: 12px;
+  transform: none;
+  background: transparent;
+  border: 1.5px solid #fff;
+  color: #fff;
   font-family: var(--mono);
   font-size: 16px;
   width: 38px;
@@ -1924,8 +1924,8 @@ body[data-theme="magenta"] {
 }
 
 .modal__arrow:hover {
-  background: var(--accent);
-  color: var(--bg);
+  background: #fff;
+  color: #000;
 }
 
 .modal__arrow--prev { left: 12px; }
