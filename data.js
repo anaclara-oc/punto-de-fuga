@@ -1,29 +1,49 @@
 // Datos del colectivo Punto de Fuga
 
 window.PDF_DATA = {
-  manifiesto: [
-    "Somos un colectivo artístico que surge en 2022 a partir de búsquedas y exploraciones compartidas en torno a la creación escénica",
-    "Fusionamos la danza aérea con arnés y las artes escénicas desde la creación de poéticas corporales en juego con la luz, el espacio, la gravedad y el equilibrio- en un diálogo constante con el lenguaje audiovisual y el paisaje sonoro-",
-  ],
+  hero: {
+    tag: "Colectivo artístico · Danza aérea con arnés + artes escénicas",
+    caption: "Un juego con la gravedad y el equilibrio · La creación de nuevas poéticas corporales",
+  },
+
+  manifiesto: {
+    parrafos: [
+      "Somos un colectivo artístico que surge en 2022 a partir de búsquedas y exploraciones compartidas en torno a la creación escénica",
+      "Fusionamos la danza aérea con arnés y las artes escénicas desde la creación de poéticas corporales en juego con la luz, el espacio, la gravedad y el equilibrio- en un diálogo constante con el lenguaje audiovisual y el paisaje sonoro-",
+    ],
+    dossierUrl: "assets/dossier colectivo_2026-.pdf",
+    dossierNombre: "dossier-colectivo-2026.pdf",
+    imagen: "assets/abrazo.jpg",
+  },
 
   somos: {
+    seccion: "El colectivo",
+    titulo: "somos.",
     intro: "Dentro del colectivo coexisten diversidad de disciplinas y formaciones que aportan desde la singularidad de cada una, colaborando en el entramado y la potencia de la grupalidad. La identidad y sus múltiples intersecciones es un tema que nos atraviesa y que decidimos poner en juego a la hora de la creación",
     integrantes: [
       { nombre: "Elisa Acosta", bio: null },
       { nombre: "Agustina Leiva", bio: null },
-      { nombre: "Florencia Mazzucco", fotos: ["assets/somos/flo-100.jpg"], bio: null },
+      { nombre: "Florencia Mazzucco", fotos: ["assets/somos/Flo-2.jpg"], bio: null },
       { nombre: "Leticia Moreno", bio: null },
-      { nombre: "Anaclara Oyenart", fotos: ["assets/somos/Anaclara.jpg", "assets/somos/Anaclara-2.jpg"], bio: "Licenciada en Diseño de Comunicación Visual y artista escénica con trayectoria en danza aérea con arnés. Forma parte de Punto de Fuga desde sus inicios, donde confluyen su práctica escénica y su trabajo como diseñadora — responsable de la identidad visual del colectivo. Con más de 15 años de formación continua en disciplinas aéreas y circenses, desarrolla proyectos en el cruce entre diseño, gestión cultural y escena." },
-      { nombre: "Stella Peña", bio: null },
+      { nombre: "Anaclara Oyenart", fotos: ["assets/somos/Anaclara.jpg", "assets/somos/Anaclara-2.jpg", "assets/somos/Anaclara-3.jpg", "assets/somos/Anaclara-4.JPG", "assets/somos/Anaclara-5.jpg"], bio: "Licenciada en Diseño de Comunicación Visual y artista escénica con trayectoria en danza aérea con arnés. Forma parte de Punto de Fuga desde sus inicios, donde confluyen su práctica escénica y su trabajo como diseñadora — responsable de la identidad visual del colectivo. Con más de 15 años de formación continua en disciplinas aéreas y circenses, desarrolla proyectos en el cruce entre diseño, gestión cultural y escena." },
+      { nombre: "Stella Peña", fotos: ["assets/somos/stella.jpg", "assets/somos/stella-2.jpg", "assets/somos/stella-3.jpg", "assets/somos/stella-4.jpg", "assets/somos/stella-5.jpg"], bio: "Bailarina, acróbata, aerealista y química. Realizó un doctorado en Química donde la mayor parte del tiempo estaba creando y sintetizando compuestos químicos bioactivos. Por lo que la experimentación y la investigación atraviesan sus poros tanto a nivel científico como a través del movimiento y la fusión de danza contemporánea y circo. Es directora de la obra PLASTIKUS, ha integrado diversos colectivos de danza y circo como Prácticas Bestiales, Proyecto Incorporar, ENTRE, Fúa, La Masa, Invertidos Circo. Actualmente es bailarina aérea y creadora en el Colectivo Punto de Fuga. Cuenta con más de 18 años de experiencia docente en acrobacias aéreas, donde desarrolla una pedagogía integral enfocada en el desarrollo humano." },
       { nombre: "Agustina Rodríguez", bio: null },
-      { nombre: "Diego Ruella", bio: null },
+      { nombre: "Diego Ruella", fotos: ["assets/somos/diego.jpg"], bio: "Artista escénico, coreógrafo y docente. Formado en Fotografía (Udelar), Docencia en Danza (IPA) y Danza Contemporánea (SODRE), complementa su trayectoria con estudios en acrobacia y danza aérea con arneses. Integra la Red de Artes Circenses del Uruguay (RACU) y el colectivo Punto de Fuga. Ha participado en producciones junto a La Fura dels Baus y en obras de danza contemporánea como Suite Gardel, Transparente y EX-ES, entre otras. Es co-creador de Buscar Nada en Ti y R.O.J.O. (Premio Jóvenes Creadores). Dirige y produce proyectos de danza contemporánea y danza aérea con arneses." },
     ],
   },
 
-  cuerpo: [
-    "Trabajamos a partir de improvisaciones y estructuras compositivas que guían la creación.  Concebimos la obra como organismo vivo.",
-    "La danza aérea con arnés nos permite desafiar la gravedad y expandir las posibilidades de movimiento en diálogo con el espacio y el equilibrio",
-  ],
+  cuerpo: {
+    titulo: "Metodología de creación — del cuerpo al texto",
+    parrafos: [
+      "Trabajamos a partir de improvisaciones y estructuras compositivas que guían la creación.  Concebimos la obra como organismo vivo.",
+      "La danza aérea con arnés nos permite desafiar la gravedad y expandir las posibilidades de movimiento en diálogo con el espacio y el equilibrio",
+    ],
+  },
+
+  accionesMeta: {
+    num: "Acciones performáticas",
+    titulo: "Obras, performances e intervenciones",
+  },
 
   acciones: [
     {
@@ -37,42 +57,32 @@ window.PDF_DATA = {
       imagen: "assets/acciones/tramas-colectivas/portada.jpg",
       descripcion: "Tramas Colectivas es un proyecto de fortalecimiento de las artes escénicas que busca tejer redes entre creadoras, espacios y comunidades. Una apuesta colectiva por la sostenibilidad de las prácticas artísticas independientes en Uruguay.",
       galeria: [
-        {
-          seccion: "Plaza Liber Seregni",
-          fotos: [],
-        },
-        {
-          seccion: "Espacio Modelo",
-          fotos: [],
-        },
-        {
-          seccion: "Balcón del Cerro",
-          fotos: Array.from({ length: 23 }, (_, i) => `assets/acciones/tramas-colectivas/balcon-del-cerro/balcon_img-${i + 1}.jpg`),
-        },
-        {
-          seccion: "Plaza Feminista Las Pioneras",
-          fotos: [],
-        },
+        { seccion: "Plaza Liber Seregni", fotos: [] },
+        { seccion: "Espacio Modelo", fotos: [] },
+        { seccion: "Balcón del Cerro", fotos: Array.from({ length: 23 }, (_, i) => `assets/acciones/tramas-colectivas/balcon-del-cerro/balcon_img-${i + 1}.jpg`) },
+        { seccion: "Plaza Feminista Las Pioneras", fotos: [] },
       ],
     },
     {
       slug: "fugas-al-este",
       year: "2026",
-      title: "Fugas al este",
+      title: "Fugas al Este",
       sub: "Intervención",
       tipo: "Intervención",
       lugar: "Grutas de Punta Ballena - Bosque y arroyo",
       imagen: "assets/acciones/fugas-al-este/fugas-al-este_img-1.jpg",
-      descripcion: "Una intervención de danza aérea con arnés en paisajes naturales del este uruguayo. Cuerpos suspendidos en el bosque, el arroyo y las grutas de Punta Ballena — un diálogo entre la gravedad, el territorio y el movimiento.",
+      descripcion: "Una intervención de danza aérea con arnés en los paisajes naturales de la costa este uruguaya. Cuerpos suspendidos entre el bosque, el arroyo y las grutas de Punta Ballena, en un diálogo entre gravedad, naturaleza y movimiento.",
+      ficha: {
+        cocreacion: "Punto de Fuga",
+        elenco: ["Anaclara Oyenart", "Florencia Mazzucco", "Elisa Acosta", "Agustina Leiva", "Stella Peña", "Leticia Moreno"],
+        produccion: "Punto de Fuga",
+        vestuario: "Punto de Fuga",
+        registro: "Leticia Moreno, Diego Ruella",
+        realizacion: "Febrero 2026",
+      },
       galeria: [
-        {
-          seccion: "Bosque y Arroyo",
-          fotos: [],
-        },
-        {
-          seccion: "Grutas y Punta Ballena",
-          fotos: [],
-        },
+        { seccion: "Bosque y Arroyo", fotos: [] },
+        { seccion: "Grutas y Punta Ballena", fotos: [] },
       ],
     },
     {
@@ -84,12 +94,7 @@ window.PDF_DATA = {
       lugar: "Espacio MUMI · Noche de los Museos",
       imagen: "assets/acciones/capas/mumi.jpg",
       descripcion: "Performance multidisciplinaria presentada en la Noche de los Museos en el Espacio MUMI. Una exploración de las capas del cuerpo en movimiento — lo visible y lo invisible, lo que se muestra y lo que se oculta — a través de la danza aérea y las artes escénicas.",
-      galeria: [
-        {
-          seccion: "Registro",
-          fotos: Array.from({ length: 10 }, (_, i) => `assets/acciones/capas/capas_img-${i + 1}.jpg`),
-        },
-      ],
+      galeria: [{ seccion: "Registro", fotos: Array.from({ length: 10 }, (_, i) => `assets/acciones/capas/capas_img-${i + 1}.jpg`) }],
       graficas: [
         "assets/acciones/capas/graficas/capas_flyer-mumi.jpg",
         "assets/acciones/capas/graficas/capas_story-hoy.jpg",
@@ -108,11 +113,20 @@ window.PDF_DATA = {
       slug: "artivismo-por-palestina",
       year: "2025",
       title: "Artivismo por Palestina",
-      sub: "Activación escénica · Varieté Artivismo",
+      sub: "Activación escénica · Varieté Artivismo · Colaboración del colectivo LAS SELVAS",
       tipo: "Intervención",
       lugar: "Plaza Liber Seregni",
       imagen: "assets/acciones/artivismo-por-palestina/portada.jpg",
-      descripcion: "Activación escénica en el marco del Varieté Artivismo por Palestina en la Plaza Liber Seregni. El cuerpo como herramienta política y poética — una intervención que une arte y resistencia en el espacio público.",
+      descripcion: "Activación escénica realizada en el marco del Varieté Artivismo por Palestina en la Plaza Liber Seregni. La propuesta explora el potencial del cuerpo como dispositivo poético y político, generando una acción situada que pone en diálogo movimiento, espacio público y compromiso social.",
+      ficha: {
+        direccion: "Diego Ruella",
+        cocreacion: "Punto de Fuga",
+        colaboracion: "Las Selvas",
+        elenco: ["Anaclara Oyenart", "Florencia Mazzucco", "Elisa Acosta", "Agustina Leiva", "Stella Peña", "Leticia Moreno"],
+        produccion: "Cirqueras Feministas",
+        vestuario: "Punto de Fuga",
+        duracion: "20 minutos",
+      },
     },
     {
       slug: "espacio-bahia",
@@ -123,12 +137,7 @@ window.PDF_DATA = {
       lugar: "Espacio Bahía",
       imagen: "assets/acciones/espacio-bahia/portada.jpg",
       descripcion: "Performance presentada en Espacio Bahía, un encuentro entre el cuerpo suspendido y la arquitectura del lugar. La danza aérea con arnés como lenguaje que habita y transforma los espacios.",
-      galeria: [
-        {
-          seccion: "Registro",
-          fotos: Array.from({ length: 26 }, (_, i) => `assets/acciones/espacio-bahia/bahia_img-${i + 1}.jpg`),
-        },
-      ],
+      galeria: [{ seccion: "Registro", fotos: Array.from({ length: 26 }, (_, i) => `assets/acciones/espacio-bahia/bahia_img-${i + 1}.jpg`) }],
     },
     {
       slug: "29m-pioneras",
@@ -140,17 +149,8 @@ window.PDF_DATA = {
       imagen: "assets/acciones/29m-pioneras/portada.jpg",
       descripcion: "En el marco del 29 de marzo, Día Internacional de las Mujeres Trabajadoras, ofrecimos un taller gratuito de danza aérea abierto a la comunidad, seguido de una intervención artística en la Plaza Las Pioneras. Arte, cuerpo y feminismo en el espacio público.",
       galeria: [
-        {
-          seccion: "Taller",
-          fotos: Array.from({ length: 19 }, (_, i) => `assets/acciones/29m-pioneras/taller/taller_img-${i + 1}.jpg`),
-        },
-        {
-          seccion: "Intervención",
-          fotos: [
-            "assets/acciones/29m-pioneras/intervencion/29m-pioneras.jpg",
-            "assets/acciones/29m-pioneras/intervencion/29m-pioneras2.jpg",
-          ],
-        },
+        { seccion: "Taller", fotos: Array.from({ length: 19 }, (_, i) => `assets/acciones/29m-pioneras/taller/taller_img-${i + 1}.jpg`) },
+        { seccion: "Intervención", fotos: ["assets/acciones/29m-pioneras/intervencion/29m-pioneras.jpg", "assets/acciones/29m-pioneras/intervencion/29m-pioneras2.jpg"] },
       ],
     },
     {
@@ -238,12 +238,7 @@ window.PDF_DATA = {
         vestuario: "Punto de Fuga",
       },
       descripcion: "Fugas Colectivas es un espectáculo que, desde el lenguaje visual-poético y las artes del movimiento, explora los vínculos y las formas en que nuestros cuerpos son afectados por enunciados hegemónicos que buscan invisibilizarnos. Interpretada por un elenco exclusivamente femenino de siete artistas, esta performance se sumerge en las múltiples posibilidades que emergen del encuentro y desencuentro entre los cuerpos en un espacio finito. La obra construye un juego espacial a través de direcciones trazadas con luces, movimientos, péndulos, espirales, desequilibrios, puntos y líneas, tejiendo una trama de interacciones y cruces que dan vida a una pintura en movimiento. Fugas Colectivas, porque el futuro será colectivo.",
-      galeria: [
-        {
-          seccion: "Registro",
-          fotos: Array.from({ length: 42 }, (_, i) => `assets/acciones/fugas-colectivas-vol-i/fugas_i_img-${i + 1}.jpg`),
-        },
-      ],
+      galeria: [{ seccion: "Registro", fotos: Array.from({ length: 42 }, (_, i) => `assets/acciones/fugas-colectivas-vol-i/fugas_i_img-${i + 1}.jpg`) }],
       graficas: [
         "assets/acciones/fugas-colectivas-vol-i/graficas/fugas_i_grafica-1.jpg",
         "assets/acciones/fugas-colectivas-vol-i/graficas/fugas_i_grafica-2.jpg",
@@ -251,9 +246,7 @@ window.PDF_DATA = {
         "assets/acciones/fugas-colectivas-vol-i/graficas/fugas_i_grafica-4.jpg",
         "assets/acciones/fugas-colectivas-vol-i/graficas/fugas_i_grafica-5.jpg",
       ],
-      videos: [
-        { label: "Reel", src: "assets/acciones/fugas-colectivas-vol-i/graficas/fugas_i_reel-1.mp4" },
-      ],
+      videos: [{ label: "Reel", src: "assets/acciones/fugas-colectivas-vol-i/graficas/fugas_i_reel-1.mp4" }],
     },
     {
       slug: "apertura-proceso-creativo",
@@ -270,12 +263,7 @@ window.PDF_DATA = {
         { label: "Video 4", src: "assets/acciones/apertura-proceso-creativo/apertura_video-4.mp4" },
       ],
       descripcion: "Muestra abierta del proceso creativo de Fugas Colectivas en La Galponera. Un espacio de encuentro con el público para compartir el trabajo en construcción — la obra en su estado más vivo y vulnerable.",
-      galeria: [
-        {
-          seccion: "Registro",
-          fotos: Array.from({ length: 19 }, (_, i) => `assets/acciones/apertura-proceso-creativo/apertura_img-${i + 1}.jpg`),
-        },
-      ],
+      galeria: [{ seccion: "Registro", fotos: Array.from({ length: 19 }, (_, i) => `assets/acciones/apertura-proceso-creativo/apertura_img-${i + 1}.jpg`) }],
     },
     {
       slug: "investigacion-visual-luces",
@@ -297,9 +285,7 @@ window.PDF_DATA = {
           ],
         },
       ],
-      videos: [
-        { label: "Video", src: "assets/acciones/investigacion-visual-luces/inv-visual_video-1.mp4" },
-      ],
+      videos: [{ label: "Video", src: "assets/acciones/investigacion-visual-luces/inv-visual_video-1.mp4" }],
     },
   ],
 
@@ -316,9 +302,23 @@ window.PDF_DATA = {
       lead: "Crear instancias de encuentro con la comunidad",
       cuerpo: "donde la práctica corporal y artística en el espacio público se convierta en una experiencia compartida y significativa.",
     },
+    {
+      lead: "Explorar y crear mediante la danza aérea en arnés",
+      cuerpo: "piezas escénicas singulares con una identidad propia.",
+    },
+    {
+      lead: "Realizar intervenciones artísticas múltiples",
+      cuerpo: "adaptables a diversos espacios escénicos.",
+    },
   ],
 
+  footer: {
+    copyright: "© 2018–2026 · Colectivo Punto de Fuga",
+  },
+
   contacto: {
+    titulo: "Escribinos.",
+    tituloEm: "Programemos.",
     email: "puntodefuga.danzaerea@gmail.com",
     instagram: "puntodefuga.danzaerea",
     instagramUrl: "https://www.instagram.com/puntodefuga.danzaerea/",

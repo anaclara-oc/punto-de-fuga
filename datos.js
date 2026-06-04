@@ -78,12 +78,20 @@ window.PDF_DATA = {
     {
       slug: "fugas-al-este",
       year: "2026",
-      title: "Fugas al este",
+      title: "Fugas al Este",
       sub: "Intervención",
       tipo: "Intervención",
       lugar: "Grutas de Punta Ballena - Bosque y arroyo",
       imagen: "assets/acciones/fugas-al-este/fugas-al-este_img-1.jpg",
-      descripcion: "Una intervención de danza aérea con arnés en paisajes naturales del este uruguayo. Cuerpos suspendidos en el bosque, el arroyo y las grutas de Punta Ballena — un diálogo entre la gravedad, el territorio y el movimiento.",
+      descripcion: "Una intervención de danza aérea con arnés en los paisajes naturales de la costa este uruguaya. Cuerpos suspendidos entre el bosque, el arroyo y las grutas de Punta Ballena, en un diálogo entre gravedad, naturaleza y movimiento.",
+      ficha: {
+        cocreacion: "Punto de Fuga",
+        elenco: ["Anaclara Oyenart", "Florencia Mazzucco", "Elisa Acosta", "Agustina Leiva", "Stella Peña", "Leticia Moreno"],
+        produccion: "Punto de Fuga",
+        vestuario: "Punto de Fuga",
+        registro: "Leticia Moreno, Diego Ruella",
+        realizacion: "Febrero 2026",
+      },
       galeria: [
         {
           seccion: "Bosque y Arroyo",
@@ -133,6 +141,15 @@ window.PDF_DATA = {
       lugar: "Plaza Liber Seregni",
       imagen: "assets/acciones/artivismo-por-palestina/portada.jpg",
       descripcion: "Activación escénica realizada en el marco del Varieté Artivismo por Palestina en la Plaza Liber Seregni. La propuesta explora el potencial del cuerpo como dispositivo poético y político, generando una acción situada que pone en diálogo movimiento, espacio público y compromiso social.",
+      ficha: {
+        direccion: "Diego Ruella",
+        cocreacion: "Punto de Fuga",
+        colaboracion: "Las Selvas",
+        elenco: ["Anaclara Oyenart", "Florencia Mazzucco", "Elisa Acosta", "Agustina Leiva", "Stella Peña", "Leticia Moreno"],
+        produccion: "Cirqueras Feministas",
+        vestuario: "Punto de Fuga",
+        duracion: "20 minutos",
+      },
     },
     {
       slug: "espacio-bahia",

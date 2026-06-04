@@ -147,7 +147,7 @@
       font-weight: 400;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: var(--fg-muted);
+      color: var(--accent);
       margin-bottom: 2rem;
     }
 
@@ -178,11 +178,36 @@
     }
 
     .hero-desc-lead {
-      font-size: 15px;
-      font-weight: 500;
-      line-height: 1.55;
+      font-family: var(--display);
+      font-size: clamp(18px, 2vw, 24px);
+      font-weight: 300;
+      line-height: 1.5;
       color: var(--fg);
       margin-bottom: 1.25rem;
+      padding-left: 20px;
+      border-left: 2px solid var(--accent);
+      position: relative;
+    }
+    .hero-desc-lead::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -5px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .hero-desc-label {
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+      display: block;
     }
 
     .hero-desc {
@@ -211,7 +236,7 @@
     }
 
     .hero-text {
-      max-width: 680px;
+      width: 100%;
     }
 
     .hero-img-wrap img {
@@ -378,13 +403,14 @@
       justify-content: space-between;
       margin-bottom: 2rem;
       padding-bottom: 1.25rem;
-      border-bottom: 1px solid var(--border);
+      border-bottom: 1px solid var(--accent);
     }
 
     .ficha-title {
       font-size: 1.1rem;
       font-weight: 500;
       letter-spacing: -0.01em;
+      color: var(--accent);
     }
 
     .ficha-num {
@@ -444,7 +470,20 @@
       font-weight: 500;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--fg-muted);
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .gallery-label::before {
+      content: "";
+      flex-shrink: 0;
+      width: 48px;
+      height: 8px;
+      margin-right: 10px;
+      background:
+        radial-gradient(circle 3px at calc(100% - 3px) 50%, var(--accent) 100%, transparent 100%),
+        linear-gradient(var(--accent), var(--accent)) center / 100% 1px no-repeat;
     }
 
     .gallery-count {
@@ -855,7 +894,7 @@
   <!-- GALERÍA -->
   <div class="gallery-section">
     <div class="gallery-header" id="gallery-header">
-      <span class="gallery-label">— Galería</span>
+      <span class="gallery-label">Galería</span>
       <span class="gallery-count" id="gallery-count">—</span>
     </div>
     <div class="gallery-grid" id="gallery-grid"></div>
@@ -943,6 +982,9 @@
     } else {
       document.title = a.title + " · Punto de Fuga";
 
+      const accentColor = a.color || (idx % 2 === 0 ? "#1a1aff" : "#c8154b");
+      document.documentElement.style.setProperty("--accent", accentColor);
+
       // Hero
       document.getElementById("hero-tipo").textContent = "— " + a.tipo;
       document.getElementById("hero-title").innerHTML = a.title.replace("Vol.", "<em>Vol.</em>");
@@ -953,7 +995,7 @@
       // Descripción
       if (a.descripcion) {
         const wrap = document.getElementById("hero-desc-wrap");
-        wrap.innerHTML = '<p class="hero-desc-lead">' + a.descripcion + '</p>';
+        wrap.innerHTML = '<span class="hero-desc-label">Sobre la acción</span><p class="hero-desc-lead">' + a.descripcion + '</p>';
       }
 
       // Frase
@@ -1015,23 +1057,24 @@
       const fichaFields = [
         { label: "Dirección", key: "direccion" },
         { label: "Co-creación", key: "cocreacion" },
-        { label: "Elenco", key: "elenco" },
+        { label: "Colaboración", key: "colaboracion" },
+        { label: "En escena", key: "elenco" },
         { label: "Producción", key: "produccion" },
         { label: "Vestuario", key: "vestuario" },
         { label: "Diseño de luces", key: "luces" },
         { label: "Duración", key: "duracion" },
+        { label: "Registro fotográfico", key: "registro" },
+        { label: "Realización", key: "realizacion" },
       ];
       const ficha = a.ficha || {};
       fichaGrid.innerHTML = fichaFields.map(f => {
         const val = ficha[f.key];
-        const display = Array.isArray(val)
-          ? val.join("<br>")
-          : val || null;
-        return '<div class="ficha-item' + (display ? "" : " ficha-item--empty") + '">'
+        const display = Array.isArray(val) ? val.join("<br>") : val || null;
+        if (!display) return "";
+        return '<div class="ficha-item">'
           + '<div class="ficha-item-label">' + f.label + '</div>'
-          + '<div class="ficha-item-value' + (display ? "" : " muted") + '">'
-          + (display || "Por completar")
-          + '</div></div>';
+          + '<div class="ficha-item-value">' + display + '</div>'
+          + '</div>';
       }).join("");
 
       // Galería — soporta array plano o array de secciones {seccion, fotos}
@@ -1064,7 +1107,7 @@
           secEl.className = "gallery-seccion";
           secEl.innerHTML =
             '<div class="gallery-seccion__header">'
-            + '<span class="gallery-label">— ' + s.seccion + '</span>'
+            + '<span class="gallery-label">' + s.seccion + '</span>'
             + '<span class="gallery-count">' + s.fotos.length + ' imágenes</span>'
             + '</div>'
             + '<div class="gallery-grid">' + buildGrid(s.fotos, offset) + '</div>';
