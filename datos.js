@@ -128,11 +128,11 @@ window.PDF_DATA = {
       slug: "artivismo-por-palestina",
       year: "2025",
       title: "Artivismo por Palestina",
-      sub: "Activación escénica · Varieté Artivismo",
+      sub: "Activación escénica · Varieté Artivismo · Colaboración del colectivo LAS SELVAS",
       tipo: "Intervención",
       lugar: "Plaza Liber Seregni",
       imagen: "assets/acciones/artivismo-por-palestina/portada.jpg",
-      descripcion: "Activación escénica en el marco del Varieté Artivismo por Palestina en la Plaza Liber Seregni. El cuerpo como herramienta política y poética — una intervención que une arte y resistencia en el espacio público.",
+      descripcion: "Activación escénica realizada en el marco del Varieté Artivismo por Palestina en la Plaza Liber Seregni. La propuesta explora el potencial del cuerpo como dispositivo poético y político, generando una acción situada que pone en diálogo movimiento, espacio público y compromiso social.",
     },
     {
       slug: "espacio-bahia",
