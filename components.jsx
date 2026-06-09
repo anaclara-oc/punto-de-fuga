@@ -145,15 +145,16 @@ function Manifiesto() {
       </aside>
       <div className="manifiesto__body">
         <p>
-          {D.manifiesto.parrafos[0].split("2022").map((part, i) =>
-            i === 0 ? part : [<span key={i} className="manifiesto__highlight">2022</span>, part]
-          )}
-        </p>
-        <p>
-          {D.manifiesto.parrafos[1].split("danza aérea con arnés").map((part, i) =>
+          {D.manifiesto.parrafos[0].split("danza aérea con arnés").map((part, i) =>
             i === 0 ? part : [<em key={i}>danza aérea con arnés</em>, part]
           )}
         </p>
+        <p>
+          {D.manifiesto.parrafos[1].split("2022").map((part, i) =>
+            i === 0 ? part : [<span key={i} className="manifiesto__highlight">2022</span>, part]
+          )}
+        </p>
+        <p>{D.manifiesto.parrafos[2]}</p>
         <a className="manifiesto__cta" href={D.manifiesto.dossierUrl} download={D.manifiesto.dossierNombre}>
           Descargar dossier <span>↓</span>
         </a>
@@ -325,7 +326,7 @@ function CuerpoTexto() {
         <div className="cuerpo-texto__media-stripes" />
       </div>
       <div className="cuerpo-texto__text">
-        <h3>{D.cuerpo.titulo}</h3>
+        <h3>{D.cuerpo.titulo.split("\n").map((line, i) => i === 0 ? line : [<br key={i}/>, line])}</h3>
         {D.cuerpo.parrafos.map((p, i) => <p key={i}>{p}</p>)}
       </div>
     </section>
@@ -451,7 +452,7 @@ function NosInteresa() {
   return (
     <section className="nos-interesa reveal" id="nos-interesa">
       <div className="section-head" style={{ padding: 0, border: "none" }}>
-        <div className="section-head__num">Nos interesa</div>
+        <div className="section-head__num">Experimentar · Crear · Compartir</div>
       </div>
       <h2 className="nos-interesa__title">nos interesa.</h2>
       <ul className="nos-interesa__lista">

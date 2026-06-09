@@ -2,14 +2,15 @@
 
 window.PDF_DATA = {
   hero: {
-    tag: "Colectivo artístico · Danza aérea con arnés + artes escénicas",
-    caption: "Un juego con la gravedad y el equilibrio · La creación de nuevas poéticas corporales",
+    tag: "Danza aérea con arneses + acciones artísticas",
+    caption: "Creación y exploración de poéticas corporales",
   },
 
   manifiesto: {
     parrafos: [
-      "Somos un colectivo artístico que surge en 2022 a partir de búsquedas y exploraciones compartidas en torno a la creación escénica",
-      "Fusionamos la danza aérea con arnés y las artes escénicas desde la creación de poéticas corporales en juego con la luz, el espacio, la gravedad y el equilibrio- en un diálogo constante con el lenguaje audiovisual y el paisaje sonoro-",
+      "Fusionamos la danza aérea con arnés y las artes escénicas para crear intervenciones, performances y obras tanto en salas y espacios convencionales como en el espacio público.",
+      "Somos un colectivo artístico que surge en 2022 a partir de la convergencia de intereses, preguntas y procesos de investigación en torno a la creación escénica contemporánea.",
+      "A partir de la creación de poéticas corporales en juego con la luz, el espacio, y la gravedad- en diálogo constante con el lenguaje audiovisual y el paisaje sonoro- desarrollamos propuestas que dialogan con cada entorno, generando experiencias sensibles e innovadoras que favorecen el encuentro con nuevos públicos.",
     ],
     dossierUrl: "assets/dossier colectivo_2026-.pdf",
     dossierNombre: "dossier-colectivo-2026.pdf",
@@ -21,28 +22,29 @@ window.PDF_DATA = {
     titulo: "somos.",
     intro: "Dentro del colectivo coexisten diversidad de disciplinas y formaciones que aportan desde la singularidad de cada una, colaborando en el entramado y la potencia de la grupalidad. La identidad y sus múltiples intersecciones es un tema que nos atraviesa y que decidimos poner en juego a la hora de la creación",
     integrantes: [
-      { nombre: "Elisa Acosta", bio: null },
-      { nombre: "Agustina Leiva", bio: null },
+      { nombre: "Elisa Acosta", fotos: ["assets/somos/Eli.jpg", "assets/somos/Eli-2.jpg", "assets/somos/Eli-3.JPG", "assets/somos/Eli-4.jpg"], bio: "Dedicada a la primera infancia, Licenciada en Psicomotricidad e instructora de yoga para niñes. Su recorrido profesional y artístico está atravesado por el movimiento, la expresión y la exploración sensible del cuerpo. Inició su camino en la gimnasia olímpica, continuó explorando el universo aéreo a través de la acrobacia en telas y, más tarde, la danza aérea con arnés, una disciplina que la cautivó por su potencia poética y creativa. Actualmente se desempeña como bailarina en el colectivo Punto de Fuga, donde continúa investigando las posibilidades del cuerpo suspendido, la relación con el espacio y la creación escénica." },
+      { nombre: "Agustina Leiva", fotos: ["assets/somos/Agus-L.jpg", "assets/somos/Agus-L-2.jpg", "assets/somos/Agus-L-3.jpg"], bio: "Diseñadora, DJ y artista del movimiento. Su práctica se desarrolla a partir de una búsqueda constante en torno al cuerpo y sus posibilidades expresivas, explorando disciplinas como el yoga, el surf, la escalada, el longboard dancing, el fitness y las acrobacias aéreas. Esta diversidad de experiencias nutre una mirada sensible sobre el movimiento, la creatividad y la relación con el espacio. Actualmente integra el colectivo Punto de Fuga como bailarina aérea y creadora, investigando las posibilidades escénicas del cuerpo suspendido." },
       { nombre: "Florencia Mazzucco", fotos: ["assets/somos/Flo-2.jpg"], bio: null },
-      { nombre: "Leticia Moreno", bio: null },
+      { nombre: "Leticia Moreno Citraro", fotos: ["assets/somos/Leti.jpg", "assets/somos/Leti-2.jpg", "assets/somos/Leti-3.JPG"], bio: "Arquitecta, con una práctica que explora los vínculos entre arquitectura, naturaleza y paisaje de una forma sensible y consciente. Con una formación permanente y continua en diferentes disciplinas artísticas tanto plásticas como del movimiento, encuentra en la danza aérea un lenguaje capaz de articular y potenciar los múltiples intereses formativos, vinculando el cuerpo, el espacio, el movimiento y la percepción, destacando su potencia expresiva para comunicar ideas y explorar nuevos sentidos, siendo un vector creativo personal fundamental. Participó como co-creadora e intérprete de danza aérea en Guarecerse (2024), una experiencia multisensorial en un sendero natural, obra desarrollada en Villa Serrana con apoyo del MEC. Desde el 2024 integra el Colectivo Punto de Fuga, participando como co-creadora y bailarina aérea." },
       { nombre: "Anaclara Oyenart", fotos: ["assets/somos/Anaclara.jpg", "assets/somos/Anaclara-2.jpg", "assets/somos/Anaclara-3.jpg", "assets/somos/Anaclara-4.JPG", "assets/somos/Anaclara-5.jpg"], bio: "Licenciada en Diseño de Comunicación Visual y artista escénica con trayectoria en danza aérea con arnés. Forma parte de Punto de Fuga desde sus inicios, donde confluyen su práctica escénica y su trabajo como diseñadora — responsable de la identidad visual del colectivo. Con más de 15 años de formación continua en disciplinas aéreas y circenses, desarrolla proyectos en el cruce entre diseño, gestión cultural y escena." },
       { nombre: "Stella Peña", fotos: ["assets/somos/stella.jpg", "assets/somos/stella-2.jpg", "assets/somos/stella-3.jpg", "assets/somos/stella-4.jpg", "assets/somos/stella-5.jpg"], bio: "Bailarina, acróbata, aerealista y química. Realizó un doctorado en Química donde la mayor parte del tiempo estaba creando y sintetizando compuestos químicos bioactivos. Por lo que la experimentación y la investigación atraviesan sus poros tanto a nivel científico como a través del movimiento y la fusión de danza contemporánea y circo. Es directora de la obra PLASTIKUS, ha integrado diversos colectivos de danza y circo como Prácticas Bestiales, Proyecto Incorporar, ENTRE, Fúa, La Masa, Invertidos Circo. Actualmente es bailarina aérea y creadora en el Colectivo Punto de Fuga. Cuenta con más de 18 años de experiencia docente en acrobacias aéreas, donde desarrolla una pedagogía integral enfocada en el desarrollo humano." },
       { nombre: "Agustina Rodríguez", bio: null },
-      { nombre: "Diego Ruella", fotos: ["assets/somos/diego.jpg"], bio: "Artista escénico, coreógrafo y docente. Formado en Fotografía (Udelar), Docencia en Danza (IPA) y Danza Contemporánea (SODRE), complementa su trayectoria con estudios en acrobacia y danza aérea con arneses. Integra la Red de Artes Circenses del Uruguay (RACU) y el colectivo Punto de Fuga. Ha participado en producciones junto a La Fura dels Baus y en obras de danza contemporánea como Suite Gardel, Transparente y EX-ES, entre otras. Es co-creador de Buscar Nada en Ti y R.O.J.O. (Premio Jóvenes Creadores). Dirige y produce proyectos de danza contemporánea y danza aérea con arneses." },
+      { nombre: "Diego Ruella", fotos: ["assets/somos/diego.jpg", "assets/somos/Diego-2.JPG", "assets/somos/Diego-3.JPG"], bio: "Artista escénico, coreógrafo y docente. Formado en Fotografía (Udelar), Docencia en Danza (IPA) y Danza Contemporánea (SODRE), complementa su trayectoria con estudios en acrobacia y danza aérea con arneses. Integra la Red de Artes Circenses del Uruguay (RACU) y el colectivo Punto de Fuga. Ha participado en producciones junto a La Fura dels Baus y en obras de danza contemporánea como Suite Gardel, Transparente y EX-ES, entre otras. Es co-creador de Buscar Nada en Ti y R.O.J.O. (Premio Jóvenes Creadores). Dirige y produce proyectos de danza contemporánea y danza aérea con arneses." },
     ],
   },
 
   cuerpo: {
-    titulo: "Metodología de creación — del cuerpo al texto",
+    titulo: "Metodología de creación\ndel cuerpo al texto, y del texto al cuerpo",
     parrafos: [
-      "Trabajamos a partir de improvisaciones y estructuras compositivas que guían la creación.  Concebimos la obra como organismo vivo.",
+      "Trabajamos a partir de improvisaciones y estructuras compositivas que guían la creación.",
+      "Concebimos la obra como organismo vivo.",
       "La danza aérea con arnés nos permite desafiar la gravedad y expandir las posibilidades de movimiento en diálogo con el espacio y el equilibrio",
     ],
   },
 
   accionesMeta: {
-    num: "Acciones performáticas",
-    titulo: "Obras, performances e intervenciones",
+    num: "Acciones artísticas",
+    titulo: "| obras | performances | intervenciones |",
   },
 
   acciones: [
@@ -342,24 +344,20 @@ window.PDF_DATA = {
 
   nosInteresa: [
     {
-      lead: "Facilitar el acceso a la cultura y el arte",
-      cuerpo: "a través de intervenciones artísticas en espacios abiertos a la comunidad, promoviendo el sentido de pertenencia y el uso del espacio público como un lugar de encuentro y disfrute.",
+      lead: "Explorar y crear",
+      cuerpo: "a través de la danza aérea en diálogo con otros lenguajes, piezas escénicas singulares con identidad propia.",
     },
     {
-      lead: "Difundir la danza aérea con arnés",
-      cuerpo: "una disciplina poco explorada en Uruguay, destacando su potencial para la investigación y la exploración del trabajo con el cuerpo.",
+      lead: "Realizar intervenciones artísticas diversas",
+      cuerpo: "y adaptables a múltiples espacios escénicos.",
     },
     {
-      lead: "Crear instancias de encuentro con la comunidad",
-      cuerpo: "donde la práctica corporal y artística en el espacio público se convierta en una experiencia compartida y significativa.",
+      lead: "Favorecer encuentros",
+      cuerpo: "a través de intervenciones en espacios abiertos a la comunidad, promoviendo el sentido de pertenencia y el uso del espacio público.",
     },
     {
-      lead: "Explorar y crear mediante la danza aérea en arnés",
-      cuerpo: "piezas escénicas singulares con una identidad propia.",
-    },
-    {
-      lead: "Realizar intervenciones artísticas múltiples",
-      cuerpo: "adaptables a diversos espacios escénicos.",
+      lead: "Difundir la danza aérea con arneses",
+      cuerpo: "destacando su potencial para la investigación y la exploración del trabajo con el cuerpo.",
     },
   ],
 

@@ -363,7 +363,7 @@ section {
 
 .hero__caption {
   font-family: var(--mono);
-  font-size: 12px;
+  font-size: 15px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   text-align: right;
@@ -473,8 +473,14 @@ section {
   font-size: clamp(22px, 2.6vw, 34px);
   line-height: 1.25;
   letter-spacing: -0.015em;
-  max-width: 22ch;
+  max-width: 34ch;
   text-wrap: pretty;
+}
+
+.manifiesto__body p:nth-child(3) {
+  font-size: clamp(15px, 1.4vw, 18px);
+  line-height: 1.55;
+  color: color-mix(in srgb, var(--fg) 70%, transparent);
 }
 
 .manifiesto__body em {
@@ -536,7 +542,9 @@ section {
 .featured__media {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9;
+  height: calc(100vh - 64px);
+  max-height: 860px;
+  min-height: 480px;
   background: #0a0a0a;
   overflow: hidden;
 }
@@ -957,7 +965,7 @@ section {
 
 .cuerpo-texto__text h3 {
   font-family: var(--mono);
-  font-size: 12px;
+  font-size: 15px;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.5);
@@ -1173,8 +1181,15 @@ section {
 
 .nos-interesa {
   padding: 120px var(--gutter) 100px;
-  background: var(--bg);
-  border-top: 1px solid var(--line-soft);
+  background: var(--azul);
+  border-top: none;
+  color: #fff;
+}
+
+.nos-interesa .section-head__num {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 16px;
+  letter-spacing: 0.18em;
 }
 
 .nos-interesa__title {
@@ -1184,14 +1199,28 @@ section {
   letter-spacing: -0.04em;
   line-height: 0.85;
   margin-bottom: 80px;
+  color: var(--magenta);
 }
 
 .nos-interesa__lista {
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   column-gap: clamp(32px, 4vw, 64px);
-  border-top: 3px solid var(--fg);
+}
+
+.nos-interesa__lista::before {
+  content: "";
+  grid-column: 1 / -1;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.25);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nos-interesa.is-visible .nos-interesa__lista::before {
+  transform: scaleX(1);
 }
 
 .nos-interesa__item {
@@ -1200,8 +1229,9 @@ section {
   font-size: clamp(15px, 1.4vw, 18px);
   line-height: 1.6;
   padding: 40px 0 40px;
-  border-bottom: 3px solid;
+  border-bottom: 3px solid rgba(255, 255, 255, 0.15);
   text-wrap: pretty;
+  color: rgba(255, 255, 255, 0.75);
 }
 
 .nos-interesa__item strong {
@@ -1211,15 +1241,8 @@ section {
   letter-spacing: -0.02em;
   line-height: 1.1;
   margin-bottom: 20px;
+  color: #fff;
 }
-
-.nos-interesa__item:nth-child(1),
-.nos-interesa__item:nth-child(2),
-.nos-interesa__item:nth-child(3) { border-color: var(--fg); }
-
-.nos-interesa__item:nth-child(1) strong { color: var(--turquesa); }
-.nos-interesa__item:nth-child(2) strong { color: var(--turquesa); }
-.nos-interesa__item:nth-child(3) strong { color: var(--turquesa); }
 
 @media (max-width: 900px) {
   .nos-interesa__lista {
