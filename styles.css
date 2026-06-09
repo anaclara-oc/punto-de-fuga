@@ -557,7 +557,7 @@ section {
   object-fit: cover;
   opacity: 0;
   transition: opacity 0.9s cubic-bezier(0.2, 0.8, 0.2, 1),
-              transform 7s linear;
+              transform 0.7s ease;
   transform: scale(1.02);
 }
 
@@ -676,7 +676,9 @@ section {
     padding: 0 0 16px;
   }
   .featured__media {
-    aspect-ratio: 16 / 9;
+    height: 56vw;
+    min-height: 240px;
+    max-height: 420px;
   }
   .featured__overlay {
     background: linear-gradient(
@@ -696,8 +698,12 @@ section {
     font-size: clamp(32px, 9vw, 52px);
   }
   .featured__nav {
-    display: none;
+    width: 36px;
+    height: 36px;
+    font-size: 14px;
   }
+  .featured__nav--prev { left: 12px; }
+  .featured__nav--next { right: 12px; }
   .featured__dots { bottom: 16px; }
 
   /* List items: card contenido con margen lateral */
