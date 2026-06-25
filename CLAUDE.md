@@ -13,8 +13,9 @@ Danza aérea con arnés + artes escénicas. Fundado en 2022.
 ## Estructura de archivos
 ```
 index.html        ← entrada principal, carga todo
+accion.html       ← página de detalle de una acción (usa el mismo datos.js)
 styles.css        ← todos los estilos (1600+ líneas, con CSS variables)
-data.js           ← todo el contenido del sitio (window.PDF_DATA)
+datos.js          ← todo el contenido del sitio (window.PDF_DATA) — único archivo de datos, lo cargan index.html y accion.html
 components.jsx    ← todos los componentes React
 app.jsx           ← monta la app, llama a los componentes en orden
 assets/

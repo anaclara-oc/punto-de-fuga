@@ -1,7 +1,7 @@
 {
   "headers": [
     {
-      "source": "/data.js",
+      "source": "/datos.js",
       "headers": [
         { "key": "Cache-Control", "value": "no-store" }
       ]

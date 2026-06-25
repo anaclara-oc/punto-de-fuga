@@ -159,9 +159,6 @@ function Manifiesto() {
           Descargar dossier <span>↓</span>
         </a>
       </div>
-      <div className="manifiesto__imagen">
-        <img src={D.manifiesto.imagen} alt="Punto de Fuga" />
-      </div>
     </section>
   );
 }
@@ -215,7 +212,7 @@ function Acciones() {
       <header className="section-head">
         <div>
           <div className="section-head__num">{D.accionesMeta.num}</div>
-          <h2 className="section-head__title">{D.accionesMeta.titulo}</h2>
+          <h2 className="section-head__title section-head__title--acciones">{D.accionesMeta.titulo}</h2>
         </div>
         <div className="section-head__meta">
           {D.acciones.length} acciones

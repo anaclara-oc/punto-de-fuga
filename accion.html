@@ -685,6 +685,15 @@
 
     .graficas-slide:hover img { transform: scale(1.02); }
 
+    .graficas-slide video {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .spots-section { margin-top: 2rem; }
+
     .graficas-nav {
       display: flex;
       gap: 8px;
@@ -908,21 +917,6 @@
     </div>
   </div>
 
-  <!-- PIEZAS GRÁFICAS -->
-  <div class="graficas-section" id="graficas-section" style="display:none">
-    <div class="graficas-header">
-      <span class="graficas-label">— Piezas gráficas</span>
-      <span class="graficas-counter" id="graficas-counter"></span>
-    </div>
-    <div class="graficas-carousel">
-      <div class="graficas-track" id="graficas-track"></div>
-      <div class="graficas-nav">
-        <button class="graficas-btn" id="graficas-prev">←</button>
-        <button class="graficas-btn" id="graficas-next">→</button>
-      </div>
-    </div>
-  </div>
-
   <!-- FICHA TÉCNICA -->
   <div class="ficha-section">
     <div class="ficha-card">
@@ -931,6 +925,36 @@
         <span class="ficha-num" id="ficha-num">—</span>
       </div>
       <div class="ficha-grid" id="ficha-grid"></div>
+    </div>
+  </div>
+
+  <!-- PIEZAS GRÁFICAS -->
+  <div class="graficas-section" id="graficas-section" style="display:none">
+    <div class="graficas-header">
+      <span class="graficas-label">— Piezas gráficas</span>
+      <span class="graficas-counter" id="graficas-counter"></span>
+    </div>
+    <div class="graficas-carousel">
+      <div class="graficas-track" id="graficas-track"></div>
+      <div class="graficas-nav" id="graficas-nav">
+        <button class="graficas-btn" id="graficas-prev">←</button>
+        <button class="graficas-btn" id="graficas-next">→</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SPOTS -->
+  <div class="graficas-section spots-section" id="spots-section" style="display:none">
+    <div class="graficas-header">
+      <span class="graficas-label">— Spots</span>
+      <span class="graficas-counter" id="spots-counter"></span>
+    </div>
+    <div class="graficas-carousel">
+      <div class="graficas-track" id="spots-track"></div>
+      <div class="graficas-nav" id="spots-nav">
+        <button class="graficas-btn" id="spots-prev">←</button>
+        <button class="graficas-btn" id="spots-next">→</button>
+      </div>
     </div>
   </div>
 
@@ -969,7 +993,7 @@
     <span class="lightbox__counter" id="lb-counter"></span>
   </div>
 
-  <script src="data.js"></script>
+  <script src="datos.js?v=3"></script>
   <script>
     const params = new URLSearchParams(location.search);
     const id = params.get("id");
@@ -1059,9 +1083,13 @@
         { label: "Co-creación", key: "cocreacion" },
         { label: "Colaboración", key: "colaboracion" },
         { label: "En escena", key: "elenco" },
+        { label: "Textos", key: "textos" },
         { label: "Producción", key: "produccion" },
         { label: "Vestuario", key: "vestuario" },
         { label: "Diseño de luces", key: "luces" },
+        { label: "Visuales", key: "visuales" },
+        { label: "Audio", key: "audio" },
+        { label: "Diseño gráfico", key: "disenoGrafico" },
         { label: "Duración", key: "duracion" },
         { label: "Registro fotográfico", key: "registro" },
         { label: "Realización", key: "realizacion" },
@@ -1169,25 +1197,23 @@
         if (e.key === "ArrowRight") lbMove(1);
       });
 
-      // Piezas gráficas — filmstrip carousel
-      if (a.graficas && a.graficas.length) {
-        const sec = document.getElementById("graficas-section");
-        sec.style.display = "";
-        document.getElementById("graficas-counter").textContent = a.graficas.length + " piezas";
-        const track = document.getElementById("graficas-track");
-        const nav = document.getElementById("graficas-nav");
-        const btnPrev = document.getElementById("graficas-prev");
-        const btnNext = document.getElementById("graficas-next");
+      // Filmstrip carousel genérico — piezas gráficas y spots
+      function initFilmstrip(opts) {
+        const { items, sectionId, counterId, counterLabel, trackId, navId, prevId, nextId, renderSlide, onSlideClick } = opts;
+        if (!items || !items.length) return;
+        document.getElementById(sectionId).style.display = "";
+        document.getElementById(counterId).textContent = items.length + " " + counterLabel;
+        const track = document.getElementById(trackId);
+        const nav = document.getElementById(navId);
+        const btnPrev = document.getElementById(prevId);
+        const btnNext = document.getElementById(nextId);
 
-        track.innerHTML = a.graficas.map(src =>
-          '<div class="graficas-slide"><img src="' + src + '" alt="Pieza gráfica" loading="lazy" /></div>'
-        ).join("");
+        track.innerHTML = items.map(renderSlide).join("");
 
         let currentIdx = 0;
 
         function getItemsPerView() {
-          if (window.innerWidth < 768) return 2;
-          return 3;
+          return window.innerWidth < 768 ? 2 : 3;
         }
 
         function getSlideWidth() {
@@ -1199,12 +1225,12 @@
 
         function updateCarousel() {
           const perView = getItemsPerView();
-          const maxIdx = Math.max(0, a.graficas.length - perView);
+          const maxIdx = Math.max(0, items.length - perView);
           currentIdx = Math.min(currentIdx, maxIdx);
           track.style.transform = "translateX(-" + (currentIdx * getSlideWidth()) + "px)";
           btnPrev.disabled = currentIdx === 0;
           btnNext.disabled = currentIdx >= maxIdx;
-          nav.style.display = a.graficas.length > perView ? "" : "none";
+          nav.style.display = items.length > perView ? "" : "none";
         }
 
         btnPrev.addEventListener("click", () => { currentIdx--; updateCarousel(); });
@@ -1212,13 +1238,32 @@
         window.addEventListener("resize", updateCarousel);
         requestAnimationFrame(updateCarousel);
 
-        track.addEventListener("click", e => {
-          const slide = e.target.closest(".graficas-slide");
-          if (!slide) return;
-          const idx = [...track.querySelectorAll(".graficas-slide")].indexOf(slide);
-          lbOpen(idx, a.graficas);
-        });
+        if (onSlideClick) {
+          track.addEventListener("click", e => {
+            const slide = e.target.closest(".graficas-slide");
+            if (!slide) return;
+            const i = [...track.querySelectorAll(".graficas-slide")].indexOf(slide);
+            onSlideClick(i, slide);
+          });
+        }
       }
+
+      // Piezas gráficas (imágenes)
+      initFilmstrip({
+        items: a.graficas,
+        sectionId: "graficas-section", counterId: "graficas-counter", counterLabel: "piezas",
+        trackId: "graficas-track", navId: "graficas-nav", prevId: "graficas-prev", nextId: "graficas-next",
+        renderSlide: src => '<div class="graficas-slide"><img src="' + src + '" alt="Pieza gráfica" loading="lazy" /></div>',
+        onSlideClick: (i) => lbOpen(i, a.graficas),
+      });
+
+      // Spots (videos)
+      initFilmstrip({
+        items: a.spots,
+        sectionId: "spots-section", counterId: "spots-counter", counterLabel: "spots",
+        trackId: "spots-track", navId: "spots-nav", prevId: "spots-prev", nextId: "spots-next",
+        renderSlide: src => '<div class="graficas-slide"><video src="' + src + '" controls playsinline preload="metadata"></video></div>',
+      });
 
       // Prev / Next
       const prev = acciones[idx - 1];

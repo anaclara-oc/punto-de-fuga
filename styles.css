@@ -276,6 +276,11 @@ section {
   margin-top: 6px;
 }
 
+.section-head__title--acciones {
+  font-size: clamp(20px, 2.6vw, 36px);
+  white-space: nowrap;
+}
+
 .section-head__meta {
   font-family: var(--mono);
   font-size: 12px;
@@ -408,9 +413,8 @@ section {
 
 .manifiesto {
   padding: 120px var(--gutter) 140px;
-  padding-right: 0;
   display: grid;
-  grid-template-columns: 1fr 2fr 1.6fr;
+  grid-template-columns: 1fr 3fr;
   gap: var(--gutter);
   position: relative;
 }
@@ -423,22 +427,6 @@ section {
   width: 1px;
   height: 120px;
   background: var(--fg);
-}
-
-.manifiesto__imagen {
-  position: relative;
-  margin-top: -120px;
-  margin-bottom: -140px;
-  overflow: hidden;
-}
-
-.manifiesto__imagen img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
 }
 
 .manifiesto__aside {
@@ -473,7 +461,7 @@ section {
   font-size: clamp(22px, 2.6vw, 34px);
   line-height: 1.25;
   letter-spacing: -0.015em;
-  max-width: 34ch;
+  max-width: 56ch;
   text-wrap: pretty;
 }
 
@@ -1628,6 +1616,11 @@ body[data-theme="magenta"] {
   .section-head__title {
     font-size: clamp(36px, 10vw, 56px);
   }
+  .section-head__title--acciones {
+    font-size: clamp(16px, 5.6vw, 22px);
+    white-space: normal;
+    text-wrap: balance;
+  }
   .section-head__meta {
     text-align: left;
   }
@@ -1639,17 +1632,6 @@ body[data-theme="magenta"] {
     gap: 32px;
     overflow: visible;
     min-height: unset;
-  }
-  .manifiesto__imagen {
-    position: static;
-    width: 100%;
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-  .manifiesto__imagen img {
-    position: static;
-    height: auto;
-    aspect-ratio: 4/3;
   }
   .manifiesto__aside {
     position: static;
@@ -1915,8 +1897,8 @@ body[data-theme="magenta"] {
 .modal__photo {
   display: block;
   width: 100%;
-  height: auto;
-  max-height: 75vh;
+  height: 65vh;
+  max-height: 65vh;
   object-fit: contain;
   object-position: center;
 }

@@ -1,0 +1,4 @@
+.vscode/
+.claude/
+.playwright-mcp/
+*.tmp
