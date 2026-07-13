@@ -56,7 +56,17 @@ window.PDF_DATA = {
       lugar: "Plaza Liber seregni / Espacio modelo / Balcón del Cerro / Plaza Feminnista Las Pioneras",
       destacado: true,
       imagen: "assets/acciones/tramas-colectivas/portada.jpg",
-      descripcion: "Tramas Colectivas es un proyecto de fortalecimiento de las artes escénicas que busca tejer redes entre creadoras, espacios y comunidades. Una apuesta colectiva por la sostenibilidad de las prácticas artísticas independientes en Uruguay.",
+      descripcion: "Tramas Colectivas es un proyecto de intervención comunitaria que busca tejer redes entre creadoras, espacios y comunidades, una apuesta colectiva por la sostenibilidad de las prácticas artísticas independientes en Montevideo.<br><br>Fue premiado por el Programa Fortalecimiento de las Artes de la Intendencia de Montevideo, en la categoría Danza - proyectos especiales.<br><br>Fue desarrollado en 2026 en 4 municipios de la Ciudad de Montevideo: Espacio Modelo - municipio D, Espacio Plaza Las Pioneras - municipio C, Espacio Balcón del Cerro - municipio A y Plaza Líber Seregni - municipio B.",
+      ficha: {
+        direccion: "Diego Ruella",
+        cocreacion: "Punto de Fuga",
+        gestion: ["Agustina Leiva", "Florencia Mazzucco"],
+        produccion: "Punto de Fuga",
+        registro: "Reinaldo Altamirano",
+        disenoGrafico: "Anaclara Oyenart",
+        montaje: ["Elisa Acosta", "Diego Ruella", "Leticia Moreno", "Stella Peña"],
+        realizacion: "El proyecto se desarrolló durante los meses de febrero-mayo de 2026",
+      },
       galeria: [
         {
           seccion: "Plaza Liber Seregni",
@@ -202,8 +212,10 @@ window.PDF_DATA = {
       ],
       graficas: [
         "assets/acciones/tramas-colectivas/graficas/tramascolectivas_full_1080x1350.jpg",
-        "assets/acciones/tramas-colectivas/graficas/tramascolectivas_seregni_1080x1350.jpg",
-        "assets/acciones/tramas-colectivas/graficas/tramascolectivas_pioneras_1080x1350.jpg",
+        "assets/acciones/tramas-colectivas/graficas/tramascolectivas_seregni-individual_1080x1350.png",
+        "assets/acciones/tramas-colectivas/graficas/tramascolectivas_modelo-individual_1080x1350.png",
+        "assets/acciones/tramas-colectivas/graficas/tramascolectivas_cerro-individual_flyer.png",
+        "assets/acciones/tramas-colectivas/graficas/tramascolectivas_pioneras-individual_1080x1350.png",
       ],
     },
     {
@@ -226,11 +238,11 @@ window.PDF_DATA = {
       galeria: [
         {
           seccion: "Bosque y Arroyo",
-          fotos: [],
+          fotos: Array.from({ length: 21 }, (_, i) => `assets/acciones/fugas-al-este/bosque/bosque-${String(i + 1).padStart(2, "0")}.webp`),
         },
         {
           seccion: "Grutas y Punta Ballena",
-          fotos: [],
+          fotos: Array.from({ length: 22 }, (_, i) => `assets/acciones/fugas-al-este/grutas/grutas-${String(i + 1).padStart(2, "0")}.webp`),
         },
       ],
     },
@@ -241,7 +253,7 @@ window.PDF_DATA = {
       sub: "Performance multidisciplinaria",
       tipo: "Performance",
       lugar: "Espacio MUMI · Noche de los Museos",
-      imagen: "assets/acciones/capas/portada.jpg",
+      imagen: "assets/acciones/capas/capas-hero.webp",
       descripcion: "Performance multidisciplinaria creada para la Noche de los Museos en el Espacio MUMI. La propuesta indaga en las capas visibles e invisibles que habitan el cuerpo en movimiento, explorando los umbrales entre presencia y ausencia, revelación y ocultamiento. A través de la danza aérea y las artes escénicas, se construye un paisaje sensible donde el cuerpo se transforma en territorio de memoria, experiencia e imaginación. En diálogo con la arquitectura del espacio, la obra resignifica recorridos, alturas y perspectivas, integrando la estructura edilicia como parte activa de la experiencia escénica.",
       ficha: {
         direccion: "Diego Ruella",
@@ -259,46 +271,7 @@ window.PDF_DATA = {
       galeria: [
         {
           seccion: "Registro",
-          fotos: [
-            "assets/acciones/capas/A-2.jpg",
-            "assets/acciones/capas/A-28 (2).jpg",
-            "assets/acciones/capas/A-32.jpg",
-            "assets/acciones/capas/A-34.jpg",
-            "assets/acciones/capas/A-39 (2).jpg",
-            "assets/acciones/capas/A-50 (2).jpg",
-            "assets/acciones/capas/A-51.jpg",
-            "assets/acciones/capas/A-59.jpg",
-            "assets/acciones/capas/A-63 (2).jpg",
-            "assets/acciones/capas/A-65.jpg",
-            "assets/acciones/capas/A-67.jpg",
-            "assets/acciones/capas/A-71 (2).jpg",
-            "assets/acciones/capas/A-78.jpg",
-            "assets/acciones/capas/A-81 (2).jpg",
-            "assets/acciones/capas/A-83.jpg",
-            "assets/acciones/capas/A-84.jpg",
-            "assets/acciones/capas/A-88.jpg",
-            "assets/acciones/capas/A-90.jpg",
-            "assets/acciones/capas/A-91.jpg",
-            "assets/acciones/capas/A-92.jpg",
-            "assets/acciones/capas/A-95.jpg",
-            "assets/acciones/capas/A-97 (1).jpg",
-            "assets/acciones/capas/A-101 (2).jpg",
-            "assets/acciones/capas/A-102 (2).jpg",
-            "assets/acciones/capas/A-104 (2).jpg",
-            "assets/acciones/capas/A-105 (2).jpg",
-            "assets/acciones/capas/A-106.jpg",
-            "assets/acciones/capas/A-109.jpg",
-            "assets/acciones/capas/A-111 (2).jpg",
-            "assets/acciones/capas/A-113.jpg",
-            "assets/acciones/capas/A-116 (2).jpg",
-            "assets/acciones/capas/A-118.jpg",
-            "assets/acciones/capas/A-121 (2).jpg",
-            "assets/acciones/capas/A-129 (1).jpg",
-            "assets/acciones/capas/A-132 (2).jpg",
-            "assets/acciones/capas/A-134 (2).jpg",
-            "assets/acciones/capas/A-138 (2).jpg",
-            "assets/acciones/capas/A-145 (1).jpg",
-          ],
+          fotos: Array.from({ length: 26 }, (_, i) => `assets/acciones/capas/capas-${String(i + 1).padStart(2, "0")}.webp`),
         },
       ],
       graficas: [
@@ -332,6 +305,12 @@ window.PDF_DATA = {
         vestuario: "Punto de Fuga",
         duracion: "20 minutos",
       },
+      galeria: [
+        {
+          seccion: "Registro",
+          fotos: Array.from({ length: 8 }, (_, i) => `assets/acciones/artivismo-por-palestina/artivismo-${String(i + 1).padStart(2, "0")}.webp`),
+        },
+      ],
       graficas: [
         "assets/acciones/artivismo-por-palestina/graficas/Grafica-full.jpg",
         "assets/acciones/artivismo-por-palestina/graficas/POST-1.jpg",
@@ -348,7 +327,7 @@ window.PDF_DATA = {
       sub: "Performance",
       tipo: "Performance",
       lugar: "Espacio Bahía",
-      imagen: "assets/acciones/espacio-bahia/portada.jpg",
+      imagen: "assets/acciones/espacio-bahia/bahia-hero.webp",
       descripcion: "Performance presentada en Espacio Bahía, lugar de residencia y creación de nuestro colectivo. Durante una jornada de puertas abiertas, compartimos fragmentos de obras y procesos en desarrollo. Entre cuerpos suspendidos, estructuras arquitectónicas en relación con el audiovisual y el uso de software interactivo; la propuesta explora nuevas formas de habitar el espacio, revelando el potencial de la danza aérea con arnés para transformar la percepción del entorno y generar poéticas del movimiento.",
       ficha: {
         direccion: "Diego Ruella",
@@ -364,8 +343,7 @@ window.PDF_DATA = {
       galeria: [
         {
           seccion: "Registro",
-          fotos: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 18, 19, 20, 21, 22, 23, 24, 25, 26]
-            .map((i) => `assets/acciones/espacio-bahia/bahia_img-${i}.jpg`),
+          fotos: Array.from({ length: 10 }, (_, i) => `assets/acciones/espacio-bahia/bahia-${String(i + 1).padStart(2, "0")}.webp`),
         },
       ],
       graficas: [
@@ -382,22 +360,29 @@ window.PDF_DATA = {
     {
       slug: "29m-pioneras",
       year: "2025",
-      title: "29M Pioneras",
-      sub: "Taller gratuito + intervención artística",
+      title: "29M Pioneras _ Arte, cuerpo y feminismos en el espacio público",
+      sub: "Taller gratuito + intervención escénica",
       tipo: "Intervención",
       lugar: "Plaza Las Pioneras · Municipio C",
       imagen: "assets/acciones/29m-pioneras/portada.jpg",
-      descripcion: "En el marco del 29 de marzo, Día Internacional de las Mujeres Trabajadoras, ofrecimos un taller gratuito de danza aérea abierto a la comunidad, seguido de una intervención artística en la Plaza Las Pioneras. Arte, cuerpo y feminismo en el espacio público.",
+      descripcion: "Proyecto apoyado por el Fondo Municipal de Cultura Comunitaria del Municipio C.<br><br>En el marco de Marzo, mes de la reflexión y visibilización de la igualdad de género y los derechos de las mujeres, desarrollamos una jornada abierta que combinó un taller gratuito de danza aérea y una intervención artística en la Plaza Las Pioneras. A través del movimiento y la ocupación poética del espacio público, la propuesta buscó generar instancias de encuentro, visibilización y reflexión colectiva en torno a los cuerpos, los territorios y las luchas feministas.",
+      ficha: {
+        direccion: "Diego Ruella",
+        elenco: ["Anaclara Oyenart", "Florencia Mazzucco", "Elisa Acosta", "Agustina Leiva", "Stella Peña", "Leticia Moreno"],
+        montaje: ["Elisa Acosta", "Diego Ruella", "Leticia Moreno"],
+        produccion: "Victoria Beretta",
+        disenoGrafico: "Anaclara Oyenart",
+        registro: "Ana Micenmacher",
+        duracion: ["Taller: 2hs", "Performance: 30 minutos"],
+      },
       galeria: [
         {
           seccion: "Taller",
-          fotos: Array.from({ length: 19 }, (_, i) => `assets/acciones/29m-pioneras/taller/taller_img-${i + 1}.jpg`),
+          fotos: Array.from({ length: 22 }, (_, i) => `assets/acciones/29m-pioneras/taller/taller-${String(i + 1).padStart(2, "0")}.webp`),
         },
         {
           seccion: "Intervención",
-          fotos: [
-            "assets/acciones/29m-pioneras/intervencion/29m-pioneras2.jpg",
-          ],
+          fotos: Array.from({ length: 14 }, (_, i) => `assets/acciones/29m-pioneras/intervencion/intervencion-${String(i + 1).padStart(2, "0")}.webp`),
         },
       ],
       graficas: [
@@ -420,7 +405,18 @@ window.PDF_DATA = {
       lugar: "Sala El Picadero",
       mes: "Diciembre",
       imagen: "assets/acciones/fugas-colectivas-vol-ii/portada.jpg",
-      descripcion: "Segunda edición de Fugas Colectivas en la Sala El Picadero. La obra regresa con nuevas capas de sentido, profundizando en el lenguaje del cuerpo suspendido y la poética del movimiento colectivo. Fugas Colectivas, porque el futuro será colectivo.",
+      frase: "Fugas Colectivas… porque el futuro será colectivo.",
+      descripcion: "Fugas Colectivas regresa en una segunda edición en Sala El Picadero, reafirmando y expandiendo la investigación escénica iniciada en su primera versión. La incorporación de nuevas artistas y la exploración de nuevos lenguajes y técnicas enriquecen la propuesta, abriendo otras posibilidades de encuentro, composición y creación colectiva.<br><br>Esta nueva etapa profundiza la investigación sobre el cuerpo suspendido, el espacio, la luz y la poética del movimiento, desarrollando nuevas capas de sentido y complejizando las relaciones entre los cuerpos en escena. A través de imágenes en constante transformación, la obra continúa indagando en las tensiones, resonancias y potencias que emergen de lo colectivo.",
+      ficha: {
+        direccion: "Diego Ruella",
+        cocreacion: "Punto de Fuga",
+        elenco: ["Anaclara Oyenart", "Florencia Mazzucco", "Elisa Acosta", "Victoria Beretta", "Agustina Leiva", "Stella Peña", "Leticia Moreno"],
+        produccion: "Punto de Fuga",
+        luces: "Fernanda Castillo",
+        disenoGrafico: "Anaclara Oyenart",
+        asistenciaTecnica: "Agustina Rodriguez",
+        duracion: "40 minutos",
+      },
       galeria: [
         {
           seccion: "Registro",
@@ -462,14 +458,12 @@ window.PDF_DATA = {
       ],
       graficas: [
         "assets/acciones/fugas-colectivas-vol-ii/graficas/fugas_ii_afiche-dic.jpg",
-        "assets/acciones/fugas-colectivas-vol-ii/graficas/fugas_ii_grafica-6.jpg",
-        "assets/acciones/fugas-colectivas-vol-ii/graficas/fugas_ii_grafica-7.jpg",
         "assets/acciones/fugas-colectivas-vol-ii/graficas/fugas_ii_posteo-1a.jpg",
         "assets/acciones/fugas-colectivas-vol-ii/graficas/fugas_ii_posteo-1b.jpg",
         "assets/acciones/fugas-colectivas-vol-ii/graficas/fugas_ii_posteo-1c.jpg",
+        "assets/acciones/fugas-colectivas-vol-ii/graficas/fugas_ii_posteo-1d.jpg",
         "assets/acciones/fugas-colectivas-vol-ii/graficas/fugas_ii_posteo-3a.jpg",
         "assets/acciones/fugas-colectivas-vol-ii/graficas/fugas_ii_posteo-4a.jpg",
-        "assets/acciones/fugas-colectivas-vol-ii/graficas/fugas_ii_posteo-5b.jpg",
       ],
       spots: [
         "assets/acciones/fugas-colectivas-vol-ii/graficas/fugas_ii_spot-lanzamiento.mp4",
@@ -493,11 +487,13 @@ window.PDF_DATA = {
       ficha: {
         direccion: "Diego Ruella",
         cocreacion: "Punto de Fuga",
-        elenco: ["Elisa Acosta", "Victoria Berreta", "Florencia Mazzucco", "Anaclara Oyenart", "Agustina Rodríguez"],
+        elenco: ["Anaclara Oyenart", "Florencia Mazzucco", "Elisa Acosta", "Agustina Rodriguez", "Victoria Berretta"],
         produccion: "Punto de Fuga",
-        vestuario: "Punto de Fuga",
+        disenoGrafico: "Anaclara Oyenart",
+        luces: "Fernanda Castillo",
+        duracion: "40 minutos",
       },
-      descripcion: "Fugas Colectivas es un espectáculo que, desde el lenguaje visual-poético y las artes del movimiento, explora los vínculos y las formas en que nuestros cuerpos son afectados por enunciados hegemónicos que buscan invisibilizarnos. Interpretada por un elenco exclusivamente femenino de siete artistas, esta performance se sumerge en las múltiples posibilidades que emergen del encuentro y desencuentro entre los cuerpos en un espacio finito. La obra construye un juego espacial a través de direcciones trazadas con luces, movimientos, péndulos, espirales, desequilibrios, puntos y líneas, tejiendo una trama de interacciones y cruces que dan vida a una pintura en movimiento. Fugas Colectivas, porque el futuro será colectivo.",
+      descripcion: "Es una performance que, desde un lenguaje visual y poético, explora los vínculos y las formas en que nuestros cuerpos son atravesados por fuerzas, discursos y afectos que condicionan nuestra manera de habitar el mundo.<br><br>Interpretada por un elenco de mujeres, la obra se despliega como una composición en movimiento donde luces, trayectorias, péndulos, espirales, puntos y líneas construyen un paisaje dinámico de encuentros y desencuentros. En un espacio finito, los cuerpos se aproximan, se rozan, se desvían, se sostienen y transforman mutuamente, revelando las múltiples posibilidades que emergen de la experiencia colectiva.<br><br>A través de una trama de imágenes en constante transformación, Fugas Colectivas da vida a una pintura en movimiento que invita a reflexionar sobre la interdependencia, la presencia y la construcción de lo común.",
       galeria: [
         {
           seccion: "Registro",
@@ -518,7 +514,7 @@ window.PDF_DATA = {
     {
       slug: "apertura-proceso-creativo",
       year: "2023",
-      title: "Apertura - work in progress",
+      title: "Habitar el Entre _ Apertura de proceso",
       sub: "Muestra abierta",
       tipo: "Ensayo",
       lugar: "La Galponera espacio de circo",
@@ -532,7 +528,15 @@ window.PDF_DATA = {
         { label: "Video 3", src: "assets/acciones/apertura-proceso-creativo/apertura_video-3.mp4" },
         { label: "Video 4", src: "assets/acciones/apertura-proceso-creativo/apertura_video-4.mp4" },
       ],
-      descripcion: "Muestra abierta del proceso creativo de Fugas Colectivas en La Galponera. Un espacio de encuentro con el público para compartir el trabajo en construcción — la obra en su estado más vivo y vulnerable.",
+      ficha: {
+        direccion: "Diego Ruella",
+        cocreacion: "Punto de Fuga",
+        elenco: ["Anaclara Oyenart", "Florencia Mazzucco", "Elisa Acosta", "Agustina Rodriguez", "Victoria Berretta"],
+        produccion: "Punto de Fuga",
+        luces: "Diego Ruella",
+        duracion: "30 minutos",
+      },
+      descripcion: "Apertura de proceso creativo Fugas Colectivas en el espacio de circo La Galponera.<br><br>Este encuentro con el público permitió compartir fragmentos de la creación en curso, acercando a las y los asistentes a una etapa de trabajo caracterizada por la experimentación, la búsqueda y la construcción colectiva de sentido. El propósito de este encuentro fue generar un espacio de intercambio y escucha que posibilitara recoger impresiones, observaciones y aportes del público, entendiendo el feedback como una herramienta fundamental para enriquecer y fortalecer el proceso creativo. Asimismo, la instancia promovió una dinámica de reflexión y escritura que permitió registrar percepciones y resonancias surgidas a partir de la experiencia compartida. La apertura puso en circulación la obra en su estado más vivo, inacabado y vulnerable, favoreciendo un diálogo directo entre creación y recepción, y reafirmando el valor del encuentro con la comunidad como parte constitutiva del proceso artístico.",
       galeria: [
         {
           seccion: "Registro",
