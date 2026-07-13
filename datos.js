@@ -469,10 +469,6 @@ window.PDF_DATA = {
         "assets/acciones/fugas-colectivas-vol-ii/graficas/fugas_ii_spot-lanzamiento.mp4",
         "assets/acciones/fugas-colectivas-vol-ii/graficas/fugas_ii_spot-lanzamiento-2.mp4",
       ],
-      videos: [
-        { label: "Reel", src: "assets/acciones/fugas-colectivas-vol-ii/graficas/fugas_ii_reel-1.mp4" },
-        { label: "Video", src: "assets/acciones/fugas-colectivas-vol-ii/graficas/fugas_ii_video-1.mp4" },
-      ],
     },
     {
       slug: "fugas-colectivas-vol-i",
@@ -525,8 +521,7 @@ window.PDF_DATA = {
       videos: [
         { label: "Video 1", src: "assets/acciones/apertura-proceso-creativo/apertura_video-1.mp4" },
         { label: "Video 2", src: "assets/acciones/apertura-proceso-creativo/apertura_video-2.mp4" },
-        { label: "Video 3", src: "assets/acciones/apertura-proceso-creativo/apertura_video-3.mp4" },
-        { label: "Video 4", src: "assets/acciones/apertura-proceso-creativo/apertura_video-4.mp4" },
+        { label: "Video 3", src: "assets/acciones/apertura-proceso-creativo/apertura_video-4.mp4" },
       ],
       ficha: {
         direccion: "Diego Ruella",
