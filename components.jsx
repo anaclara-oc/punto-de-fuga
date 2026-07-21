@@ -66,6 +66,7 @@ function Nav() {
       <div className={"nav__menu" + (menuOpen ? " is-open" : "")}>
         <a href="#acciones" onClick={() => setMenuOpen(false)}>Acciones</a>
         <a href="#somos" onClick={() => setMenuOpen(false)}>Somos</a>
+        <a href="#nos-interesa" onClick={() => setMenuOpen(false)}>Nos interesa</a>
         <a href="#contacto" onClick={() => setMenuOpen(false)}>Contacto</a>
       </div>
     </nav>
@@ -377,11 +378,6 @@ function IntegranteModal({ item, onClose }) {
             <>
               <button className="modal__arrow modal__arrow--prev" onClick={prev}>←</button>
               <button className="modal__arrow modal__arrow--next" onClick={next}>→</button>
-              <div className="modal__dots">
-                {fotos.map((_, j) => (
-                  <span key={j} className={"modal__dot" + (j === idx ? " is-active" : "")} />
-                ))}
-              </div>
             </>
           )}
         </div>
@@ -423,9 +419,6 @@ function Somos() {
       <div className="section-head" style={{ padding: 0, border: "none" }}>
         <div>
           <div className="section-head__num">{D.somos.seccion}</div>
-        </div>
-        <div className="section-head__meta">
-          {D.somos.integrantes.length} integrantes
         </div>
       </div>
       <h2 className="somos__title">{D.somos.titulo}</h2>

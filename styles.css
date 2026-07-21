@@ -239,7 +239,7 @@ body[data-theme="magenta"] .nav--scrolled .nav__logo {
   .nav__menu {
     gap: 16px;
   }
-  .nav__menu a:nth-child(n + 4) {
+  .nav__menu a:nth-child(n + 5) {
     display: none;
   }
 }
@@ -519,6 +519,7 @@ section {
   border-top: 1px solid var(--fg);
   padding-bottom: 80px;
   background: var(--bg);
+  scroll-margin-top: 72px;
 }
 
 /* ── Carrusel destacado de Acciones ────────────────── */
@@ -530,9 +531,9 @@ section {
 .featured__media {
   position: relative;
   width: 100%;
-  height: calc(100vh - 64px);
-  max-height: 860px;
-  min-height: 480px;
+  height: calc(100vh - 175px);
+  max-height: 800px;
+  min-height: 420px;
   background: #0a0a0a;
   overflow: hidden;
 }
@@ -609,12 +610,10 @@ section {
 
 .featured__nav {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 32px;
   z-index: 4;
   width: 56px;
   height: 56px;
-  border-radius: 50%;
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.3);
   color: #fff;
@@ -991,12 +990,17 @@ section {
 .somos {
   padding: 120px var(--gutter) 100px;
   background: var(--bg);
+  scroll-margin-top: 72px;
+}
+
+.somos .section-head__num {
+  font-size: 20px;
 }
 
 .somos__title {
   font-family: var(--display);
   font-weight: 300;
-  font-size: clamp(64px, 14vw, 220px);
+  font-size: clamp(60px, 12.5vw, 190px);
   letter-spacing: -0.04em;
   line-height: 0.85;
   margin-bottom: 60px;
@@ -1178,10 +1182,11 @@ section {
   background: var(--azul);
   border-top: none;
   color: #fff;
+  scroll-margin-top: 72px;
 }
 
 .nos-interesa .section-head__num {
-  color: rgba(255, 255, 255, 0.55);
+  color: #fff;
   font-size: 16px;
   letter-spacing: 0.18em;
 }
@@ -1189,11 +1194,11 @@ section {
 .nos-interesa__title {
   font-family: var(--display);
   font-weight: 300;
-  font-size: clamp(64px, 14vw, 220px);
+  font-size: clamp(60px, 12.5vw, 190px);
   letter-spacing: -0.04em;
   line-height: 0.85;
   margin-bottom: 80px;
-  color: var(--magenta);
+  color: var(--fg);
 }
 
 .nos-interesa__lista {
@@ -1207,7 +1212,7 @@ section {
   content: "";
   grid-column: 1 / -1;
   height: 3px;
-  background: rgba(255, 255, 255, 0.25);
+  background: #fff;
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
@@ -1223,7 +1228,7 @@ section {
   font-size: clamp(15px, 1.4vw, 18px);
   line-height: 1.6;
   padding: 40px 0 40px;
-  border-bottom: 3px solid rgba(255, 255, 255, 0.15);
+  border-bottom: 3px solid #fff;
   text-wrap: pretty;
   color: rgba(255, 255, 255, 0.75);
 }
@@ -1262,6 +1267,7 @@ section {
   border-top: 1px solid var(--fg);
   padding: 120px var(--gutter) 60px;
   background: var(--bg);
+  scroll-margin-top: 72px;
   position: relative;
 }
 
@@ -1727,6 +1733,9 @@ body[data-theme="magenta"] {
   .somos {
     padding: 80px 20px 60px;
   }
+  .somos .section-head__num {
+    font-size: 15px;
+  }
   .somos__title {
     font-size: clamp(72px, 22vw, 140px);
     margin-bottom: 32px;
@@ -1856,7 +1865,7 @@ body[data-theme="magenta"] {
   color: var(--fg);
   width: min(460px, 100%);
   max-height: calc(100vh - 48px);
-  overflow-y: auto;
+  overflow: hidden;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -1897,7 +1906,7 @@ body[data-theme="magenta"] {
 .modal__photo {
   display: block;
   width: 100%;
-  height: 65vh;
+  height: auto;
   max-height: 65vh;
   object-fit: contain;
   object-position: center;
@@ -1942,28 +1951,26 @@ body[data-theme="magenta"] {
 .modal__arrow--prev { left: 12px; }
 .modal__arrow--next { right: 12px; }
 
-.modal__dots {
-  position: absolute;
-  bottom: 12px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 6px;
-  z-index: 5;
-}
-
-.modal__dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.4);
-  transition: background 0.2s;
-}
-
-.modal__dot.is-active { background: #fff; }
-
 .modal__info {
   padding: 28px;
+  overflow-y: auto;
+  flex: 1;
+  min-height: 0;
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent) transparent;
+}
+
+.modal__info::-webkit-scrollbar {
+  width: 10px;
+}
+
+.modal__info::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.modal__info::-webkit-scrollbar-thumb {
+  background-color: var(--accent);
+  border-radius: 4px;
 }
 
 .modal__name {
