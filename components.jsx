@@ -66,7 +66,7 @@ function Nav() {
       <div className={"nav__menu" + (menuOpen ? " is-open" : "")}>
         <a href="#acciones" onClick={() => setMenuOpen(false)}>Acciones</a>
         <a href="#somos" onClick={() => setMenuOpen(false)}>Somos</a>
-        <a href="#nos-interesa" onClick={() => setMenuOpen(false)}>Nos interesa</a>
+        <a href="#nos-interesa" onClick={() => setMenuOpen(false)}>Intereses</a>
         <a href="#contacto" onClick={() => setMenuOpen(false)}>Contacto</a>
       </div>
     </nav>
@@ -215,28 +215,27 @@ function Acciones() {
           <div className="section-head__num">{D.accionesMeta.num}</div>
           <h2 className="section-head__title section-head__title--acciones">{D.accionesMeta.titulo}</h2>
         </div>
-        <div className="section-head__meta">
-          {D.acciones.length} acciones
-        </div>
       </header>
 
       {/* Carrusel destacado */}
       {featured && (
         <div className="acciones__featured">
-          <div
-            className="featured__media"
-            onTouchStart={conImagen.length > 1 ? onTouchStart : undefined}
-            onTouchEnd={conImagen.length > 1 ? onTouchEnd : undefined}
-          >
-            {conImagen.map((a, i) => (
-              <ImgPortada
-                key={a.slug}
-                accion={a}
-                alt={a.title}
-                className={"featured__img" + (i === activeIdx ? " is-active" : "")}
-              />
-            ))}
-            <div className="featured__overlay" />
+          <div className="featured__wrap">
+            <div
+              className="featured__media"
+              onTouchStart={conImagen.length > 1 ? onTouchStart : undefined}
+              onTouchEnd={conImagen.length > 1 ? onTouchEnd : undefined}
+            >
+              {conImagen.map((a, i) => (
+                <ImgPortada
+                  key={a.slug}
+                  accion={a}
+                  alt={a.title}
+                  className={"featured__img" + (i === activeIdx ? " is-active" : "")}
+                />
+              ))}
+              <div className="featured__overlay" />
+            </div>
             <a
               className="featured__caption"
               href={"accion.html?id=" + featured.slug}
@@ -253,9 +252,8 @@ function Acciones() {
               <div className="featured__caption-lugar">{featured.lugar}</div>
             </a>
             {conImagen.length > 1 && (
-              <>
+              <div className="featured__controls">
                 <button className="featured__nav featured__nav--prev" onClick={prev} aria-label="Anterior">←</button>
-                <button className="featured__nav featured__nav--next" onClick={next} aria-label="Siguiente">→</button>
                 <div className="featured__dots">
                   {conImagen.map((_, i) => (
                     <button
@@ -266,7 +264,8 @@ function Acciones() {
                     />
                   ))}
                 </div>
-              </>
+                <button className="featured__nav featured__nav--next" onClick={next} aria-label="Siguiente">→</button>
+              </div>
             )}
           </div>
         </div>
@@ -458,16 +457,28 @@ function NosInteresa() {
 
 /* ─────────────  Contacto  ───────────── */
 function Contacto() {
-  const [sent, setSent] = useState(false);
-  const handle = (e) => {
+  const [status, setStatus] = useState("idle"); // idle | sending | sent | error
+  const handle = async (e) => {
     e.preventDefault();
-    const data = new FormData(e.currentTarget);
-    const subject = encodeURIComponent("[Web] " + (data.get("asunto") || "Contacto"));
-    const body = encodeURIComponent(
-      `De: ${data.get("nombre")} <${data.get("email")}>\n\n${data.get("mensaje")}`
-    );
-    window.location.href = `mailto:${D.contacto.email}?subject=${subject}&body=${body}`;
-    setSent(true);
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    data.set("_subject", "[Web] " + (data.get("asunto") || "Contacto"));
+    setStatus("sending");
+    try {
+      const res = await fetch("https://formspree.io/f/moeaayzv", {
+        method: "POST",
+        body: data,
+        headers: { Accept: "application/json" },
+      });
+      if (res.ok) {
+        setStatus("sent");
+        form.reset();
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
   };
 
   return (
@@ -519,7 +530,7 @@ function Contacto() {
             <g id="clA"><path d="M345.34,414.71l-66-150.21c-.34-.8-1.19-1.3-2.21-1.3s-1.87.5-2.21,1.3l-66.01,150.22-1.47,3.43h5.4l.49-1.48,63.79-145.06,63.79,145.05.5,1.49h5.4l-1.47-3.44Z" fill="#000" strokeWidth="0"/></g>
             <g id="cld"><path d="M263.93.93v62.53h-6.85l-.76-6.18c-1.47,2.26-3.3,4.02-5.5,5.29s-4.65,1.9-7.36,1.9c-5.3,0-9.44-2.09-12.4-6.26-2.96-4.17-4.44-9.79-4.44-16.84,0-4.57.7-8.63,2.11-12.19s3.44-6.33,6.09-8.34c2.65-2,5.75-3,9.31-3,4.57,0,8.57,1.83,12.02,5.5V0l7.79.93ZM251.24,56.65c1.69-1.1,3.33-2.75,4.91-4.95v-21.83c-1.47-1.92-3.03-3.37-4.7-4.36-1.66-.99-3.54-1.48-5.63-1.48-3.44,0-6.11,1.44-8,4.32-1.89,2.88-2.83,7.16-2.83,12.86s.87,10.04,2.62,12.86c1.75,2.82,4.26,4.23,7.53,4.23,2.37,0,4.4-.55,6.09-1.65Z" fill="#000" strokeWidth="0"/></g>
             <g id="cle"><path d="M308.36,43.83h-28.43c.34,4.91,1.58,8.52,3.72,10.83,2.14,2.31,4.91,3.47,8.29,3.47,2.14,0,4.12-.31,5.92-.93,1.8-.62,3.69-1.61,5.67-2.96l3.38,4.65c-4.74,3.72-9.93,5.59-15.57,5.59-6.21,0-11.04-2.03-14.51-6.09-3.47-4.06-5.2-9.65-5.2-16.76,0-4.62.75-8.73,2.24-12.31,1.49-3.58,3.64-6.39,6.43-8.42,2.79-2.03,6.08-3.05,9.86-3.05,5.92,0,10.46,1.95,13.62,5.84,3.16,3.89,4.74,9.28,4.74,16.16,0,1.3-.06,2.62-.17,3.98ZM300.83,37.57c0-4.4-.87-7.76-2.62-10.07-1.75-2.31-4.37-3.47-7.87-3.47-6.38,0-9.85,4.68-10.41,14.05h20.9v-.51Z" fill="#000" strokeWidth="0"/></g>
-            <circle id="cdot" cx="13.78" cy="228.31" r="13.78" fill="var(--accent)" strokeWidth="0"/>
+            <circle id="cdot" cx="13.78" cy="228.31" r="13.78" fill="var(--magenta)" strokeWidth="0"/>
             <g id="clu"><path d="M69.54,63.91c6.31,0,11.26-3.01,14.85-9.03l.26,8.08h4.34V17.53h-5.04v32.91c-3.59,6.2-8.02,9.29-13.29,9.29-3.01,0-5.25-.82-6.73-2.47-1.48-1.65-2.21-4.24-2.21-7.77v-31.96h-5.04v32.48c0,4.46,1.11,7.89,3.34,10.29,2.23,2.4,5.4,3.6,9.51,3.6Z" fill="#000" strokeWidth="0"/></g>
             <g id="cln"><path d="M107.14,30.04c2.03-3.07,4.15-5.4,6.38-6.99,2.23-1.59,4.79-2.39,7.69-2.39s4.98.84,6.43,2.52c1.45,1.68,2.17,4.34,2.17,7.99v31.78h5.04V30.47c0-4.4-1.08-7.82-3.26-10.25-2.17-2.43-5.31-3.65-9.42-3.65-6.08,0-11.17,2.9-15.28,8.68l-.43-7.73h-4.34v45.42h5.04V30.04Z" fill="#000" strokeWidth="0"/></g>
             <g id="clt"><path d="M159.24,59.57c-2.26,0-3.94-.65-5.04-1.95-1.1-1.3-1.65-3.28-1.65-5.95v-30.05h11.12l.61-4.08h-11.72V6.07l-5.04.61v10.86h-7.64v4.08h7.64v30.31c0,3.88.98,6.85,2.95,8.9,1.97,2.06,4.69,3.08,8.16,3.08s6.66-.95,9.55-2.87l-2-3.56c-2.26,1.39-4.57,2.08-6.95,2.08Z" fill="#000" strokeWidth="0"/></g>
@@ -585,10 +596,19 @@ function Contacto() {
           <label className="form__label">Mensaje</label>
           <textarea className="form__textarea" name="mensaje" rows={4} required />
         </div>
-        <button type="submit" className="form__submit">
-          {sent ? "Enviado · gracias" : "Enviar mensaje"}
+        <button type="submit" className="form__submit" disabled={status === "sending"}>
+          {status === "sent" ? "Enviado · gracias"
+            : status === "sending" ? "Enviando..."
+            : status === "error" ? "Error · reintentar"
+            : "Enviar mensaje"}
           <span className="form__submit-arrow">→</span>
         </button>
+        {status === "error" && (
+          <p className="form__error">
+            No se pudo enviar. Probá de nuevo o escribinos directo a{" "}
+            <a href={`mailto:${D.contacto.email}`}>{D.contacto.email}</a>.
+          </p>
+        )}
       </form>
     </section>
   );
