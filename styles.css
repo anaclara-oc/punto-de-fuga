@@ -1991,6 +1991,10 @@ body[data-theme="magenta"] {
   .modal__info {
     padding: 20px;
   }
+  .modal__bio {
+    font-size: 15px;
+    letter-spacing: 0.01em;
+  }
 }
 
 /* Touch targets — siempre 44px mínimo */
