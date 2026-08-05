@@ -167,7 +167,7 @@ function Manifiesto() {
 /* ─────────────  Acciones (con carrusel grande)  ───────────── */
 function ImgPortada({ accion, className, alt }) {
   const base = `assets/acciones/${accion.carpeta || accion.slug}/portada`;
-  const fallbacks = [`${base}.jpg`, `${base}.png`, `${base}.jpeg`, accion.imagen].filter(Boolean);
+  const fallbacks = [`${base}.webp`, `${base}.jpg`, `${base}.png`, `${base}.jpeg`, accion.imagen].filter(Boolean);
   const [idx, setIdx] = React.useState(0);
   return (
     <img
