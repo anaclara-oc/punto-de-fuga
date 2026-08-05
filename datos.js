@@ -286,6 +286,9 @@ window.PDF_DATA = {
       spots: [
         "assets/acciones/capas/graficas/spot-capas.mp4",
       ],
+      videos: [
+        { url: "https://youtu.be/2M00-UubO7M", thumb: "https://img.youtube.com/vi/2M00-UubO7M/hqdefault.jpg", label: "Registro audiovisual" },
+      ],
     },
     {
       slug: "artivismo-por-palestina",
