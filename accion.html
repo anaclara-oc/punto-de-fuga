@@ -16,6 +16,10 @@
       --fg-muted: #666660;
       --fg-subtle: #999990;
       --accent: #1a1aff;
+      --turquesa: #3fe5d0;
+      --magenta: #c8154b;
+      --rosa: #f5cfe5;
+      --lila: #e6b3ec;
       --border: rgba(17,17,16,0.12);
       --border-mid: rgba(17,17,16,0.25);
       --nav-h: 108px;
@@ -642,6 +646,15 @@
     .nav-action-dir svg {
       width: 16px; height: 16px;
       stroke: currentColor; fill: none; stroke-width: 2;
+      border-radius: 50%;
+      padding: 6px;
+      box-sizing: content-box;
+      transition: background 0.25s, stroke 0.25s;
+    }
+
+    .nav-action:hover .nav-action-dir svg {
+      background: var(--turquesa);
+      stroke: var(--fg);
     }
 
     .nav-action-title {
@@ -794,6 +807,16 @@
       letter-spacing: 0.05em;
     }
 
+    footer a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    footer a:hover {
+      color: #fff;
+    }
+
     /* BACK TO TOP */
     .back-to-top {
       position: fixed;
@@ -801,6 +824,7 @@
       bottom: 24px;
       width: 44px;
       height: 44px;
+      border-radius: 50%;
       background: var(--bg);
       border: 1px solid var(--border-mid);
       color: var(--fg);
@@ -821,9 +845,9 @@
     }
 
     .back-to-top:hover {
-      background: var(--accent);
-      color: #fff;
-      border-color: var(--accent);
+      background: var(--turquesa);
+      color: var(--fg);
+      border-color: var(--turquesa);
     }
 
     @media (max-width: 600px) {
@@ -1078,8 +1102,9 @@
 
   <!-- FOOTER -->
   <footer>
-    <span>Punto de Fuga · Montevideo · Uruguay</span>
-    <span>© 2026 — Todos los derechos reservados</span>
+    <span>© 2022–2026 · Colectivo Punto de Fuga</span>
+    <span>Montevideo · Uruguay</span>
+    <span><a href="https://www.instagram.com/puntodefuga.danzaerea/">IG ↗</a> · <a href="mailto:puntodefuga.danzaerea@gmail.com">Mail ↗</a></span>
   </footer>
 
   <!-- BACK TO TOP -->
