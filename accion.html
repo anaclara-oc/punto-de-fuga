@@ -108,18 +108,19 @@
     .nav-links a:hover::after { right: 0; }
 
     @media (max-width: 880px) {
-      .nav-links { gap: 18px; }
-      .nav-links a { font-size: 14px; letter-spacing: 0.07em; }
+      .nav-links { gap: 0; }
+      .nav-links a { padding: 4px 9px; font-size: 14px; letter-spacing: 0.07em; }
+      .nav-links li:not(:first-child) { border-left: 1px solid currentColor; }
     }
 
     @media (max-width: 640px) {
-      .nav-links { gap: 12px; }
-      .nav-links a { font-size: 14px; letter-spacing: 0.05em; }
+      .nav-links { gap: 0; }
+      .nav-links a { padding: 4px 6px; font-size: 14px; letter-spacing: 0.05em; }
     }
 
     @media (max-width: 420px) {
-      .nav-links { gap: 7px; }
-      .nav-links a { font-size: 12px; }
+      .nav-links { gap: 0; }
+      .nav-links a { padding: 4px 5px; font-size: 12px; }
     }
 
     /* HERO */

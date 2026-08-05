@@ -1701,9 +1701,15 @@ body[data-theme="magenta"] {
     height: 52px;
   }
   .nav__menu {
-    gap: 18px;
+    gap: 0;
     font-size: 14px;
     letter-spacing: 0.07em;
+  }
+  .nav__menu a {
+    padding: 4px 9px;
+  }
+  .nav__menu a:not(:first-child) {
+    border-left: 1px solid currentColor;
   }
   .nav__menu a:nth-child(n) {
     display: block;
@@ -1723,9 +1729,12 @@ body[data-theme="magenta"] {
     padding: 12px 14px;
   }
   .nav__menu {
-    gap: 12px;
+    gap: 0;
     font-size: 14px;
     letter-spacing: 0.05em;
+  }
+  .nav__menu a {
+    padding: 4px 6px;
   }
   .nav__menu a:nth-child(n) {
     display: block;
@@ -1955,8 +1964,11 @@ body[data-theme="magenta"] {
 
 @media (max-width: 420px) {
   .nav__menu {
-    gap: 7px;
+    gap: 0;
     font-size: 12px;
+  }
+  .nav__menu a {
+    padding: 4px 5px;
   }
   .hero__title {
     font-size: clamp(56px, 16vw, 88px);
