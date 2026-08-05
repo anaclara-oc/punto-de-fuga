@@ -1187,25 +1187,31 @@ section {
   color: rgba(255, 255, 255, 0.6);
 }
 
-.integrante__dots {
+.integrante__arrow {
   position: absolute;
-  bottom: 8px;
-  left: 50%;
-  transform: translateX(-50%);
+  bottom: 10px;
+  width: 30px;
+  height: 30px;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1.5px solid #fff;
+  color: #fff;
+  font-family: var(--mono);
+  font-size: 13px;
   display: flex;
-  gap: 5px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
   z-index: 2;
+  transition: background 0.2s, color 0.2s;
 }
 
-.integrante__dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.45);
-  transition: background 0.2s;
+.integrante__arrow:hover {
+  background: #fff;
+  color: #000;
 }
 
-.integrante__dot.is-active { background: #fff; }
+.integrante__arrow--prev { left: 10px; }
+.integrante__arrow--next { right: 10px; }
 
 .integrante:hover .integrante__avatar {
   background:

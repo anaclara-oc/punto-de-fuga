@@ -387,16 +387,18 @@ function Integrante({ item, onOpen }) {
       >
         {fotos[idx] && <img src={fotos[idx]} alt={nombre} />}
         {fotos.length > 1 && (
-          <div className="integrante__dots">
-            {fotos.map((_, i) => (
-              <button
-                key={i}
-                className={"integrante__dot" + (i === idx ? " is-active" : "")}
-                onClick={() => setIdx(i)}
-                aria-label={`Foto ${i + 1} de ${nombre}`}
-              />
-            ))}
-          </div>
+          <>
+            <button
+              className="integrante__arrow integrante__arrow--prev"
+              onClick={prev}
+              aria-label={`Foto anterior de ${nombre}`}
+            >←</button>
+            <button
+              className="integrante__arrow integrante__arrow--next"
+              onClick={next}
+              aria-label={`Foto siguiente de ${nombre}`}
+            >→</button>
+          </>
         )}
       </div>
       <div className="integrante__name" onClick={onOpen}>
