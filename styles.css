@@ -959,14 +959,13 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: transparent;
-  transition: transform 0.3s, background 0.3s, color 0.3s;
+  background: var(--turquesa);
+  color: var(--fg);
+  transition: transform 0.3s;
 }
 
 .accion:hover .accion__arrow {
   transform: translateX(8px);
-  background: var(--turquesa);
-  color: var(--fg);
 }
 
 @media (max-width: 880px) {

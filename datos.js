@@ -291,7 +291,7 @@ window.PDF_DATA = {
       slug: "artivismo-por-palestina",
       year: "2025",
       title: "Artivismo por Palestina Colaboración del colectivo Las Selvas",
-      sub: "Activación escénica · Varieté Artivismo · Colaboración del colectivo LAS SELVAS",
+      sub: "Activación escénica · Varieté Artivismo",
       tipo: "Intervención",
       lugar: "Plaza Liber Seregni",
       imagen: "assets/acciones/artivismo-por-palestina/portada.jpg",
