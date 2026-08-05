@@ -1930,8 +1930,8 @@ body[data-theme="magenta"] {
   top: 12px;
   right: 12px;
   background: transparent;
-  border: 1.5px solid #fff;
-  color: #fff;
+  border: 1.5px solid var(--fg);
+  color: var(--fg);
   font-family: var(--mono);
   font-size: 13px;
   width: 32px;
