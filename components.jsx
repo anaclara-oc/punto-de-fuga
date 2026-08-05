@@ -419,7 +419,10 @@ function Somos() {
           <div className="section-head__num">{D.somos.seccion}</div>
         </div>
       </div>
-      <h2 className="somos__title">{D.somos.titulo}</h2>
+      <h2 className="somos__title">
+        {D.somos.titulo.replace(/\.$/, "")}
+        <span className="somos__title-dot">.</span>
+      </h2>
 
       <div className="somos__intro">
         <p>{D.somos.intro}</p>

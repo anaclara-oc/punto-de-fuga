@@ -1049,6 +1049,14 @@ section {
   margin-bottom: 60px;
 }
 
+.somos__title-dot {
+  color: var(--magenta);
+}
+
+.somos .section-head__num {
+  color: var(--magenta);
+}
+
 .somos__intro {
   display: grid;
   grid-template-columns: 1fr 2fr;
