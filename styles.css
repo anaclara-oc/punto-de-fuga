@@ -1827,7 +1827,13 @@ body[data-theme="magenta"] {
 
   /* Modal integrante */
   .modal-overlay {
-    padding: 24px 20px;
+    padding: 16px 12px;
+  }
+  .modal__info {
+    padding: 20px;
+  }
+  .modal__bio {
+    line-height: 1.45;
   }
 
   /* Contacto */
