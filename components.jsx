@@ -632,6 +632,26 @@ function Footer() {
   );
 }
 
+/* ─────────────  Back to top  ───────────── */
+function BackToTop() {
+  const [visible, setVisible] = useState(false);
+  useEffect(() => {
+    const onScroll = () => setVisible(window.scrollY > 600);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+  return (
+    <button
+      className={"back-to-top" + (visible ? " is-visible" : "")}
+      onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+      aria-label="Volver arriba"
+    >
+      ↑
+    </button>
+  );
+}
+
 /* ─────────────  Reveal observer  ───────────── */
 function useReveal() {
   useEffect(() => {
@@ -654,5 +674,5 @@ function useReveal() {
 
 Object.assign(window, {
   GravityCursor, Nav, Hero, Manifiesto, Acciones, CuerpoTexto,
-  Somos, Contacto, Footer, useReveal,
+  Somos, Contacto, Footer, BackToTop, useReveal,
 });

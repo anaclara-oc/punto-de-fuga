@@ -27,6 +27,7 @@ function App() {
       <NosInteresa />
       <Contacto />
       <Footer />
+      <BackToTop />
     </>
   );
 }
