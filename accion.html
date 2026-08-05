@@ -51,9 +51,14 @@
       z-index: 100;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 880px) {
       .site-nav { padding: 14px 20px; }
       :root { --nav-h: 80px; }
+    }
+
+    @media (max-width: 640px) {
+      .site-nav { padding: 12px 14px; }
+      :root { --nav-h: 76px; }
     }
 
     .nav-logo {
@@ -66,7 +71,7 @@
 
     .nav-logo img { height: 72px; width: auto; }
 
-    @media (max-width: 600px) {
+    @media (max-width: 880px) {
       .nav-logo img { height: 52px; }
     }
 
@@ -102,16 +107,19 @@
     .nav-links a:hover { color: var(--fg); }
     .nav-links a:hover::after { right: 0; }
 
-    @media (max-width: 720px) {
-      .nav-links { gap: 16px; }
+    @media (max-width: 880px) {
+      .nav-links { gap: 18px; }
+      .nav-links a { font-size: 14px; letter-spacing: 0.07em; }
     }
 
-    @media (max-width: 600px) {
-      .nav-links { gap: 12px; font-size: 14px; letter-spacing: 0.05em; }
+    @media (max-width: 640px) {
+      .nav-links { gap: 12px; }
+      .nav-links a { font-size: 14px; letter-spacing: 0.05em; }
     }
 
     @media (max-width: 420px) {
-      .nav-links { gap: 7px; font-size: 12px; }
+      .nav-links { gap: 7px; }
+      .nav-links a { font-size: 12px; }
     }
 
     /* HERO */
