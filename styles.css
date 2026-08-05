@@ -78,7 +78,7 @@ video {
 .label {
   font-family: var(--mono);
   font-size: 12px;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--muted);
 }
@@ -1001,8 +1001,8 @@ section {
 
 .cuerpo-texto__text h3 {
   font-family: var(--mono);
-  font-size: 15px;
-  letter-spacing: 0.15em;
+  font-size: 12px;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--rosa);
   margin-bottom: 24px;
@@ -1034,10 +1034,6 @@ section {
   padding: 120px var(--gutter) 100px;
   background: var(--bg);
   scroll-margin-top: 72px;
-}
-
-.somos .section-head__num {
-  font-size: 20px;
 }
 
 .somos__title {
@@ -1244,8 +1240,6 @@ section {
 
 .nos-interesa .section-head__num {
   color: var(--lila);
-  font-size: 16px;
-  letter-spacing: 0.18em;
 }
 
 .nos-interesa__title {
@@ -1802,9 +1796,6 @@ body[data-theme="magenta"] {
   /* Somos */
   .somos {
     padding: 80px 20px 60px;
-  }
-  .somos .section-head__num {
-    font-size: 15px;
   }
   .somos__title {
     font-size: clamp(72px, 22vw, 140px);
