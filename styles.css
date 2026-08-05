@@ -1973,6 +1973,7 @@ body[data-theme="magenta"] {
   letter-spacing: -0.02em;
   line-height: 1.1;
   margin: 0 0 20px;
+  padding-right: 44px;
 }
 
 .modal__bio {
