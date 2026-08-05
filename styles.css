@@ -269,7 +269,10 @@ section {
 }
 
 .acciones .section-head__num {
-  color: var(--turquesa);
+  display: inline-block;
+  background: var(--turquesa);
+  color: var(--fg);
+  padding: 2px 8px;
 }
 
 .section-head__title {
@@ -1054,7 +1057,10 @@ section {
 }
 
 .somos .section-head__num {
-  color: var(--magenta);
+  display: inline-block;
+  background: var(--magenta);
+  color: #fff;
+  padding: 2px 8px;
 }
 
 .somos__intro {
@@ -1319,7 +1325,10 @@ section {
 /* ── Contacto ──────────────────────────────────────── */
 
 .contacto .label {
-  color: var(--azul);
+  display: inline-block;
+  background: var(--magenta);
+  color: #fff;
+  padding: 2px 8px;
 }
 
 .contacto {
