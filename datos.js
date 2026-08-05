@@ -323,6 +323,9 @@ window.PDF_DATA = {
         "assets/acciones/artivismo-por-palestina/graficas/2A.jpg",
         "assets/acciones/artivismo-por-palestina/graficas/Placas artistas_Artboard 5 copy 16.jpg",
       ],
+      videos: [
+        { url: "https://youtu.be/fk8yFm1Xj9A", thumb: "https://img.youtube.com/vi/fk8yFm1Xj9A/hqdefault.jpg", label: "Registro audiovisual" },
+      ],
     },
     {
       slug: "espacio-bahia",
