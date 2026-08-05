@@ -229,7 +229,7 @@ window.PDF_DATA = {
       descripcion: "Una intervención de danza aérea con arnés en los paisajes naturales de la costa este uruguaya. Cuerpos suspendidos entre el bosque, el arroyo y las grutas de Punta Ballena, en un diálogo entre gravedad, naturaleza y movimiento.",
       ficha: {
         cocreacion: "Punto de Fuga",
-        elenco: ["Agustina Leiva", "Anaclara Oyenart", "Elisa Acosta", "Florencia Mazzucco", "Leticia Moreno", "Stella Peña"],
+        elenco: ["Agustina Leiva", "Anaclara Oyenart", "Diego Ruella", "Elisa Acosta", "Florencia Mazzucco", "Leticia Moreno", "Stella Peña"],
         produccion: "Punto de Fuga",
         vestuario: "Punto de Fuga",
         registro: "Leticia Moreno, Diego Ruella",
