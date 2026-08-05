@@ -817,6 +817,45 @@
       color: #fff;
     }
 
+    /* GRAVITY CURSOR */
+    .cursor {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--accent);
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%, -50%);
+      transition: transform 0.18s ease, width 0.3s, height 0.3s, background 0.3s;
+      mix-blend-mode: difference;
+    }
+
+    .cursor--hover {
+      width: 36px;
+      height: 36px;
+      background: var(--turquesa);
+    }
+
+    .cursor-line {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 1px;
+      background: var(--accent);
+      pointer-events: none;
+      z-index: 9998;
+      transform-origin: top left;
+      opacity: 0.4;
+      mix-blend-mode: difference;
+    }
+
+    @media (pointer: coarse) {
+      .cursor, .cursor-line { display: none; }
+    }
+
     /* BACK TO TOP */
     .back-to-top {
       position: fixed;
@@ -970,6 +1009,10 @@
   </style>
 </head>
 <body data-theme="light">
+
+  <!-- GRAVITY CURSOR -->
+  <div class="cursor-line" id="cursor-line"></div>
+  <div class="cursor" id="cursor"></div>
 
   <!-- NAV -->
   <nav class="site-nav">
@@ -1446,6 +1489,21 @@
     });
     backToTop.addEventListener("click", () => {
       window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    // Gravity cursor
+    const cursorDot = document.getElementById("cursor");
+    const cursorLine = document.getElementById("cursor-line");
+    window.addEventListener("mousemove", (e) => {
+      const x = e.clientX;
+      const y = e.clientY;
+      cursorDot.style.transform = `translate(${x}px, ${y}px) translate(-50%, -50%)`;
+      cursorLine.style.left = `${x}px`;
+      cursorLine.style.height = `${y}px`;
+    });
+    window.addEventListener("mouseover", (e) => {
+      const interactive = e.target.closest("a, button, input, textarea");
+      cursorDot.classList.toggle("cursor--hover", !!interactive);
     });
   </script>
 </body>
