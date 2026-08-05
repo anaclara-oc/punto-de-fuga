@@ -17,7 +17,7 @@ window.PDF_DATA = {
   },
 
   somos: {
-    seccion: "El colectivo",
+    seccion: "Colectivo",
     titulo: "somos.",
     intro: "Dentro del colectivo coexisten diversidad de disciplinas y formaciones que aportan desde la singularidad de cada una, colaborando en el entramado y la potencia de la grupalidad. La identidad y sus múltiples intersecciones es un tema que nos atraviesa y que decidimos poner en juego a la hora de la creación",
     integrantes: [
