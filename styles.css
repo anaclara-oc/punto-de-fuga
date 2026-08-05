@@ -1092,7 +1092,6 @@ section {
   border-bottom: 1px solid var(--line-soft);
   padding: 24px;
   position: relative;
-  cursor: pointer;
   transition: background 0.3s;
   display: flex;
   flex-direction: column;
@@ -1125,6 +1124,7 @@ section {
   font-size: clamp(20px, 1.8vw, 26px);
   letter-spacing: -0.02em;
   line-height: 1.05;
+  cursor: pointer;
 }
 
 .integrante__name span {
@@ -1840,9 +1840,6 @@ body[data-theme="magenta"] {
   .modal-overlay {
     padding: 24px 20px;
   }
-  .modal__carousel {
-    max-height: none;
-  }
 
   /* Contacto */
   .contacto {
@@ -1962,62 +1959,6 @@ body[data-theme="magenta"] {
   background: var(--accent);
   color: var(--bg);
 }
-
-.modal__carousel {
-  position: relative;
-  width: 100%;
-  background: #0a0a0a;
-  overflow: hidden;
-  flex-shrink: 0;
-}
-
-.modal__photo {
-  display: block;
-  width: 100%;
-  height: auto;
-  max-height: 65vh;
-  object-fit: contain;
-  object-position: center;
-}
-
-.modal__photo-empty {
-  width: 100%;
-  height: 100%;
-  background: repeating-linear-gradient(
-    90deg,
-    var(--line-soft) 0,
-    var(--line-soft) 1px,
-    transparent 1px,
-    transparent 8px
-  );
-}
-
-.modal__arrow {
-  position: absolute;
-  bottom: 12px;
-  transform: none;
-  background: transparent;
-  border: 1.5px solid #fff;
-  color: #fff;
-  font-family: var(--mono);
-  font-size: 16px;
-  width: 38px;
-  height: 38px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  z-index: 5;
-  transition: background 0.2s, color 0.2s;
-}
-
-.modal__arrow:hover {
-  background: #fff;
-  color: #000;
-}
-
-.modal__arrow--prev { left: 12px; }
-.modal__arrow--next { right: 12px; }
 
 .modal__info {
   padding: 28px;

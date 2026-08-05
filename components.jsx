@@ -333,21 +333,7 @@ function CuerpoTexto() {
 /* ─────────────  Somos  ───────────── */
 function IntegranteModal({ item, onClose }) {
   const nombre = item.nombre ?? item;
-  const fotos = item.fotos ?? (item.foto ? [item.foto] : []);
   const bio = item.bio ?? null;
-  const [idx, setIdx] = useState(0);
-  const touchX = React.useRef(null);
-
-  const next = () => setIdx(i => (i + 1) % fotos.length);
-  const prev = () => setIdx(i => (i - 1 + fotos.length) % fotos.length);
-
-  const onTouchStart = (e) => { touchX.current = e.touches[0].clientX; };
-  const onTouchEnd = (e) => {
-    if (touchX.current === null || fotos.length < 2) return;
-    const dx = e.changedTouches[0].clientX - touchX.current;
-    if (Math.abs(dx) > 30) dx < 0 ? next() : prev();
-    touchX.current = null;
-  };
 
   React.useEffect(() => {
     const onKey = (e) => { if (e.key === "Escape") onClose(); };
@@ -364,28 +350,10 @@ function IntegranteModal({ item, onClose }) {
       <div className="modal" onClick={e => e.stopPropagation()}>
         <button className="modal__close" onClick={onClose}>✕</button>
 
-        <div
-          className="modal__carousel"
-          onTouchStart={fotos.length > 1 ? onTouchStart : undefined}
-          onTouchEnd={fotos.length > 1 ? onTouchEnd : undefined}
-        >
-          {fotos[idx]
-            ? <img src={fotos[idx]} alt={nombre} className="modal__photo" />
-            : <div className="modal__photo-empty" />
-          }
-          {fotos.length > 1 && (
-            <>
-              <button className="modal__arrow modal__arrow--prev" onClick={prev}>←</button>
-              <button className="modal__arrow modal__arrow--next" onClick={next}>→</button>
-            </>
-          )}
+        <div className="modal__info">
+          <h3 className="modal__name">{nombre}</h3>
+          {bio && <p className="modal__bio">{bio}</p>}
         </div>
-
-        {bio && (
-          <div className="modal__info">
-            <p className="modal__bio">{bio}</p>
-          </div>
-        )}
       </div>
     </div>,
     document.body
@@ -396,13 +364,42 @@ function Integrante({ item, onOpen }) {
   const nombre = item.nombre ?? item;
   const fotos = item.fotos ?? (item.foto ? [item.foto] : []);
   const partes = nombre.split(" ");
+  const [idx, setIdx] = useState(0);
+  const touchX = React.useRef(null);
+
+  const next = () => setIdx(i => (i + 1) % fotos.length);
+  const prev = () => setIdx(i => (i - 1 + fotos.length) % fotos.length);
+
+  const onTouchStart = (e) => { touchX.current = e.touches[0].clientX; };
+  const onTouchEnd = (e) => {
+    if (touchX.current === null || fotos.length < 2) return;
+    const dx = e.changedTouches[0].clientX - touchX.current;
+    if (Math.abs(dx) > 30) dx < 0 ? next() : prev();
+    touchX.current = null;
+  };
 
   return (
-    <div className="integrante" onClick={onOpen}>
-      <div className="integrante__avatar">
-        {fotos[0] && <img src={fotos[0]} alt={nombre} />}
+    <div className="integrante">
+      <div
+        className="integrante__avatar"
+        onTouchStart={fotos.length > 1 ? onTouchStart : undefined}
+        onTouchEnd={fotos.length > 1 ? onTouchEnd : undefined}
+      >
+        {fotos[idx] && <img src={fotos[idx]} alt={nombre} />}
+        {fotos.length > 1 && (
+          <div className="integrante__dots">
+            {fotos.map((_, i) => (
+              <button
+                key={i}
+                className={"integrante__dot" + (i === idx ? " is-active" : "")}
+                onClick={() => setIdx(i)}
+                aria-label={`Foto ${i + 1} de ${nombre}`}
+              />
+            ))}
+          </div>
+        )}
       </div>
-      <div className="integrante__name">
+      <div className="integrante__name" onClick={onOpen}>
         <span>{partes[0]}</span>
         <span>{partes.slice(1).join(" ")}</span>
         <span className="integrante__hint">conocer →</span>
