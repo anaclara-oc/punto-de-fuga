@@ -1825,17 +1825,6 @@ body[data-theme="magenta"] {
     margin-top: 12px;
   }
 
-  /* Modal integrante */
-  .modal-overlay {
-    padding: 16px 12px;
-  }
-  .modal__info {
-    padding: 20px;
-  }
-  .modal__bio {
-    line-height: 1.45;
-  }
-
   /* Contacto */
   .contacto {
     padding: 80px 20px 40px;
@@ -1988,11 +1977,20 @@ body[data-theme="magenta"] {
 
 .modal__bio {
   font-family: var(--display);
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 400;
-  line-height: 1.7;
+  line-height: 1.5;
   color: var(--accent);
   margin: 0;
+}
+
+@media (max-width: 640px) {
+  .modal-overlay {
+    padding: 16px 12px;
+  }
+  .modal__info {
+    padding: 20px;
+  }
 }
 
 /* Touch targets — siempre 44px mínimo */
