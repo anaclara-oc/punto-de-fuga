@@ -50,8 +50,8 @@ function Nav() {
   const [menuOpen, setMenuOpen] = useState(false);
   useEffect(() => {
     const onScroll = () => {
-      // Aparece el fondo cuando salimos del hero (~70vh)
-      setScrolled(window.scrollY > window.innerHeight * 0.7);
+      // Aparece el fondo apenas se hace scroll, para no solaparse con el hero
+      setScrolled(window.scrollY > 10);
     };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -325,6 +325,7 @@ function CuerpoTexto() {
       <div className="cuerpo-texto__text">
         <h3>{D.cuerpo.titulo.split("\n").map((line, i) => i === 0 ? line : [<br key={i}/>, line])}</h3>
         {D.cuerpo.parrafos.map((p, i) => <p key={i}>{p}</p>)}
+        <div className="cuerpo-texto__line"></div>
       </div>
     </section>
   );
