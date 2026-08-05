@@ -424,6 +424,14 @@
       text-transform: uppercase;
     }
 
+    .video-card__thumb--yt iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
     .video-card__thumb--local {
       cursor: pointer;
       aspect-ratio: unset;
@@ -1217,6 +1225,11 @@
       }
 
       // Video gallery
+      const ytId = (url) => {
+        const m = url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/))([\w-]{11})/);
+        return m ? m[1] : null;
+      };
+
       if (a.videos && a.videos.length) {
         document.getElementById("video-section").style.display = "";
         const videoGrid = document.getElementById("video-grid");
@@ -1232,14 +1245,14 @@
               + '<span class="video-card__label">' + (v.label || '') + '</span>'
               + '</div>';
           } else {
-            // URL externa (YouTube, Vimeo, etc.)
-            return '<a class="video-card" href="' + v.url + '" target="_blank" rel="noopener">'
-              + '<div class="video-card__thumb">'
+            // URL externa (YouTube, Vimeo, etc.) — se reproduce embebido al hacer click
+            return '<div class="video-card" data-yt-url="' + v.url + '">'
+              + '<div class="video-card__thumb video-card__thumb--yt">'
               + (v.thumb ? '<img src="' + v.thumb + '" alt="' + (v.label || a.title) + '" />' : '')
               + '<div class="video-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>'
               + '</div>'
               + '<span class="video-card__label">' + (v.label || a.title) + '</span>'
-              + '</a>';
+              + '</div>';
           }
         }).join("");
 
@@ -1251,6 +1264,18 @@
             vid.paused ? vid.play() : vid.pause();
             card.classList.toggle("is-playing", !vid.paused);
           });
+        });
+
+        // Click en video externo (YouTube): reemplaza la miniatura por el reproductor embebido
+        videoGrid.querySelectorAll("[data-yt-url]").forEach(card => {
+          card.addEventListener("click", () => {
+            const id = ytId(card.dataset.ytUrl);
+            const thumb = card.querySelector(".video-card__thumb");
+            if (!id) { window.open(card.dataset.ytUrl, "_blank", "noopener"); return; }
+            thumb.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0"'
+              + ' title="' + (card.querySelector(".video-card__label")?.textContent || "") + '"'
+              + ' frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+          }, { once: true });
         });
       }
 
