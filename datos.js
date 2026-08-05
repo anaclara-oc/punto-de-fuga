@@ -42,7 +42,7 @@ window.PDF_DATA = {
   },
 
   accionesMeta: {
-    num: "Acciones artísticas",
+    num: "Acciones",
     titulo: "| obras | performances | intervenciones | exploraciones",
   },
 
