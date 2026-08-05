@@ -320,7 +320,7 @@ function CuerpoTexto() {
   return (
     <section className="cuerpo-texto reveal">
       <div className="cuerpo-texto__media">
-        <div className="cuerpo-texto__media-stripes" />
+        <img src="assets/metodologia.jpg" alt="Cuerpo suspendido en danza aérea con arnés" />
       </div>
       <div className="cuerpo-texto__text">
         <h3>{D.cuerpo.titulo.split("\n").map((line, i) => i === 0 ? line : [<br key={i}/>, line])}</h3>
