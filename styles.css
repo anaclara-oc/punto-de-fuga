@@ -1004,7 +1004,7 @@ section {
   font-size: 15px;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--rosa);
   margin-bottom: 24px;
 }
 
