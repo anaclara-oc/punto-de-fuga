@@ -77,7 +77,7 @@ video {
 }
 .label {
   font-family: var(--mono);
-  font-size: 12px;
+  font-size: 15px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--muted);
@@ -262,10 +262,14 @@ section {
 
 .section-head__num {
   font-family: var(--mono);
-  font-size: 12px;
+  font-size: 15px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--muted);
+}
+
+.acciones .section-head__num {
+  color: var(--turquesa);
 }
 
 .section-head__title {
@@ -1001,7 +1005,7 @@ section {
 
 .cuerpo-texto__text h3 {
   font-family: var(--mono);
-  font-size: 12px;
+  font-size: 15px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--rosa);
@@ -1313,6 +1317,10 @@ section {
 }
 
 /* ── Contacto ──────────────────────────────────────── */
+
+.contacto .label {
+  color: var(--azul);
+}
 
 .contacto {
   border-top: 1px solid var(--fg);
