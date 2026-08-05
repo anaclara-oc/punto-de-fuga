@@ -64,7 +64,7 @@ window.PDF_DATA = {
         produccion: "Punto de Fuga",
         registro: "Reinaldo Altamirano",
         disenoGrafico: "Anaclara Oyenart",
-        montaje: ["Elisa Acosta", "Diego Ruella", "Leticia Moreno", "Stella Peña"],
+        montaje: ["Diego Ruella", "Elisa Acosta", "Leticia Moreno", "Stella Peña"],
         realizacion: "El proyecto se desarrolló durante los meses de febrero-mayo de 2026",
       },
       galeria: [
@@ -229,7 +229,7 @@ window.PDF_DATA = {
       descripcion: "Una intervención de danza aérea con arnés en los paisajes naturales de la costa este uruguaya. Cuerpos suspendidos entre el bosque, el arroyo y las grutas de Punta Ballena, en un diálogo entre gravedad, naturaleza y movimiento.",
       ficha: {
         cocreacion: "Punto de Fuga",
-        elenco: ["Anaclara Oyenart", "Florencia Mazzucco", "Elisa Acosta", "Agustina Leiva", "Stella Peña", "Leticia Moreno"],
+        elenco: ["Agustina Leiva", "Anaclara Oyenart", "Elisa Acosta", "Florencia Mazzucco", "Leticia Moreno", "Stella Peña"],
         produccion: "Punto de Fuga",
         vestuario: "Punto de Fuga",
         registro: "Leticia Moreno, Diego Ruella",
@@ -258,7 +258,7 @@ window.PDF_DATA = {
       ficha: {
         direccion: "Diego Ruella",
         cocreacion: "Punto de Fuga",
-        elenco: ["Anaclara Oyenart", "Florencia Mazzucco", "Elisa Acosta", "Agustina Leiva", "Stella Peña", "Leticia Moreno"],
+        elenco: ["Agustina Leiva", "Anaclara Oyenart", "Elisa Acosta", "Florencia Mazzucco", "Leticia Moreno", "Stella Peña"],
         produccion: "Punto de Fuga",
         vestuario: "Agustina Leiva",
         textos: "Florencia Mazzucco",
@@ -300,7 +300,7 @@ window.PDF_DATA = {
         direccion: "Diego Ruella",
         cocreacion: "Punto de Fuga",
         colaboracion: "Las Selvas",
-        elenco: ["Anaclara Oyenart", "Florencia Mazzucco", "Elisa Acosta", "Agustina Leiva", "Stella Peña", "Leticia Moreno"],
+        elenco: ["Agustina Leiva", "Anaclara Oyenart", "Elisa Acosta", "Florencia Mazzucco", "Leticia Moreno", "Stella Peña"],
         produccion: "Cirqueras Feministas",
         vestuario: "Punto de Fuga",
         duracion: "20 minutos",
@@ -333,7 +333,7 @@ window.PDF_DATA = {
       ficha: {
         direccion: "Diego Ruella",
         cocreacion: "Punto de Fuga",
-        elenco: ["Anaclara Oyenart", "Florencia Mazzucco", "Elisa Acosta", "Agustina Leiva", "Stella Peña", "Leticia Moreno"],
+        elenco: ["Agustina Leiva", "Anaclara Oyenart", "Elisa Acosta", "Florencia Mazzucco", "Leticia Moreno", "Stella Peña"],
         textos: "Florencia Mazzucco",
         produccion: "Punto de Fuga",
         luces: "Diego Ruella",
@@ -369,8 +369,8 @@ window.PDF_DATA = {
       descripcion: "Proyecto apoyado por el Fondo Municipal de Cultura Comunitaria del Municipio C.<br><br>En el marco de Marzo, mes de la reflexión y visibilización de la igualdad de género y los derechos de las mujeres, desarrollamos una jornada abierta que combinó un taller gratuito de danza aérea y una intervención artística en la Plaza Las Pioneras. A través del movimiento y la ocupación poética del espacio público, la propuesta buscó generar instancias de encuentro, visibilización y reflexión colectiva en torno a los cuerpos, los territorios y las luchas feministas.",
       ficha: {
         direccion: "Diego Ruella",
-        elenco: ["Anaclara Oyenart", "Florencia Mazzucco", "Elisa Acosta", "Agustina Leiva", "Stella Peña", "Leticia Moreno"],
-        montaje: ["Elisa Acosta", "Diego Ruella", "Leticia Moreno"],
+        elenco: ["Agustina Leiva", "Anaclara Oyenart", "Elisa Acosta", "Florencia Mazzucco", "Leticia Moreno", "Stella Peña"],
+        montaje: ["Diego Ruella", "Elisa Acosta", "Leticia Moreno"],
         produccion: "Victoria Beretta",
         disenoGrafico: "Anaclara Oyenart",
         registro: "Ana Micenmacher",
@@ -411,7 +411,7 @@ window.PDF_DATA = {
       ficha: {
         direccion: "Diego Ruella",
         cocreacion: "Punto de Fuga",
-        elenco: ["Anaclara Oyenart", "Florencia Mazzucco", "Elisa Acosta", "Victoria Beretta", "Agustina Leiva", "Stella Peña", "Leticia Moreno"],
+        elenco: ["Agustina Leiva", "Anaclara Oyenart", "Elisa Acosta", "Florencia Mazzucco", "Leticia Moreno", "Stella Peña", "Victoria Beretta"],
         produccion: "Punto de Fuga",
         luces: "Fernanda Castillo",
         disenoGrafico: "Anaclara Oyenart",
@@ -484,7 +484,7 @@ window.PDF_DATA = {
       ficha: {
         direccion: "Diego Ruella",
         cocreacion: "Punto de Fuga",
-        elenco: ["Anaclara Oyenart", "Florencia Mazzucco", "Elisa Acosta", "Agustina Rodriguez", "Victoria Berretta"],
+        elenco: ["Agustina Rodriguez", "Anaclara Oyenart", "Elisa Acosta", "Florencia Mazzucco", "Victoria Berretta"],
         produccion: "Punto de Fuga",
         disenoGrafico: "Anaclara Oyenart",
         luces: "Fernanda Castillo",
@@ -527,7 +527,7 @@ window.PDF_DATA = {
       ficha: {
         direccion: "Diego Ruella",
         cocreacion: "Punto de Fuga",
-        elenco: ["Anaclara Oyenart", "Florencia Mazzucco", "Elisa Acosta", "Agustina Rodriguez", "Victoria Berretta"],
+        elenco: ["Agustina Rodriguez", "Anaclara Oyenart", "Elisa Acosta", "Florencia Mazzucco", "Victoria Berretta"],
         produccion: "Punto de Fuga",
         luces: "Diego Ruella",
         duracion: "30 minutos",
