@@ -188,9 +188,6 @@ function ProximoEvento() {
             </a>
           </div>
         </div>
-        <a className="evento__cta" href={e.link} target="_blank" rel="noopener">
-          Más información <span>↗</span>
-        </a>
       </div>
     </section>
   );
