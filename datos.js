@@ -612,7 +612,7 @@ window.PDF_DATA = {
   ],
 
   footer: {
-    copyright: "© 2022–2026 · Colectivo Punto de Fuga",
+    copyright: "© 2022–2026 · Colectivo Punto de Fuga · Todos los derechos reservados",
   },
 
   contacto: {

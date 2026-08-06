@@ -1685,7 +1685,8 @@ a.evento__link:hover {
 /* ── Footer ────────────────────────────────────────── */
 
 .footer {
-  border-top: 1px solid var(--line-soft);
+  border-top: 1px solid var(--fg);
+  background: var(--turquesa);
   padding: 32px var(--gutter);
   display: flex;
   justify-content: space-between;
@@ -1694,7 +1695,7 @@ a.evento__link:hover {
   font-size: 12px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--fg);
   gap: 16px;
   flex-wrap: wrap;
 }
