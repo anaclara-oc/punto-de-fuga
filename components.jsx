@@ -184,7 +184,7 @@ function ProximoEvento() {
             aria-expanded={expanded}
             onClick={() => setExpanded((v) => !v)}
           >
-            {expanded ? "Ver menos" : "Ver más detalles"}
+            {expanded ? "Ver menos" : "Ver más detalles"} <span>{expanded ? "↑" : "↓"}</span>
           </button>
         )}
         <div className="evento__detalles">
