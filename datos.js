@@ -45,9 +45,11 @@ window.PDF_DATA = {
     label: "Próximo evento",
     titulo: "FIC 2026 · 7ma edición",
     subtitulo: "Punto de Fuga presenta CAPAS",
+    imagen: "assets/acciones/capas/capas-hero.webp",
     fecha: "Sábado 26 de septiembre · 20:30 hs",
     lugar: "Teatro Solís · Sala Zavala Muniz",
-    entradas: "Tickantel",
+    entradasLabel: "Comprar entradas",
+    entradasUrl: "https://tickantel.com.uy/inicio/espectaculo/40021226/espectaculo/Capas%20-%20FIC?32",
     link: "https://www.ficuruguay.com",
   },
 
@@ -254,6 +256,9 @@ window.PDF_DATA = {
           seccion: "Grutas y Punta Ballena",
           fotos: Array.from({ length: 22 }, (_, i) => `assets/acciones/fugas-al-este/grutas/grutas-${String(i + 1).padStart(2, "0")}.webp`),
         },
+      ],
+      videos: [
+        { url: "https://youtu.be/tOmtwSlX590", thumb: "https://img.youtube.com/vi/tOmtwSlX590/hqdefault.jpg", label: "Registro audiovisual" },
       ],
     },
     {

@@ -187,26 +187,35 @@ function ProximoEvento() {
   if (!e) return null;
   return (
     <section className="evento reveal">
-      <div className="evento__label">{e.label}</div>
-      <h2 className="evento__titulo">{e.titulo}</h2>
-      <p className="evento__sub">{e.subtitulo}</p>
-      <div className="evento__detalles">
-        <div>
-          <div className="evento__detalle-label">Fecha</div>
-          <div className="evento__detalle-valor">{e.fecha}</div>
+      {e.imagen && (
+        <div className="evento__media">
+          <img src={e.imagen} alt={e.titulo} />
         </div>
-        <div>
-          <div className="evento__detalle-label">Lugar</div>
-          <div className="evento__detalle-valor">{e.lugar}</div>
+      )}
+      <div className="evento__content">
+        <div className="evento__label">{e.label}</div>
+        <h2 className="evento__titulo">{e.titulo}</h2>
+        <p className="evento__sub">{e.subtitulo}</p>
+        <div className="evento__detalles">
+          <div>
+            <div className="evento__detalle-label">Fecha</div>
+            <div className="evento__detalle-valor">{e.fecha}</div>
+          </div>
+          <div>
+            <div className="evento__detalle-label">Lugar</div>
+            <div className="evento__detalle-valor">{e.lugar}</div>
+          </div>
+          <div>
+            <div className="evento__detalle-label">Entradas</div>
+            <a className="evento__detalle-valor evento__link" href={e.entradasUrl} target="_blank" rel="noopener">
+              {e.entradasLabel} <span>↗</span>
+            </a>
+          </div>
         </div>
-        <div>
-          <div className="evento__detalle-label">Entradas</div>
-          <div className="evento__detalle-valor">{e.entradas}</div>
-        </div>
+        <a className="evento__cta" href={e.link} target="_blank" rel="noopener">
+          Más información <span>↗</span>
+        </a>
       </div>
-      <a className="evento__cta" href={e.link} target="_blank" rel="noopener">
-        Más información <span>↗</span>
-      </a>
     </section>
   );
 }
