@@ -50,7 +50,7 @@ window.PDF_DATA = {
       "Seis mujeres en escena se desplazan e interactúan entre sí, con el público y con el espacio arquitectónico, transformándolo en un territorio compartido.",
       "Proyectan fragmentos de sus imágenes; sus rostros se entrelazan, se iluminan mutuamente y, mediante el uso de software interactivo, construyen una trama de sostén, de encuentro, de imaginación de otros mundos posibles.",
     ],
-    imagen: "assets/acciones/capas/capas-hero.webp",
+    imagen: "assets/acciones/fic-proximo-evento.jpg",
     fecha: "Sábado 26 de septiembre · 20:30 hs",
     lugar: "Teatro Solís · Sala Zavala Muniz",
     entradasLabel: "Comprar entradas",

@@ -533,7 +533,7 @@ section {
   border-top: 1px solid var(--fg);
   scroll-margin-top: 72px;
   display: grid;
-  grid-template-columns: 0.8fr 1.2fr;
+  grid-template-columns: 0.55fr 1.45fr;
   gap: var(--gutter);
   align-items: stretch;
 }
@@ -546,7 +546,7 @@ section {
 .evento__media img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
 }
 
@@ -578,7 +578,7 @@ section {
   font-family: var(--mono);
   font-size: 14px;
   line-height: 1.6;
-  max-width: 56ch;
+  max-width: 80ch;
 }
 
 .evento__parrafo + .evento__parrafo {
