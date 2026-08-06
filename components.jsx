@@ -155,6 +155,7 @@ function ImgPortada({ accion, className, alt }) {
 /* ─────────────  Próximo evento  ───────────── */
 function ProximoEvento() {
   const e = D.proximoEvento;
+  const [expanded, setExpanded] = useState(false);
   if (!e) return null;
   return (
     <section className="evento reveal">
@@ -169,9 +170,23 @@ function ProximoEvento() {
         </div>
       )}
       <div className="evento__body">
-        {e.parrafos && e.parrafos.map((p, i) => (
-          <p key={i} className="evento__parrafo">{p}</p>
-        ))}
+        {e.parrafos && (
+          <div className={"evento__descripcion" + (expanded ? " is-expanded" : "")}>
+            {e.parrafos.map((p, i) => (
+              <p key={i} className="evento__parrafo">{p}</p>
+            ))}
+          </div>
+        )}
+        {e.parrafos && e.parrafos.length > 0 && (
+          <button
+            type="button"
+            className="evento__toggle"
+            aria-expanded={expanded}
+            onClick={() => setExpanded((v) => !v)}
+          >
+            {expanded ? "Ver menos" : "Ver más detalles"}
+          </button>
+        )}
         <div className="evento__detalles">
           <div>
             <div className="evento__detalle-label">Fecha</div>
