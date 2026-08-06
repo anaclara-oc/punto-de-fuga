@@ -524,6 +524,92 @@ section {
   }
 }
 
+/* ── Próximo evento ─────────────────────────────────── */
+
+.evento {
+  background: var(--turquesa);
+  color: var(--fg);
+  padding: 80px var(--gutter);
+  border-top: 1px solid var(--fg);
+  scroll-margin-top: 72px;
+}
+
+.evento__label {
+  font-family: var(--mono);
+  font-size: 15px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.evento__titulo {
+  font-family: var(--display);
+  font-weight: 300;
+  font-size: clamp(32px, 5vw, 56px);
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  margin-bottom: 8px;
+}
+
+.evento__sub {
+  font-family: var(--display);
+  font-weight: 300;
+  font-size: clamp(18px, 2vw, 24px);
+  margin-bottom: 40px;
+}
+
+.evento__detalles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding-top: 24px;
+  margin-bottom: 40px;
+  border-top: 1px solid rgba(10, 10, 10, 0.2);
+}
+
+.evento__detalle-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.6;
+  margin-bottom: 6px;
+}
+
+.evento__detalle-valor {
+  font-family: var(--mono);
+  font-size: 15px;
+}
+
+.evento__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid var(--fg);
+  color: var(--fg);
+  padding: 14px 24px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.evento__cta:hover {
+  background: var(--fg);
+  color: var(--turquesa);
+}
+
+@media (max-width: 640px) {
+  .evento {
+    padding: 56px 20px;
+  }
+  .evento__detalles {
+    gap: 24px;
+  }
+}
+
 /* ── Acciones (cronología) ─────────────────────────── */
 
 .acciones {

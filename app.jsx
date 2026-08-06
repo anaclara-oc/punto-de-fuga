@@ -21,6 +21,7 @@ function App() {
       <Nav />
       <Hero />
       <Manifiesto />
+      <ProximoEvento />
       <Acciones />
       <CuerpoTexto />
       <Somos />

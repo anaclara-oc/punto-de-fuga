@@ -181,6 +181,36 @@ function ImgPortada({ accion, className, alt }) {
   );
 }
 
+/* ─────────────  Próximo evento  ───────────── */
+function ProximoEvento() {
+  const e = D.proximoEvento;
+  if (!e) return null;
+  return (
+    <section className="evento reveal">
+      <div className="evento__label">{e.label}</div>
+      <h2 className="evento__titulo">{e.titulo}</h2>
+      <p className="evento__sub">{e.subtitulo}</p>
+      <div className="evento__detalles">
+        <div>
+          <div className="evento__detalle-label">Fecha</div>
+          <div className="evento__detalle-valor">{e.fecha}</div>
+        </div>
+        <div>
+          <div className="evento__detalle-label">Lugar</div>
+          <div className="evento__detalle-valor">{e.lugar}</div>
+        </div>
+        <div>
+          <div className="evento__detalle-label">Entradas</div>
+          <div className="evento__detalle-valor">{e.entradas}</div>
+        </div>
+      </div>
+      <a className="evento__cta" href={e.link} target="_blank" rel="noopener">
+        Más información <span>↗</span>
+      </a>
+    </section>
+  );
+}
+
 function Acciones() {
   const [activeIdx, setActiveIdx] = useState(0);
   const items = D.acciones;
@@ -673,6 +703,6 @@ function useReveal() {
 }
 
 Object.assign(window, {
-  GravityCursor, Nav, Hero, Manifiesto, Acciones, CuerpoTexto,
+  GravityCursor, Nav, Hero, Manifiesto, ProximoEvento, Acciones, CuerpoTexto,
   Somos, Contacto, Footer, BackToTop, useReveal,
 });

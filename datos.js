@@ -41,6 +41,16 @@ window.PDF_DATA = {
     ],
   },
 
+  proximoEvento: {
+    label: "Próximo evento",
+    titulo: "FIC 2026 · 7ma edición",
+    subtitulo: "Punto de Fuga presenta CAPAS",
+    fecha: "Sábado 26 de septiembre · 20:30 hs",
+    lugar: "Teatro Solís · Sala Zavala Muniz",
+    entradas: "Tickantel",
+    link: "https://www.ficuruguay.com",
+  },
+
   accionesMeta: {
     num: "Acciones",
     titulo: "| obras | performances | intervenciones | exploraciones",
