@@ -529,7 +529,7 @@ section {
 .evento {
   background: var(--turquesa);
   color: var(--fg);
-  padding: 80px var(--gutter);
+  padding: 48px var(--gutter);
   border-top: 1px solid var(--fg);
   scroll-margin-top: 72px;
   display: grid;
@@ -537,7 +537,8 @@ section {
   grid-template-areas:
     "media intro"
     "media body";
-  gap: var(--gutter);
+  column-gap: var(--gutter);
+  row-gap: 16px;
   align-items: stretch;
 }
 
@@ -567,7 +568,7 @@ section {
   font-size: 15px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  margin-bottom: 16px;
+  margin-bottom: 10px;
 }
 
 .evento__titulo {
@@ -583,30 +584,30 @@ section {
   font-family: var(--display);
   font-weight: 300;
   font-size: clamp(18px, 2vw, 24px);
-  margin-bottom: 24px;
+  margin-bottom: 12px;
 }
 
 .evento__parrafo {
   font-family: var(--mono);
   font-size: 14px;
-  line-height: 1.6;
+  line-height: 1.5;
   max-width: 80ch;
 }
 
 .evento__parrafo + .evento__parrafo {
-  margin-top: 1em;
+  margin-top: 0.6em;
 }
 
 .evento__parrafo:last-of-type {
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 .evento__detalles {
   display: flex;
   flex-wrap: wrap;
-  gap: 40px;
-  padding-top: 24px;
-  margin-bottom: 40px;
+  gap: 32px;
+  padding-top: 16px;
+  margin-bottom: 20px;
   border-top: 1px solid rgba(10, 10, 10, 0.2);
 }
 
@@ -672,7 +673,7 @@ a.evento__link:hover {
 
 @media (max-width: 640px) {
   .evento {
-    padding: 56px 20px;
+    padding: 36px 20px;
   }
   .evento__detalles {
     gap: 24px;
