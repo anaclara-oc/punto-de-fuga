@@ -283,6 +283,10 @@
       gap: 8px;
     }
 
+    .video-grid--single {
+      grid-template-columns: 1fr;
+    }
+
     .video-card {
       display: flex;
       flex-direction: column;
@@ -1154,7 +1158,11 @@
       if (a.videos && a.videos.length) {
         document.getElementById("video-section").style.display = "";
         const videoGrid = document.getElementById("video-grid");
-        if (a.videos.length === 1) videoGrid.classList.add("video-grid--single");
+        const hasLocal = a.videos.some(v => v.src);
+        const hasRemote = a.videos.some(v => !v.src);
+        if (a.videos.length === 1 || (hasLocal && hasRemote)) {
+          videoGrid.classList.add("video-grid--single");
+        }
         videoGrid.innerHTML = a.videos.map(v => {
           if (v.src) {
             // Video local
