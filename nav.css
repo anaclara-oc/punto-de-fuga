@@ -161,7 +161,15 @@ body[data-theme="magenta"] .nav--scrolled .nav__logo {
     padding: 4px 0;
   }
   .nav__menu a:not(:first-child)::before {
-    display: none;
+    content: "";
+    position: absolute;
+    left: -6px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 12px;
+    background: currentColor;
+    opacity: 0.4;
   }
 }
 
@@ -170,6 +178,9 @@ body[data-theme="magenta"] .nav--scrolled .nav__logo {
     gap: 8px;
     font-size: 10px;
     letter-spacing: 0.02em;
+  }
+  .nav__menu a:not(:first-child)::before {
+    left: -4px;
   }
 }
 
