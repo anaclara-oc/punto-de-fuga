@@ -110,7 +110,16 @@
     @media (max-width: 880px) {
       .nav-links { gap: 0; }
       .nav-links a { padding: 4px 9px; font-size: 14px; letter-spacing: 0.07em; }
-      .nav-links li:not(:first-child) { border-left: 1px solid currentColor; }
+      .nav-links li:not(:first-child) a::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 1px;
+        height: 12px;
+        background: currentColor;
+      }
     }
 
     @media (max-width: 640px) {

@@ -1708,8 +1708,15 @@ body[data-theme="magenta"] {
   .nav__menu a {
     padding: 4px 9px;
   }
-  .nav__menu a:not(:first-child) {
-    border-left: 1px solid currentColor;
+  .nav__menu a:not(:first-child)::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 12px;
+    background: currentColor;
   }
   .nav__menu a:nth-child(n) {
     display: block;
