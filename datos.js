@@ -45,6 +45,11 @@ window.PDF_DATA = {
     label: "Próximo evento",
     titulo: "FIC 2026 · 7ma edición",
     subtitulo: "Punto de Fuga presenta CAPAS",
+    parrafos: [
+      "Capas es una performance site specific co-creada e interpretada por mujeres que exploran, desde la danza aérea, la iluminación escénica y el lenguaje audiovisual, la potencia de despojarse; despojarse de lo que cubre, de lo que pesa, de lo que históricamente se ha adherido al cuerpo como una segunda piel.",
+      "Seis mujeres en escena se desplazan e interactúan entre sí, con el público y con el espacio arquitectónico, transformándolo en un territorio compartido.",
+      "Proyectan fragmentos de sus imágenes; sus rostros se entrelazan, se iluminan mutuamente y, mediante el uso de software interactivo, construyen una trama de sostén, de encuentro, de imaginación de otros mundos posibles.",
+    ],
     imagen: "assets/acciones/capas/capas-hero.webp",
     fecha: "Sábado 26 de septiembre · 20:30 hs",
     lugar: "Teatro Solís · Sala Zavala Muniz",

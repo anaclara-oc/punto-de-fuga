@@ -535,11 +535,10 @@ section {
   display: grid;
   grid-template-columns: 0.8fr 1.2fr;
   gap: var(--gutter);
-  align-items: center;
+  align-items: stretch;
 }
 
 .evento__media {
-  aspect-ratio: 4 / 5;
   overflow: hidden;
   background: rgba(10, 10, 10, 0.1);
 }
@@ -572,6 +571,21 @@ section {
   font-family: var(--display);
   font-weight: 300;
   font-size: clamp(18px, 2vw, 24px);
+  margin-bottom: 24px;
+}
+
+.evento__parrafo {
+  font-family: var(--mono);
+  font-size: 14px;
+  line-height: 1.6;
+  max-width: 56ch;
+}
+
+.evento__parrafo + .evento__parrafo {
+  margin-top: 1em;
+}
+
+.evento__parrafo:last-of-type {
   margin-bottom: 40px;
 }
 
@@ -634,6 +648,7 @@ a.evento__link:hover {
     grid-template-columns: 1fr;
   }
   .evento__media {
+    aspect-ratio: 4 / 5;
     max-width: 320px;
   }
 }

@@ -196,6 +196,9 @@ function ProximoEvento() {
         <div className="evento__label">{e.label}</div>
         <h2 className="evento__titulo">{e.titulo}</h2>
         <p className="evento__sub">{e.subtitulo}</p>
+        {e.parrafos && e.parrafos.map((p, i) => (
+          <p key={i} className="evento__parrafo">{p}</p>
+        ))}
         <div className="evento__detalles">
           <div>
             <div className="evento__detalle-label">Fecha</div>
