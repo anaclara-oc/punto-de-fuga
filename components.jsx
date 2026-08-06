@@ -44,35 +44,6 @@ function GravityCursor() {
   );
 }
 
-/* ─────────────  Nav  ───────────── */
-function Nav() {
-  const [scrolled, setScrolled] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
-  useEffect(() => {
-    const onScroll = () => {
-      // Aparece el fondo apenas se hace scroll, para no solaparse con el hero
-      setScrolled(window.scrollY > 10);
-    };
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  return (
-    <nav className={"nav" + (scrolled ? " nav--scrolled" : "")}>
-      <a href="#top" className="nav__brand" aria-label="Punto de Fuga — Inicio">
-        <img src="assets/logo.svg" alt="Punto de Fuga" className="nav__logo" />
-      </a>
-      <div className={"nav__menu" + (menuOpen ? " is-open" : "")}>
-        <a href="#acciones" onClick={() => setMenuOpen(false)}>Acciones</a>
-        <a href="#somos" onClick={() => setMenuOpen(false)}>Somos</a>
-        <a href="#nos-interesa" onClick={() => setMenuOpen(false)}>Intereses</a>
-        <a href="#contacto" onClick={() => setMenuOpen(false)}>Contacto</a>
-      </div>
-    </nav>
-  );
-}
-
 /* ─────────────  Hero  ───────────── */
 function Hero({ bg }) {
   const videoRef = React.useRef(null);
@@ -717,6 +688,6 @@ function useReveal() {
 }
 
 Object.assign(window, {
-  GravityCursor, Nav, Hero, Manifiesto, ProximoEvento, Acciones, CuerpoTexto,
+  GravityCursor, Hero, Manifiesto, ProximoEvento, Acciones, CuerpoTexto,
   Somos, Contacto, Footer, BackToTop, useReveal,
 });

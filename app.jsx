@@ -18,7 +18,6 @@ function App() {
     <>
       <GravityCursor />
       <div className="bg-grid" />
-      <Nav />
       <Hero />
       <Manifiesto />
       <ProximoEvento />

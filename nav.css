@@ -1,0 +1,174 @@
+/* ============================================================
+   NAV — compartido entre index.html y accion.html
+   Única fuente de verdad para el header. No duplicar estas
+   reglas en styles.css ni en el <style> de accion.html.
+   ============================================================ */
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px var(--gutter);
+  color: #fff;
+  pointer-events: none;
+  transition: background 0.4s ease, backdrop-filter 0.4s ease,
+    color 0.4s ease, padding 0.3s ease, border-color 0.4s ease;
+  border-bottom: 1px solid transparent;
+  mix-blend-mode: difference;
+}
+
+.nav--scrolled {
+  mix-blend-mode: normal;
+  background: rgba(255, 255, 255, 0.78);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  backdrop-filter: blur(14px) saturate(140%);
+  border-bottom-color: var(--line-soft);
+  color: var(--fg);
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.nav--scrolled .nav__logo {
+  filter: none;
+  height: 48px;
+}
+
+body[data-theme="invert"] .nav--scrolled,
+body[data-theme="azul"] .nav--scrolled,
+body[data-theme="magenta"] .nav--scrolled {
+  background: rgba(10, 10, 10, 0.6);
+  color: #fff;
+}
+
+body[data-theme="invert"] .nav--scrolled .nav__logo,
+body[data-theme="azul"] .nav--scrolled .nav__logo,
+body[data-theme="magenta"] .nav--scrolled .nav__logo {
+  filter: invert(1);
+}
+
+.nav > * {
+  pointer-events: auto;
+}
+
+.nav__brand {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav__brand-mark {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.nav__logo {
+  display: block;
+  height: 72px;
+  width: auto;
+  /* Logo viene en negro; con mix-blend-mode: difference del nav
+     se invierte automáticamente sobre fondos oscuros.
+     Para asegurar contraste, lo forzamos a blanco vía filter. */
+  filter: invert(1);
+}
+
+.nav__menu {
+  display: flex;
+  gap: 48px;
+  font-family: var(--mono);
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.nav__menu a {
+  position: relative;
+  padding: 4px 0;
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav__menu a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 100%;
+  bottom: 0;
+  height: 1px;
+  background: currentColor;
+  transition: right 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.nav__menu a:hover::after {
+  right: 0;
+}
+
+@media (max-width: 880px) {
+  .nav {
+    padding: 14px 20px;
+  }
+  .nav__logo {
+    height: 52px;
+  }
+  .nav__menu {
+    gap: 0;
+    font-size: 14px;
+    letter-spacing: 0.07em;
+  }
+  .nav__menu a {
+    padding: 4px 9px;
+  }
+  .nav__menu a:not(:first-child)::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 12px;
+    background: currentColor;
+  }
+}
+
+@media (max-width: 640px) {
+  .nav {
+    padding: 12px 14px;
+  }
+  .nav__menu {
+    gap: 0;
+    font-size: 14px;
+    letter-spacing: 0.05em;
+  }
+  .nav__menu a {
+    padding: 4px 6px;
+  }
+}
+
+@media (max-width: 420px) {
+  .nav__menu {
+    gap: 0;
+    font-size: 12px;
+  }
+  .nav__menu a {
+    padding: 4px 5px;
+  }
+}
+
+@media (pointer: coarse) {
+  .nav__menu a {
+    padding: 8px 0;
+  }
+}

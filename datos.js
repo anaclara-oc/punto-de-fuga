@@ -242,7 +242,7 @@ window.PDF_DATA = {
       sub: "Intervención",
       tipo: "Intervención",
       lugar: "Grutas de Punta Ballena - Bosque y arroyo",
-      imagen: "assets/acciones/fugas-al-este/fugas-al-este_img-1.jpg",
+      imagen: "assets/acciones/fugas-al-este/portada.webp",
       descripcion: "Una intervención de danza aérea con arnés en los paisajes naturales de la costa este uruguaya. Cuerpos suspendidos entre el bosque, el arroyo y las grutas de Punta Ballena, en un diálogo entre gravedad, naturaleza y movimiento.",
       ficha: {
         cocreacion: "Punto de Fuga",
@@ -421,6 +421,7 @@ window.PDF_DATA = {
       ],
       videos: [
         { label: "Reel", src: "assets/acciones/29m-pioneras/graficas/reel_29M_final-crop.mp4" },
+        { url: "https://youtu.be/ziXLjs9cAw0", thumb: "https://img.youtube.com/vi/ziXLjs9cAw0/hqdefault.jpg", label: "Registro audiovisual" },
       ],
     },
     {

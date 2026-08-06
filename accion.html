@@ -7,6 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="nav.css?v=1" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -22,6 +23,8 @@
       --lila: #e6b3ec;
       --border: rgba(17,17,16,0.12);
       --border-mid: rgba(17,17,16,0.25);
+      --line-soft: rgba(10, 10, 10, 0.12);
+      --gutter: clamp(20px, 4vw, 56px);
       --nav-h: 108px;
       --max: 1200px;
       --pad: clamp(1.5rem, 5vw, 4rem);
@@ -38,98 +41,13 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* NAV */
-    .site-nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      background: var(--bg);
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 18px var(--pad);
-      z-index: 100;
-    }
-
+    /* NAV: ver nav.css (compartido con index.html) */
     @media (max-width: 880px) {
-      .site-nav { padding: 14px 20px; }
       :root { --nav-h: 80px; }
     }
 
     @media (max-width: 640px) {
-      .site-nav { padding: 12px 14px; }
       :root { --nav-h: 76px; }
-    }
-
-    .nav-logo {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      text-decoration: none;
-      color: var(--fg);
-    }
-
-    .nav-logo img { height: 72px; width: auto; }
-
-    @media (max-width: 880px) {
-      .nav-logo img { height: 52px; }
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 48px;
-      list-style: none;
-    }
-
-    .nav-links a {
-      position: relative;
-      font-family: var(--mono);
-      font-size: 14px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      text-decoration: none;
-      color: var(--fg-muted);
-      padding: 4px 0;
-      transition: color 0.2s;
-    }
-
-    .nav-links a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      right: 100%;
-      bottom: 0;
-      height: 1px;
-      background: currentColor;
-      transition: right 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
-    }
-
-    .nav-links a:hover { color: var(--fg); }
-    .nav-links a:hover::after { right: 0; }
-
-    @media (max-width: 880px) {
-      .nav-links { gap: 0; }
-      .nav-links a { padding: 4px 9px; font-size: 14px; letter-spacing: 0.07em; }
-      .nav-links li:not(:first-child) a::before {
-        content: "";
-        position: absolute;
-        left: 0;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 1px;
-        height: 12px;
-        background: currentColor;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .nav-links { gap: 0; }
-      .nav-links a { padding: 4px 6px; font-size: 14px; letter-spacing: 0.05em; }
-    }
-
-    @media (max-width: 420px) {
-      .nav-links { gap: 0; }
-      .nav-links a { padding: 4px 5px; font-size: 12px; }
     }
 
     /* HERO */
@@ -809,10 +727,12 @@
 
     @media (max-width: 768px) {
       .graficas-slide { flex: 0 0 calc(50% - 6px); }
+      .graficas-slide:only-child { flex: 0 0 100%; }
     }
 
     @media (max-width: 480px) {
       .graficas-slide { flex: 0 0 calc(50% - 6px); }
+      .graficas-slide:only-child { flex: 0 0 100%; }
     }
 
     /* FOOTER */
@@ -1042,18 +962,10 @@
   <div class="cursor-line" id="cursor-line"></div>
   <div class="cursor" id="cursor"></div>
 
-  <!-- NAV -->
-  <nav class="site-nav">
-    <a href="index.html" class="nav-logo">
-      <img src="assets/logo.svg" alt="Punto de Fuga" />
-    </a>
-    <ul class="nav-links">
-      <li><a href="index.html#acciones">Acciones</a></li>
-      <li><a href="index.html#somos">Somos</a></li>
-      <li><a href="index.html#nos-interesa">Intereses</a></li>
-      <li><a href="index.html#contacto">Contacto</a></li>
-    </ul>
-  </nav>
+  <!-- NAV: compartido con index.html, ver nav.js/nav.css -->
+  <script>window.NAV_STATIC = true;</script>
+  <div id="nav-mount"></div>
+  <script src="nav.js?v=1"></script>
 
 
   <!-- HERO -->
