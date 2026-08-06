@@ -534,11 +534,23 @@ section {
   scroll-margin-top: 72px;
   display: grid;
   grid-template-columns: 0.55fr 1.45fr;
+  grid-template-areas:
+    "media intro"
+    "media body";
   gap: var(--gutter);
   align-items: stretch;
 }
 
+.evento__intro {
+  grid-area: intro;
+}
+
+.evento__body {
+  grid-area: body;
+}
+
 .evento__media {
+  grid-area: media;
   overflow: hidden;
   background: rgba(10, 10, 10, 0.1);
 }
@@ -646,10 +658,15 @@ a.evento__link:hover {
 @media (max-width: 880px) {
   .evento {
     grid-template-columns: 1fr;
+    grid-template-areas:
+      "intro"
+      "media"
+      "body";
   }
   .evento__media {
     aspect-ratio: 4 / 5;
     max-width: 320px;
+    margin: 0 auto;
   }
 }
 

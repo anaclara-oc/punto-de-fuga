@@ -187,15 +187,17 @@ function ProximoEvento() {
   if (!e) return null;
   return (
     <section className="evento reveal">
+      <div className="evento__intro">
+        <div className="evento__label">{e.label}</div>
+        <h2 className="evento__titulo">{e.titulo}</h2>
+        <p className="evento__sub">{e.subtitulo}</p>
+      </div>
       {e.imagen && (
         <div className="evento__media">
           <img src={e.imagen} alt={e.titulo} />
         </div>
       )}
-      <div className="evento__content">
-        <div className="evento__label">{e.label}</div>
-        <h2 className="evento__titulo">{e.titulo}</h2>
-        <p className="evento__sub">{e.subtitulo}</p>
+      <div className="evento__body">
         {e.parrafos && e.parrafos.map((p, i) => (
           <p key={i} className="evento__parrafo">{p}</p>
         ))}

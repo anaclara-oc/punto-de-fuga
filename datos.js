@@ -42,7 +42,7 @@ window.PDF_DATA = {
   },
 
   proximoEvento: {
-    label: "Próximo evento",
+    label: "Próximamente",
     titulo: "FIC 2026 · 7ma edición",
     subtitulo: "Punto de Fuga presenta CAPAS",
     parrafos: [
@@ -263,7 +263,7 @@ window.PDF_DATA = {
         },
       ],
       videos: [
-        { url: "https://youtu.be/tOmtwSlX590", thumb: "https://img.youtube.com/vi/tOmtwSlX590/hqdefault.jpg", label: "Registro audiovisual" },
+        { url: "https://youtu.be/sQ1paWXxGUY", thumb: "https://img.youtube.com/vi/sQ1paWXxGUY/hqdefault.jpg", label: "Registro audiovisual" },
       ],
     },
     {
