@@ -1379,13 +1379,13 @@ a.evento__link:hover {
 
 .nos-interesa__item {
   font-family: var(--display);
-  font-weight: 300;
+  font-weight: 500;
   font-size: clamp(15px, 1.4vw, 18px);
   line-height: 1.6;
   padding: 40px 0 40px;
   border-bottom: 3px solid var(--lila);
   text-wrap: pretty;
-  color: rgba(230, 179, 236, 0.75);
+  color: rgba(230, 179, 236, 0.92);
 }
 
 .nos-interesa__item strong {
