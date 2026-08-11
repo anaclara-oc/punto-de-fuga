@@ -367,6 +367,7 @@ window.PDF_DATA = {
         visuales: ["Agustina Leiva", "Anaclara Oyenart"],
         disenoGrafico: "Anaclara Oyenart",
         duracion: "30 minutos",
+        registro: "Eugenia Braida",
       },
       galeria: [
         {
