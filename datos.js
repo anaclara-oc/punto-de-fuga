@@ -287,6 +287,7 @@ window.PDF_DATA = {
         audio: "Stella Peña",
         disenoGrafico: "Anaclara Oyenart",
         duracion: "30 minutos",
+        registro: "Reinaldo Altamirano",
       },
       galeria: [
         {
@@ -444,6 +445,7 @@ window.PDF_DATA = {
         disenoGrafico: "Anaclara Oyenart",
         asistenciaTecnica: "Agustina Rodriguez",
         duracion: "40 minutos",
+        registro: "Reinaldo Altamirano",
       },
       galeria: [
         {
@@ -516,6 +518,7 @@ window.PDF_DATA = {
         disenoGrafico: "Anaclara Oyenart",
         luces: "Fernanda Castillo",
         duracion: "40 minutos",
+        registro: "Pamela da Silva",
       },
       descripcion: "Es una performance que, desde un lenguaje visual y poético, explora los vínculos y las formas en que nuestros cuerpos son atravesados por fuerzas, discursos y afectos que condicionan nuestra manera de habitar el mundo.<br><br>Interpretada por un elenco de mujeres, la obra se despliega como una composición en movimiento donde luces, trayectorias, péndulos, espirales, puntos y líneas construyen un paisaje dinámico de encuentros y desencuentros. En un espacio finito, los cuerpos se aproximan, se rozan, se desvían, se sostienen y transforman mutuamente, revelando las múltiples posibilidades que emergen de la experiencia colectiva.<br><br>A través de una trama de imágenes en constante transformación, Fugas Colectivas da vida a una pintura en movimiento que invita a reflexionar sobre la interdependencia, la presencia y la construcción de lo común.",
       galeria: [
